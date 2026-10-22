@@ -1,0 +1,28 @@
+{{- $now := now }}
+{{- $upcomingEvents := slice }}
+{{- range where site.RegularPages "Section" "events" }}
+  {{- if partial "event-upcoming.html" . }}
+    {{- $upcomingEvents = $upcomingEvents | append . }}
+  {{- end }}
+{{- end }}
+{{- $upcomingEvents = $upcomingEvents | first 3 }}
+{{- if eq (len $upcomingEvents) 0 }}
+  <section class="upcoming-events">
+    <h2>Upcoming events</h2>
+    <p>No events are currently scheduled. Join us on <a href="{{ hugo.Data.club.discord_invite }}">Discord</a> for updates.</p>
+  </section>
+{{- else }}
+  <section class="upcoming-events">
+    <h2>Upcoming events</h2>
+    <ul class="event-list">
+      {{- range $upcomingEvents }}
+        <li class="event-item">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{- partial "event-when.html" . }}
+          {{- with .Params.location }}<p class="event-location">{{ . }}</p>{{ end }}
+        </li>
+      {{- end }}
+    </ul>
+    <p><a href="/events/">View all events</a></p>
+  </section>
+{{- end }}

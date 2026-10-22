@@ -86,6 +86,11 @@ footer {
   margin: 1rem 0;
 }
 
+.hero {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 .next-meeting {
   margin-top: 1rem;
   padding: 1rem;
@@ -97,6 +102,22 @@ footer {
 .next-meeting h2 {
   margin-top: 0;
   color: var(--accent);
+}
+
+.upcoming-events {
+  margin: 2rem 0;
+}
+
+.latest-results {
+  margin: 2rem 0;
+}
+
+.news {
+  margin: 2rem 0;
+}
+
+.sponsors {
+  margin: 2rem 0;
 }
 
 .sponsor-card {

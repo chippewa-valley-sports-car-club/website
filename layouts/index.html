@@ -1,6 +1,76 @@
 {{ define "main" }}
-<h1>{{ hugo.Data.club.name }}</h1>
-<p>{{ hugo.Data.club.tagline }}</p>
+<section class="hero">
+  <h1>{{ hugo.Data.club.name }}</h1>
+  <p>{{ hugo.Data.club.tagline }}</p>
+  {{ with hugo.Data.club.discord_invite }}
+    <p><a href="{{ . }}" class="button">Join us on Discord</a></p>
+  {{ end }}
+</section>
+
 {{ partial "next-meeting.html" . }}
-{{ with hugo.Data.club.discord_invite }}<p><a href="{{ . }}">Join the club Discord</a></p>{{ end }}
+
+{{ partial "upcoming-events.html" . }}
+
+{{- $results := where site.RegularPages "Section" "results" }}
+{{- $latestResult := $results | first 1 }}
+{{- if $latestResult }}
+  <section class="latest-results">
+    <h2>Latest results</h2>
+    {{- $result := index $latestResult 0 }}
+    <h3><a href="{{ $result.RelPermalink }}">{{ $result.Title }}</a></h3>
+    {{- with $result.Params.summary }}<p class="news-summary">{{ . }}</p>{{ end }}
+    {{- with $result.Params.highlights }}
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Place</th>
+              <th>Driver</th>
+              <th>Car</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{- range . }}
+            <tr>
+              <td>{{ .class }}</td>
+              <td>{{ .place }}</td>
+              <td>{{ .driver }}</td>
+              <td>{{ .car }}</td>
+              <td>{{ .time }}</td>
+            </tr>
+            {{- end }}
+          </tbody>
+        </table>
+      </div>
+    {{- end }}
+  </section>
+{{- end }}
+
+{{- $news := where site.RegularPages "Section" "news" }}
+{{- $latestNews := $news | first 3 }}
+{{- if $latestNews }}
+  <section class="news">
+    <h2>News</h2>
+    {{- range $latestNews }}
+      <article class="news-item">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{- with .Params.date }}<p class="news-date">{{ time.AsTime . | dateFormat "January 2, 2006" }}</p>{{ end }}
+        {{- with .Params.summary }}<p class="news-summary">{{ . }}</p>{{ end }}
+      </article>
+    {{- end }}
+  </section>
+{{- end }}
+
+{{- $sponsors := hugo.Data.sponsors }}
+{{- if $sponsors }}
+  <section class="sponsors">
+    <h2>Our sponsors</h2>
+    <div class="sponsor-strip">
+      {{ partial "sponsor-strip.html" . }}
+    </div>
+    <p><a href="/sponsors/">View all sponsors</a></p>
+  </section>
+{{- end }}
 {{ end }}
