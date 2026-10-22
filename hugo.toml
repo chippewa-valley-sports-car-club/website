@@ -1,0 +1,46 @@
+# Hugo config. Editors never touch this file; see docs/content-model.md for
+# what they do edit.
+baseURL = "https://www.cvscc.org/"
+locale = "en-us"
+title = "Chippewa Valley Sports Car Club"
+# Events are dated the day they happen, which is usually in the future.
+buildFuture = true
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+description = "A car club for the Chippewa Valley: autocross, track days, rally, sim racing, and quarterly meetings at Hangar 54."
+repo = "https://github.com/chippewa-valley-sports-car-club/website"
+
+[markup.goldmark.renderer]
+unsafe = false
+
+[[menus.main]]
+name = "Events"
+pageRef = "/events"
+weight = 10
+
+[[menus.main]]
+name = "Results"
+pageRef = "/results"
+weight = 20
+
+[[menus.main]]
+name = "News"
+pageRef = "/news"
+weight = 30
+
+[[menus.main]]
+name = "Sponsors"
+pageRef = "/sponsors"
+weight = 40
+
+[[menus.main]]
+name = "Join"
+pageRef = "/join"
+weight = 50
+
+[[menus.main]]
+name = "About"
+pageRef = "/about"
+weight = 60

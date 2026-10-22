@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ with resources.Get "css/main.css" }}{{ with . | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}{{ end }}
+</head>
+<body>
+  <header>
+    <a href="{{ "/" | relURL }}">{{ hugo.Data.club.name }}</a>
+    <nav>{{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a> {{ end }}</nav>
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer>
+    <p>© {{ now.Year }} {{ hugo.Data.club.name }}</p>
+  </footer>
+</body>
+</html>

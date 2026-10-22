@@ -1,0 +1,13 @@
+# Club-wide facts. Every key is described in docs/content-model.md.
+name: Chippewa Valley Sports Car Club
+tagline: Car people from the Eau Claire area. Any car, any experience level.
+email: ""
+discord_invite: https://discord.gg/d3kfjmWDQ8
+media_form_url: ""
+next_meeting:
+  date: ""
+  time: ""
+  venue: Hangar 54
+  address: ""
+  map_url: ""
+  notes: ""

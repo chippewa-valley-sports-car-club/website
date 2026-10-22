@@ -1,0 +1,2 @@
+/* Site styles. One file, no framework. */
+body { font-family: system-ui, sans-serif; margin: 0 auto; max-width: 60rem; padding: 0 1rem; }
