@@ -42,6 +42,6 @@
 {{ .Content }}
 
 {{ with .Params.event }}
-  <p><a href="{{ printf "/events/%s/" . | relURL }}">Event page</a></p>
+  <p><a href="{{ printf "events/%s/" . | relURL }}">Event page</a></p>
 {{ end }}
 {{ end }}

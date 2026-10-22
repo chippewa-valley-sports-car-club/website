@@ -25,7 +25,9 @@ To look at a page, build into a scratch directory and read the HTML:
    old spellings are deprecated, and the check treats warnings as errors.
    `.IsMenuCurrent` and `.HasMenuCurrent` are methods on the page, not the
    menu entry: `{{ if $.IsMenuCurrent "main" . }}` inside `range site.Menus.main`.
-3. **Every internal link goes through `relURL` or `.RelPermalink`.** The check
+3. **Every internal link goes through `relURL` or `.RelPermalink`**, and a
+   path given to `relURL` has no leading slash (`"events/" | relURL`; with a
+   slash Hugo resolves it from the host root and drops `/website/`). The check
    builds under `/website/`, so a bare `href="/events/"` fails it.
 4. **The content model is a contract.** Read keys exactly as
    `docs/content-model.md` names them. Every key not marked required may be

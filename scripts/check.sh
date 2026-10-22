@@ -31,6 +31,12 @@ if grep -rlE '^type:' content/; then
   echo "check: front matter must not set type: (an event's kind is event_type)" >&2; exit 1
 fi
 
+# AGENTS.md rule 3: relURL of "/x" resolves from the host root and drops the
+# /website/ sub-path; the link check only sees links the sample content renders.
+if grep -rnE '"/[^"]*" *\| *relURL|printf "/[^"]*"[^|]*\| *relURL' layouts/; then
+  echo "check: relURL takes a path without a leading slash (\"events/\", not \"/events/\")" >&2; exit 1
+fi
+
 out=$(mktemp -d)
 trap 'rm -rf "$out"' EXIT
 hugo --gc --panicOnWarning --printPathWarnings --logLevel warn \

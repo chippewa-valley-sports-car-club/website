@@ -148,3 +148,34 @@ footer {
     justify-content: flex-end;
   }
 }
+
+.event-list {
+  list-style: none;
+  padding: 0;
+}
+
+.event-item {
+  margin: 0 0 1.5rem;
+}
+
+.event-item h3 {
+  margin: 0.25rem 0;
+}
+
+.event-when,
+.event-location {
+  margin: 0.25rem 0;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  vertical-align: middle;
+}

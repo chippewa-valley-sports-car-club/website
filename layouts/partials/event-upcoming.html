@@ -1,0 +1,4 @@
+{{- /* Returns true when the event's last day (end_date, else date) is today or later, at build time. */ -}}
+{{- $end := .Date -}}
+{{- with .Params.end_date }}{{ $end = time.AsTime . }}{{ end -}}
+{{- return (ge ($end.Format "2006-01-02") (now.Format "2006-01-02")) -}}

@@ -1,0 +1,20 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ $upcoming := slice }}{{ $past := slice }}
+{{ range .Pages.ByDate }}
+  {{ if partial "event-upcoming.html" . }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}
+{{ end }}
+
+<h2>Upcoming</h2>
+{{ with $upcoming }}
+  <ul class="event-list">{{ range . }}{{ partial "event-item.html" . }}{{ end }}</ul>
+{{ else }}
+  <p>Nothing on the calendar yet.{{ with hugo.Data.club.discord_invite }} Watch <a href="{{ . }}">#announcements on Discord</a> for the next one.{{ end }}</p>
+{{ end }}
+
+{{ with $past }}
+  <h2>Past events</h2>
+  <ul class="event-list">{{ range sort . "Date" "desc" }}{{ partial "event-item.html" . }}{{ end }}</ul>
+{{ end }}
+{{ end }}

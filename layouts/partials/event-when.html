@@ -1,0 +1,4 @@
+{{- /* "Sat, May 15, 2027", or a range when end_date is set. */ -}}
+{{- $start := .Date -}}
+<time datetime="{{ $start.Format "2006-01-02" }}">{{ $start.Format "Mon, Jan 2, 2006" }}</time>
+{{- with .Params.end_date }}{{ $end := time.AsTime . }}{{ if ne ($end.Format "2006-01-02") ($start.Format "2006-01-02") }} – <time datetime="{{ $end.Format "2006-01-02" }}">{{ $end.Format "Mon, Jan 2, 2006" }}</time>{{ end }}{{ end -}}
