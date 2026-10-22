@@ -20,9 +20,11 @@ To look at a page, build into a scratch directory and read the HTML:
 1. **Hugo only.** No theme, no npm, no JavaScript framework, no CSS
    framework. One stylesheet, `assets/css/main.css`. A few lines of vanilla
    JavaScript only when a bead asks for it.
-2. **This is Hugo 0.163.** Write `hugo.Data.club`, never `site.Data` or
+2. **This is Hugo 0.168** (pinned by flake.lock; `nix develop -c hugo version`). Write `hugo.Data.club`, never `site.Data` or
    `.Site.Data`, and `site.Language.Locale`, never `.Site.LanguageCode`. Both
    old spellings are deprecated, and the check treats warnings as errors.
+   `.IsMenuCurrent` and `.HasMenuCurrent` are methods on the page, not the
+   menu entry: `{{ if $.IsMenuCurrent "main" . }}` inside `range site.Menus.main`.
 3. **Every internal link goes through `relURL` or `.RelPermalink`.** The check
    builds under `/website/`, so a bare `href="/events/"` fails it.
 4. **The content model is a contract.** Read keys exactly as
