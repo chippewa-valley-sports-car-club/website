@@ -62,7 +62,7 @@ Front matter:
 | `title` | text, *required* | |
 | `date` | date, *required* | The day of the event. `buildFuture` is on, so future dates publish |
 | `end_date` | date | Multi-day events |
-| `type` | one of `autocross`, `track`, `rally`, `social`, `meeting`, `sim`, *required* | |
+| `event_type` | one of `autocross`, `track`, `rally`, `social`, `meeting`, `sim`, *required* | Not `type`: Hugo reserves that front-matter key to pick the page template |
 | `location` | text | |
 | `register_url` | url | MotorsportReg, Eventbrite, Facebook event |
 | `summary` | text | One line for lists |

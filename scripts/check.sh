@@ -26,6 +26,11 @@ if grep -rnE '(site|\.Site)\.Data|\.Site\.LanguageCode' layouts/; then
   echo "check: use hugo.Data and site.Language.Locale (AGENTS.md rule 2)" >&2; exit 1
 fi
 
+# AGENTS.md rule 5: `type` in front matter silently swaps the page's template.
+if grep -rlE '^type:' content/; then
+  echo "check: front matter must not set type: (an event's kind is event_type)" >&2; exit 1
+fi
+
 out=$(mktemp -d)
 trap 'rm -rf "$out"' EXIT
 hugo --gc --panicOnWarning --printPathWarnings --logLevel warn \

@@ -140,7 +140,7 @@ content:
     exclude: [_index.md]
     filename: "{fields.date}-{primary}.md"
     view:
-      fields: [title, date, type, location]
+      fields: [title, date, event_type, location]
       sort: [date]
       default:
         sort: date
@@ -162,7 +162,7 @@ content:
         default: ""
         options:
           format: yyyy-MM-dd
-      - name: type
+      - name: event_type
         label: Type
         type: select
         required: true

@@ -32,13 +32,16 @@ To look at a page, build into a scratch directory and read the HTML:
    missing or empty, so guard it with `with` or `if`. Never rename a key. A new
    key goes in the content model, in `.pages.yml` once that file exists, and in
    the template, all in the same change.
-5. **Partials do one thing.** `layouts/partials/<thing>.html`, called with
+5. **Hugo reserves some front-matter keys.** `type` and `layout` choose the
+   template, `url` and `slug` the address, `weight` the order. Never use one
+   as a content field: an event's kind is `event_type`.
+6. **Partials do one thing.** `layouts/partials/<thing>.html`, called with
    `{{ partial "<thing>.html" . }}`. Page types live in
    `layouts/<section>/list.html` and `layouts/<section>/single.html`.
-6. **Accessible and mobile-first.** Semantic elements, alt text on images
+7. **Accessible and mobile-first.** Semantic elements, alt text on images
    (fall back to the name), links that say where they go, and a layout that
    works at 360 px wide.
-7. **Leave alone:** `.github/`, `flake.nix`, `flake.lock`, `scripts/check.sh`
+8. **Leave alone:** `.github/`, `flake.nix`, `flake.lock`, `scripts/check.sh`
    and `.beads/`, unless the bead says otherwise.
 
 ## Sample content
