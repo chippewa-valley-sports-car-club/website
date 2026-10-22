@@ -7,4 +7,9 @@
 #   offer: 10% off for club members
 #   code: CVSCC10
 #   blurb: Parts and advice for every kind of build.
-[]
+- name: Example Sponsor
+  url: https://example.com
+  tier: title
+  offer: 10% off for club members
+  code: CVSCC10
+  blurb: Example sponsor for testing.

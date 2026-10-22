@@ -99,6 +99,25 @@ footer {
   color: var(--accent);
 }
 
+.sponsor-card {
+  border: 1px solid var(--muted);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.sponsor-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sponsor-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
 @media (min-width: 48rem) {
   header {
     flex-wrap: nowrap;
