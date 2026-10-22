@@ -1,0 +1,38 @@
+{{ $now := now }}
+{{ $meetingDate := hugo.Data.club.next_meeting.date }}
+{{ $meetingTime := hugo.Data.club.next_meeting.time }}
+{{ $meetingVenue := hugo.Data.club.next_meeting.venue }}
+{{ $meetingAddress := hugo.Data.club.next_meeting.address }}
+{{ $meetingMapUrl := hugo.Data.club.next_meeting.map_url }}
+{{ $meetingNotes := hugo.Data.club.next_meeting.notes }}
+
+{{ if or (eq $meetingDate "") (lt (time.AsTime $meetingDate) $now) }}
+  <section class="next-meeting">
+    <h2>Next meeting: date TBA</h2>
+    {{ with hugo.Data.club.discord_invite }}
+      <p>Watch <a href="{{ . }}">#announcements on Discord</a></p>
+    {{ end }}
+  </section>
+{{ else }}
+  <section class="next-meeting">
+    <h2>Next meeting: {{ time.AsTime $meetingDate | dateFormat "Monday, January 2, 2006" }}</h2>
+    {{ with $meetingTime }}
+      <p><strong>Time:</strong> {{ . }}</p>
+    {{ end }}
+    {{ with $meetingVenue }}
+      <p><strong>Venue:</strong> {{ . }}</p>
+    {{ end }}
+    {{ with $meetingAddress }}
+      <p><strong>Address:</strong> 
+        {{ if $meetingMapUrl }}
+          <a href="{{ $meetingMapUrl }}">{{ . }}</a>
+        {{ else }}
+          {{ . }}
+        {{ end }}
+      </p>
+    {{ end }}
+    {{ with $meetingNotes }}
+      <p><strong>Notes:</strong> {{ . }}</p>
+    {{ end }}
+  </section>
+{{ end }}
