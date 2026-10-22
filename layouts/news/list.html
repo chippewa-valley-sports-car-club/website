@@ -6,7 +6,7 @@
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <p class="news-date">{{ .Date.Format "January 2, 2006" }}</p>
     {{ with .Params.image }}
-      <img src="{{ . | relURL }}" alt="{{ .Title }}" class="news-image">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="news-image">
     {{ end }}
     {{ with .Params.summary }}
       <p class="news-summary">{{ . }}</p>
