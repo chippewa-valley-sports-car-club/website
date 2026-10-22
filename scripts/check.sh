@@ -20,6 +20,12 @@ for f in data/*.yml .pages.yml; do
   yq eval 'true' "$f" >/dev/null || { echo "check: $f is not valid YAML" >&2; exit 1; }
 done
 
+# AGENTS.md rule 2: Hugo 0.168 still accepts site.Data without a warning, so
+# the build alone can't catch it.
+if grep -rnE '(site|\.Site)\.Data|\.Site\.LanguageCode' layouts/; then
+  echo "check: use hugo.Data and site.Language.Locale (AGENTS.md rule 2)" >&2; exit 1
+fi
+
 out=$(mktemp -d)
 trap 'rm -rf "$out"' EXIT
 hugo --gc --panicOnWarning --printPathWarnings --logLevel warn \
