@@ -15,6 +15,13 @@
   event: 2026-08-23-fall-autocross
   event_label: 2026 Fall Autocross
   blurb: Mobile tire installation.
+- name: Fast Freddie's Rod Shop
+  url: https://fastfreddiesrodshop.com/
+  lane: event
+  tier: event
+  event: 2026-08-23-fall-autocross
+  event_label: 2026 Fall Autocross
+  blurb: Hot rod shop in Eau Claire restoring vintage cars to their former glory.
 - name: Holzinger Homes
   url: https://holzingerhomes.com/
   lane: event

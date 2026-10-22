@@ -1,7 +1,10 @@
 # Club-wide facts. Every key is described in docs/content-model.md.
 name: Chippewa Valley Sports Car Club
 tagline: Car people from the Eau Claire area. Any car, any experience level.
-email: ""
+email: cvscc@cvscc.org
+# Optional: a signup page for the mailing list (Google Group, form...). Empty means
+# people join by emailing the club address above.
+mailing_list_url: ""
 # Shown on the Sponsors page. The club is not a 501(c)(3): sponsorships and
 # donations are not tax-deductible as charitable contributions.
 tax_status: 501(c)(7)

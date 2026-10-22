@@ -18,7 +18,8 @@ it. That is how a half-filled form stays publishable.
 | --- | --- | --- |
 | `name` | text, *required* | "Chippewa Valley Sports Car Club" |
 | `tagline` | text | One line under the name on the home page |
-| `email` | text | Contact address, shown on Contact |
+| `email` | text | Contact address, shown on Contact; also how people join the mailing list |
+| `mailing_list_url` | url | A signup page for the mailing list. Empty: the Find us card emails `email` instead |
 | `tax_status` | text | e.g. `501(c)(7)`; the Sponsors page says it and that the club is not a 501(c)(3) |
 | `discord_invite` | url | The permanent invite; the site's main call to action |
 | `media_form_url` | url | Where members submit videos and photos (`/submit/`) |

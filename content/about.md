@@ -20,6 +20,10 @@ Club members provide most of the in-car coaches for the [Teen Car Control Class]
 
 We meet quarterly at Hangar 54. The date of the next one is on the [home page](../) and announced on Discord.
 
+## Mailing list
+
+Want club notices and event dates by email? Email the club at [cvscc@cvscc.org](mailto:cvscc@cvscc.org?subject=Add%20me%20to%20the%20CVSCC%20mailing%20list) and ask to be added, or give an officer your email at a meeting. Members who join at a meeting are added automatically.
+
 ## Find us
 
 Most of the club's day-to-day conversation happens on our Discord server. We're also on Facebook at [facebook.com/cvscc.org](https://www.facebook.com/cvscc.org).

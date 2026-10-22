@@ -36,6 +36,11 @@ content:
       - name: email
         label: Contact email
         type: string
+        description: Shown on Contact. Without a signup link below, people join the mailing list by emailing it.
+      - name: mailing_list_url
+        label: Mailing list signup link (optional)
+        type: string
+        description: A Google Group or signup form. Leave empty to have people email the club instead.
       - name: tax_status
         label: Tax status (shown on the Sponsors page)
         type: string
