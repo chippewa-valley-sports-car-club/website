@@ -2,10 +2,11 @@
 # lane: club (season-long) or event (one event). Tiers: club lane title, gold,
 # supporter; event lane presenting, event, in-kind.
 - name: Holzinger Homes
+  url: https://holzingerhomes.com/
   lane: event
   tier: event
   event_label: Club autocross
-  blurb: Home builder in Altoona.
+  blurb: Custom and ready-built homes from an Altoona home builder.
 - name: PSI Mobile Tire
   lane: event
   tier: event
