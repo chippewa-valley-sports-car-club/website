@@ -3,10 +3,12 @@
 <p><strong>{{ .Date.Format "January 2, 2006" }}</strong></p>
 {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
 
-{{ with .Params.highlights }}
+{{ $highlights := .Params.highlights }}
+{{ with $highlights }}
   <h2>Podium</h2>
+  {{/* Determine all columns from all highlights */}}
   {{ $columns := slice }}
-  {{ range . }}
+  {{ range $highlights }}
     {{ range $key, $value := . }}
       {{ if not (in $columns $key) }}
         {{ $columns = $columns | append $key }}
@@ -24,10 +26,10 @@
         </tr>
       </thead>
       <tbody>
-        {{ range .Params.highlights }}
+        {{ range $highlights }}
           <tr>
             {{ range $columns }}
-              <td>{{ index . . }}</td>
+              <td>{{ with index . . }}{{ . }}{{ end }}</td>
             {{ end }}
           </tr>
         {{ end }}
