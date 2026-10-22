@@ -2,7 +2,7 @@
 # The one proof a change is good: CI runs it on every PR, the bead loop runs it
 # as its gate, and you can run it before you push.
 #
-#   nix develop -c scripts/check.sh
+#   flox activate -- scripts/check.sh
 #
 # 1. Every data file and the CMS config parse as YAML.
 # 2. Hugo builds with warnings as errors, under a sub-path base URL, which is
@@ -12,7 +12,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 for tool in hugo lychee yq; do
-  command -v "$tool" >/dev/null || { echo "missing $tool: run under 'nix develop -c scripts/check.sh'" >&2; exit 1; }
+  command -v "$tool" >/dev/null || { echo "missing $tool: run under 'flox activate -- scripts/check.sh'" >&2; exit 1; }
 done
 
 for f in data/*.yml .pages.yml; do

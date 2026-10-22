@@ -8,19 +8,19 @@ forms, so the content files are an interface: their shape is fixed in
 ## The proof
 
 ```bash
-nix develop -c scripts/check.sh      # green ends with the line "check: PASS"
+flox activate -- scripts/check.sh    # green ends with the line "check: PASS"
 ```
 
 CI runs exactly this, and so does the bead loop's gate. Nothing is done red.
 To look at a page, build into a scratch directory and read the HTML:
-`nix develop -c hugo --quiet --destination /tmp/site && grep -n 'next-meeting' /tmp/site/index.html`.
+`flox activate -- hugo --quiet --destination /tmp/site && grep -n 'next-meeting' /tmp/site/index.html`.
 
 ## Rules
 
 1. **Hugo only.** No theme, no npm, no JavaScript framework, no CSS
    framework. One stylesheet, `assets/css/main.css`. A few lines of vanilla
    JavaScript only when a bead asks for it.
-2. **This is Hugo 0.168** (pinned by flake.lock; `nix develop -c hugo version`). Write `hugo.Data.club`, never `site.Data` or
+2. **This is Hugo 0.168** (pinned by `.flox/env/manifest.lock`; `flox activate -- hugo version`). Write `hugo.Data.club`, never `site.Data` or
    `.Site.Data`, and `site.Language.Locale`, never `.Site.LanguageCode`. Both
    old spellings are deprecated, and the check treats warnings as errors.
    `.IsMenuCurrent` and `.HasMenuCurrent` are methods on the page, not the
@@ -43,7 +43,7 @@ To look at a page, build into a scratch directory and read the HTML:
 7. **Accessible and mobile-first.** Semantic elements, alt text on images
    (fall back to the name), links that say where they go, and a layout that
    works at 360 px wide.
-8. **Leave alone:** `.github/`, `flake.nix`, `flake.lock`, `scripts/check.sh`
+8. **Leave alone:** `.github/`, `.flox/`, `scripts/check.sh`
    and `.beads/`, unless the bead says otherwise.
 
 ## Design

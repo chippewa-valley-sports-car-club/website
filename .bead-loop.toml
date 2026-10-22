@@ -4,5 +4,5 @@
 # worktree that passes it is one CI would pass.
 label = "delegate:local"
 base = "main"
-gate = "nix develop -c scripts/check.sh"
+gate = "flox activate -- scripts/check.sh"
 merge = "auto"                       # the watcher squash-merges once `check` is green

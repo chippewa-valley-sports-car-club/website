@@ -8,14 +8,14 @@ static site, built and published by GitHub Pages from `main`.
   [`docs/content-model.md`](docs/content-model.md).
 - **Changing the site itself:**
   ```bash
-  nix develop -c hugo server          # live preview at http://localhost:1313
-  nix develop -c scripts/check.sh     # the proof CI runs; must end "check: PASS"
+  flox activate -- hugo server        # live preview at http://localhost:1313
+  flox activate -- scripts/check.sh   # the proof CI runs; must end "check: PASS"
   ```
 - **Autocross results:** put the timing data in `results-src/YYYY-MM-DD-<event>.tsv`
   (class, number, driver, car, best raw time, and a note for any amended
   result), keep `results-src/pax-YYYY.tsv` current, then
   ```bash
-  nix develop -c python3 scripts/results-tables.py results-src/<event>.tsv content/results/<event>.md
+  flox activate -- python3 scripts/results-tables.py results-src/<event>.tsv content/results/<event>.md
   ```
   It writes the raw, PAX and by-class tables and the top-ten-on-PAX list.
   PAX times are truncated to 0.001, as AXWare does.

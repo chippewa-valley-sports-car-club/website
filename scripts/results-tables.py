@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build an autocross results page's tables from the timing data.
 
-    nix develop -c python3 scripts/results-tables.py \\
+    flox activate -- python3 scripts/results-tables.py \\
         results-src/2026-08-23-fall-autocross.tsv content/results/2026-08-23-fall-autocross.md
 
 Input: a tab-separated file with the columns class, number, driver, car, raw,
