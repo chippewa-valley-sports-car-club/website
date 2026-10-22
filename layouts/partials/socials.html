@@ -1,0 +1,23 @@
+{{ range hugo.Data.socials }}
+  {{ if .url }}
+    {{ $name := .name }}
+    {{ $label := .label | default (title .name) }}
+    <a href="{{ .url }}" aria-label="{{ $label }}" rel="me noopener">
+      {{ if eq $name "facebook" }}
+        <span class="social-icon">f</span>
+      {{ else if eq $name "discord" }}
+        <span class="social-icon">d</span>
+      {{ else if eq $name "youtube" }}
+        <span class="social-icon">y</span>
+      {{ else if eq $name "instagram" }}
+        <span class="social-icon">i</span>
+      {{ else if eq $name "tiktok" }}
+        <span class="social-icon">t</span>
+      {{ else if eq $name "reddit" }}
+        <span class="social-icon">r</span>
+      {{ else }}
+        {{ $name }}
+      {{ end }}
+    </a>
+  {{ end }}
+{{ end }}
