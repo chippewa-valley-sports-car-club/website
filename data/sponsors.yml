@@ -1,6 +1,7 @@
 # Sponsors, in display order within each lane and tier. docs/content-model.md
 # lane: club (season-long) or event (one event). Tiers: club lane title, gold,
-# supporter; event lane presenting, event, in-kind.
+# supporter; event lane presenting, event, in-kind. A business that sponsored
+# two events has an entry for each; the home page lists it once.
 - name: Holzinger Homes
   url: https://holzingerhomes.com/
   lane: event
@@ -14,3 +15,23 @@
   event: 2026-08-23-fall-autocross
   event_label: 2026 Fall Autocross
   blurb: Mobile tire installation.
+- name: Holzinger Homes
+  url: https://holzingerhomes.com/
+  lane: event
+  tier: event
+  event: 2026-05-10-spring-autocross
+  event_label: 2026 Spring Autocross
+  blurb: Custom and ready-built homes from an Altoona home builder.
+- name: PSI Mobile Tire
+  lane: event
+  tier: event
+  event: 2026-05-10-spring-autocross
+  event_label: 2026 Spring Autocross
+  blurb: Mobile tire installation.
+- name: Fast Freddie's Rod Shop
+  url: https://fastfreddiesrodshop.com/
+  lane: event
+  tier: event
+  event: 2026-05-10-spring-autocross
+  event_label: 2026 Spring Autocross
+  blurb: Hot rod shop in Eau Claire restoring vintage cars to their former glory.
