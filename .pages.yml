@@ -36,6 +36,10 @@ content:
       - name: email
         label: Contact email
         type: string
+      - name: tax_status
+        label: Tax status (shown on the Sponsors page)
+        type: string
+        description: e.g. 501(c)(5). The page also says the club is not a 501(c)(3).
       - name: discord_invite
         label: Discord invite link
         type: string
@@ -117,12 +121,27 @@ content:
         options:
           media: images
           path: static/images/sponsors
+      - name: lane
+        label: Lane
+        type: select
+        default: club
+        description: club = backs the whole season. event = backs one event.
+        options:
+          values: [club, event]
       - name: tier
         label: Tier
         type: select
-        default: supporter
+        description: Club lane - title, gold or supporter. Event lane - presenting, event or in-kind.
         options:
-          values: [title, gold, supporter]
+          values: [title, gold, supporter, presenting, event, in-kind]
+      - name: event
+        label: Event (event lane only)
+        type: string
+        description: The event entry's file name without .md; the sponsor also shows on that event's page.
+      - name: event_label
+        label: Event name to group under (event lane only)
+        type: string
+        description: e.g. 2027 CVTC Autocross
       - name: offer
         label: Member offer
         type: string

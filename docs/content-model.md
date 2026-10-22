@@ -19,6 +19,7 @@ it. That is how a half-filled form stays publishable.
 | `name` | text, *required* | "Chippewa Valley Sports Car Club" |
 | `tagline` | text | One line under the name on the home page |
 | `email` | text | Contact address, shown on Contact |
+| `tax_status` | text | e.g. `501(c)(5)`; the Sponsors page says it and that the club is not a 501(c)(3) |
 | `discord_invite` | url | The permanent invite; the site's main call to action |
 | `media_form_url` | url | Where members submit videos and photos (`/submit/`) |
 | `next_meeting.date` | date | Past or empty: the site says "Next meeting: date TBA" |
@@ -50,7 +51,10 @@ A list, shown in order.
 | `name` | text, *required* | |
 | `url` | url | The site adds `utm_source=cvscc.org&utm_medium=referral&utm_campaign=sponsors` so sponsors can see the referrals |
 | `logo` | image path under `static/images/sponsors/` | Missing: the name is shown instead |
-| `tier` | one of `title`, `gold`, `supporter` | Defaults to `supporter`. Title sponsors show first and largest |
+| `lane` | `club` or `event` | Defaults to `club`. Club sponsors back the whole season; event sponsors back one event |
+| `tier` | club lane: `title`, `gold`, `supporter`; event lane: `presenting`, `event`, `in-kind` | Defaults to `supporter` (club) or `event` (event). Higher tiers show first and larger |
+| `event` | file name of a `content/events/` page, without `.md` | Event lane: the sponsor also shows on that event's page |
+| `event_label` | text | Event lane: the heading it's grouped under on the Sponsors page, e.g. `2027 CVTC Autocross` |
 | `offer` | text | "10% off parts for members" |
 | `code` | text | A discount or referral code to quote |
 | `blurb` | text | One or two sentences |

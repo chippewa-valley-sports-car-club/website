@@ -1,5 +1,5 @@
 <ul class="sponsor-strip">
-  {{- range hugo.Data.sponsors }}{{ $s := . }}
+  {{- range (cond (reflect.IsSlice .) . hugo.Data.sponsors) }}{{ $s := . }}
   <li>{{ $href := partial "sponsor-link.html" . }}<a {{ with $href }}href="{{ . }}" {{ end }}rel="sponsored noopener" title="{{ .name }}">{{ with .logo }}<img src="{{ . | relURL }}" alt="{{ $s.name }}" loading="lazy">{{ else }}{{ .name }}{{ end }}</a></li>
   {{- end }}
 </ul>

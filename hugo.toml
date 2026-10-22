@@ -36,6 +36,11 @@ pageRef = "/sponsors"
 weight = 40
 
 [[menus.main]]
+name = "Community"
+pageRef = "/community"
+weight = 45
+
+[[menus.main]]
 name = "Join"
 pageRef = "/join"
 weight = 50

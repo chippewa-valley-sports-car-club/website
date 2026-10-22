@@ -1,0 +1,14 @@
+{{- /* One sponsor as a card. */ -}}
+{{- $s := . }}
+{{- $href := partial "sponsor-link.html" $s }}
+{{- $lane := $s.lane | default "club" }}
+{{- $tier := $s.tier | default (cond (eq $lane "event") "event" "supporter") }}
+<article class="card sponsor-card tier-{{ $tier }}">
+  {{- with $s.logo }}<a class="sponsor-mark" {{ with $href }}href="{{ . }}" {{ end }}rel="sponsored noopener"><img src="{{ . | relURL }}" alt="{{ $s.name }}"></a>{{ end }}
+  {{- $kicker := dict "title" "Title sponsor" "gold" "Gold sponsor" "presenting" "Presenting sponsor" "in-kind" "In-kind sponsor" }}
+  {{ with index $kicker $tier }}<p class="card-kicker">{{ . }}</p>{{ end }}
+  <h3>{{ if $href }}<a href="{{ $href }}" rel="sponsored noopener">{{ $s.name }}</a>{{ else }}{{ $s.name }}{{ end }}</h3>
+  {{ with $s.blurb }}<p>{{ . }}</p>{{ end }}
+  {{ with $s.offer }}<p class="offer">{{ . }}</p>{{ end }}
+  {{ with $s.code }}<p class="code">Code: <code>{{ . }}</code></p>{{ end }}
+</article>

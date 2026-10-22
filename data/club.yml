@@ -2,6 +2,9 @@
 name: Chippewa Valley Sports Car Club
 tagline: Car people from the Eau Claire area. Any car, any experience level.
 email: ""
+# Shown on the Sponsors page. The club is not a 501(c)(3): sponsorships and
+# donations are not tax-deductible as charitable contributions.
+tax_status: 501(c)(5)
 discord_invite: https://discord.gg/d3kfjmWDQ8
 media_form_url: ""
 next_meeting:

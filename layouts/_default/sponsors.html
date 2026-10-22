@@ -1,26 +1,43 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-{{ .Content }}
 {{- $all := hugo.Data.sponsors | default slice }}
-{{- $ordered := slice }}
-{{- range slice "title" "gold" "supporter" }}{{ $tier := . }}
-  {{- range $all }}{{ if eq (.tier | default "supporter") $tier }}{{ $ordered = $ordered | append . }}{{ end }}{{ end }}
+{{- $club := slice }}{{ $event := slice }}
+{{- range $all }}{{ if eq (.lane | default "club") "event" }}{{ $event = $event | append . }}{{ else }}{{ $club = $club | append . }}{{ end }}{{ end }}
+
+{{- with $club }}
+<section class="home-section">
+  <div class="section-head"><h2>Club sponsors</h2></div>
+  <div class="card-grid sponsors-grid">
+    {{- range $tier := slice "title" "gold" "supporter" }}
+      {{- range $club }}{{ if eq (.tier | default "supporter") $tier }}{{ partial "sponsor-card.html" . }}{{ end }}{{ end }}
+    {{- end }}
+  </div>
+</section>
 {{- end }}
-{{- with $ordered }}
-<div class="card-grid sponsors-grid">
-  {{- range . }}{{ $s := . }}
-  {{- $href := partial "sponsor-link.html" . }}
-  <article class="card sponsor-card tier-{{ .tier | default "supporter" }}">
-    <a class="sponsor-mark" {{ with $href }}href="{{ . }}" {{ end }}rel="sponsored noopener">{{ with .logo }}<img src="{{ . | relURL }}" alt="{{ $s.name }}">{{ else }}<span>{{ $s.name }}</span>{{ end }}</a>
-    {{ if ne (.tier | default "supporter") "supporter" }}<p class="card-kicker">{{ .tier | humanize }} sponsor</p>{{ end }}
-    <h3>{{ if $href }}<a href="{{ $href }}" rel="sponsored noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
-    {{ with .blurb }}<p>{{ . }}</p>{{ end }}
-    {{ with .offer }}<p class="offer">{{ . }}</p>{{ end }}
-    {{ with .code }}<p class="code">Code: <code>{{ . }}</code></p>{{ end }}
-  </article>
+
+{{- with $event }}
+<section class="home-section">
+  <div class="section-head"><h2>Event sponsors</h2></div>
+  {{- $labels := slice }}{{ range $event }}{{ $labels = $labels | append (.event_label | default "Club events") }}{{ end }}
+  {{- range $label := uniq $labels }}
+  <h3 class="sponsor-group">{{ $label }}</h3>
+  <div class="card-grid sponsors-grid">
+    {{- range $tier := slice "presenting" "event" "in-kind" }}
+      {{- range $event }}{{ if and (eq (.event_label | default "Club events") $label) (eq (.tier | default "event") $tier) }}{{ partial "sponsor-card.html" . }}{{ end }}{{ end }}
+    {{- end }}
+  </div>
   {{- end }}
-</div>
-{{- else }}
-<p class="card">Want to sponsor the club? Ask an officer on <a href="{{ hugo.Data.club.discord_invite }}">Discord</a>.</p>
+</section>
 {{- end }}
+
+<section class="home-section sponsor-pitch">
+  <div class="section-head"><h2>Sponsor the club</h2></div>
+  {{ with hugo.Data.club.tax_status }}
+  <aside class="notice tax-status">
+    <strong>The club is a {{ . }} nonprofit, not a 501(c)(3).</strong>
+    Sponsorships and donations to the club are not tax-deductible as charitable contributions. Many businesses treat sponsorship as an advertising expense instead; check with your tax advisor.
+  </aside>
+  {{ end }}
+  <div class="prose">{{ .Content }}</div>
+</section>
 {{ end }}

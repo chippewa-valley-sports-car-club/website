@@ -432,6 +432,10 @@ code {
   color: #fff;
 }
 
+.facts a {
+  color: #fff;
+}
+
 .home-section {
   margin-top: 2.75rem;
 }
@@ -476,6 +480,40 @@ code {
 
 .community-facebook .community-icon {
   background: #1877f2;
+}
+
+/* ── Page text ─────────────────────────────────────────────────────── */
+
+.prose {
+  max-width: var(--measure);
+}
+
+.page table,
+.prose table {
+  margin: 1rem 0 1.5rem;
+  background: var(--card);
+  white-space: normal;
+}
+
+.page td,
+.prose td {
+  white-space: normal;
+  vertical-align: top;
+}
+
+.page h2,
+.prose h3 {
+  margin-top: 2rem;
+}
+
+.card-more {
+  color: var(--link);
+  font-weight: 600;
+}
+
+.community-grid h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
 }
 
 /* ── Events ───────────────────────────────────────────────────────────── */
@@ -659,6 +697,29 @@ tbody tr:nth-child(even) {
 .offer {
   font-weight: 700;
   color: var(--red);
+}
+
+.sponsor-group {
+  margin: 1.5rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tax-status {
+  margin-bottom: 1.5rem;
+}
+
+.event-sponsors {
+  margin-top: 2rem;
+}
+
+.event-sponsors h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 /* ── Contact ──────────────────────────────────────────────────────────── */

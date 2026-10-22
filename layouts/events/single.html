@@ -6,6 +6,13 @@
   {{ .Content }}
   {{ with .Params.register_url }}<p><a class="button" href="{{ . }}">Register</a></p>{{ end }}
   {{ with .Params.results }}<p><a href="{{ printf "results/%s/" . | relURL }}">See the results</a></p>{{ end }}
+  {{- $slug := .File.ContentBaseName }}
+  {{- with where (hugo.Data.sponsors | default slice) "event" $slug }}
+  <section class="event-sponsors">
+    <h2>Thanks to our event sponsors</h2>
+    {{ partial "sponsor-strip.html" . }}
+  </section>
+  {{- end }}
   <p><a href="{{ "events/" | relURL }}">All events</a></p>
 </article>
 {{ end }}

@@ -12,6 +12,10 @@ The Chippewa Valley Sports Car Club is a group of car people from the Eau Claire
 - **Sim racing:** Assetto Corsa practice with Fugazy Sim Racing when the weather won't cooperate.
 - **Social events:** meetings, drives and get-togethers.
 
+## In the community
+
+Club members provide most of the in-car coaches for the [Teen Car Control Class](../community/teen-car-control/), and our autocross proceeds fund two [CVTC automotive scholarships](../community/cvtc-scholarships/) every year. The club has been part of the Chippewa Valley for over 60 years.
+
 ## Meetings
 
 We meet quarterly at Hangar 54. The date of the next one is on the [home page](../) and announced on Discord.

@@ -1,15 +1,12 @@
-# Sponsors, shown in this order. docs/content-model.md
-# Example entry (copy it, fill it in, and remove the leading "# "):
-# - name: Example Auto Parts
-#   url: https://example.com
-#   logo: images/sponsors/example.png
-#   tier: supporter
-#   offer: 10% off for club members
-#   code: CVSCC10
-#   blurb: Parts and advice for every kind of build.
-- name: Example Sponsor
-  url: https://example.com
-  tier: title
-  offer: 10% off for club members
-  code: CVSCC10
-  blurb: Example sponsor for testing.
+# Sponsors, in display order within each lane and tier. docs/content-model.md
+# lane: club (season-long) or event (one event). Tiers: club lane title, gold,
+# supporter; event lane presenting, event, in-kind.
+- name: Holzinger Homes
+  lane: event
+  tier: event
+  event_label: Club autocross
+  blurb: Home builder in Altoona.
+- name: PSI Tire
+  lane: event
+  tier: event
+  event_label: Club autocross
