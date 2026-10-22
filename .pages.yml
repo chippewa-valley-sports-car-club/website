@@ -39,7 +39,7 @@ content:
       - name: tax_status
         label: Tax status (shown on the Sponsors page)
         type: string
-        description: e.g. 501(c)(5). The page also says the club is not a 501(c)(3).
+        description: e.g. 501(c)(7). The page also says the club is not a 501(c)(3).
       - name: discord_invite
         label: Discord invite link
         type: string

@@ -19,7 +19,7 @@ it. That is how a half-filled form stays publishable.
 | `name` | text, *required* | "Chippewa Valley Sports Car Club" |
 | `tagline` | text | One line under the name on the home page |
 | `email` | text | Contact address, shown on Contact |
-| `tax_status` | text | e.g. `501(c)(5)`; the Sponsors page says it and that the club is not a 501(c)(3) |
+| `tax_status` | text | e.g. `501(c)(7)`; the Sponsors page says it and that the club is not a 501(c)(3) |
 | `discord_invite` | url | The permanent invite; the site's main call to action |
 | `media_form_url` | url | Where members submit videos and photos (`/submit/`) |
 | `next_meeting.date` | date | Past or empty: the site says "Next meeting: date TBA" |
