@@ -81,6 +81,11 @@ footer {
   border: none;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
 @media (min-width: 48rem) {
   header {
     flex-wrap: nowrap;
