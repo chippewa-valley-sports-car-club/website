@@ -1,8 +1,16 @@
 # Links to the club elsewhere. An empty url is hidden. docs/content-model.md
 - name: discord
   url: https://discord.gg/d3kfjmWDQ8
+  label: Discord
+  blurb: Where the club talks every day. Event plans, carpools, results, build threads and buy/sell.
 - name: facebook
   url: https://www.facebook.com/cvscc.org
+  label: Facebook page
+  blurb: Official club notices and event announcements.
+- name: facebook
+  url: https://www.facebook.com/groups/1598148030477801
+  label: Facebook group
+  blurb: Member discussion, photos and car talk.
 - name: youtube
   url: ""
 - name: instagram

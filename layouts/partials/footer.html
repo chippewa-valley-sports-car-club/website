@@ -1,5 +1,17 @@
-<footer>
-  <div class="footer-socials">{{ partial "socials.html" . }}</div>
-  <p>© {{ now.Year }} {{ hugo.Data.club.name }}</p>
-  <p class="footer-edit"><a href="{{ site.Params.repo }}/blob/main/docs/editing-the-website.md">Club editors: update this site</a></p>
+<footer class="site-footer">
+  <div class="checker" aria-hidden="true"></div>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="{{ "images/logo.png" | relURL }}" alt="" width="56" height="56">
+      <div>
+        <p class="footer-name">{{ hugo.Data.club.name }}</p>
+        <p>Quarterly meetings at Hangar 54 · Eau Claire area</p>
+      </div>
+    </div>
+    <div class="footer-socials">{{ partial "socials.html" . }}</div>
+  </div>
+  <div class="container footer-meta">
+    <p>© {{ now.Year }} {{ hugo.Data.club.name }} · <a href="{{ "privacy/" | relURL }}">Privacy</a> · <a href="{{ "terms/" | relURL }}">Terms</a> · <a href="{{ "contact/" | relURL }}">Contact</a></p>
+    <p class="footer-edit"><a href="{{ site.Params.repo }}/blob/main/docs/editing-the-website.md">Club editors: update this site</a></p>
+  </div>
 </footer>

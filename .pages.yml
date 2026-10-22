@@ -90,7 +90,10 @@ content:
         type: string
         description: Leave empty to hide this platform.
       - name: label
-        label: Screen-reader label (optional)
+        label: Name to show (e.g. Facebook group)
+        type: string
+      - name: blurb
+        label: One line for the home page's Find us section (optional)
         type: string
 
   - name: sponsors

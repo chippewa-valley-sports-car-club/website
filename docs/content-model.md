@@ -31,13 +31,15 @@ it. That is how a half-filled form stays publishable.
 ## `data/socials.yml`: links to the club elsewhere
 
 A list. An entry with an empty `url` is hidden, so all six can sit here
-before the accounts exist.
+before the accounts exist. A platform may appear twice (the club's Facebook
+page and its Facebook group); `label` tells them apart.
 
 | Key | Type | Notes |
 | --- | --- | --- |
 | `name` | one of `facebook`, `discord`, `youtube`, `instagram`, `tiktok`, `reddit`, *required* | Picks the icon |
 | `url` | url | |
 | `label` | text | Accessible name; defaults to the name, capitalized |
+| `blurb` | text | One line for the home page's "Find us" section; entries without one only show in the footer |
 
 ## `data/sponsors.yml`: who supports the club
 

@@ -46,6 +46,17 @@ To look at a page, build into a scratch directory and read the HTML:
 8. **Leave alone:** `.github/`, `flake.nix`, `flake.lock`, `scripts/check.sh`
    and `.beads/`, unless the bead says otherwise.
 
+## Design
+
+Colours come from the club badge (`static/images/logo.png`) and live as CSS
+variables at the top of `assets/css/main.css`: `--red` (helmet), `--blue`
+(lettering), `--ink` (rim), `--silver`, with a dark-mode set. Use the
+variables, never a new hex value. Reuse the existing patterns before adding
+CSS: `.card` (with `.card-kicker` for the small uppercase line above a title),
+`.card-grid`, `.section-head` (a section's title with an "All … →" link),
+`.button` / `.button-ghost`, `.badge`, and `.checker`, the checkered strip.
+Add new rules in the section of the stylesheet they belong to, not at the end.
+
 ## Sample content
 
 `content/events/example-autocross.md`, `content/results/example-autocross.md`

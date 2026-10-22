@@ -1,0 +1,17 @@
+{{- /* "Find us": every social link with a url and a blurb, as cards. */ -}}
+{{- $names := dict "facebook" "Facebook" "discord" "Discord" "youtube" "YouTube" "instagram" "Instagram" "tiktok" "TikTok" "reddit" "Reddit" }}
+{{- $cards := where (where hugo.Data.socials "url" "!=" "") "blurb" "!=" nil }}
+{{- with $cards }}
+<section class="home-section">
+  <div class="section-head"><h2>Find us</h2></div>
+  <div class="card-grid">
+    {{- range . }}{{ if .blurb }}
+    <a class="card card-link community-{{ .name }}" href="{{ .url }}" rel="me noopener">
+      <span class="community-icon">{{ partial "social-icon.html" .name }}</span>
+      <h3>{{ .label | default (index $names .name) }}</h3>
+      <p>{{ .blurb }}</p>
+    </a>
+    {{- end }}{{ end }}
+  </div>
+</section>
+{{- end }}

@@ -1,0 +1,19 @@
+{{- /* A results podium table from a highlights list; shows only the columns at least one row fills. */ -}}
+{{- $rows := . }}
+{{- $labels := dict "class" "Class" "place" "Place" "driver" "Driver" "car" "Car" "time" "Time" }}
+{{- $cols := slice }}
+{{- range slice "place" "class" "driver" "car" "time" }}
+  {{- $c := . }}{{ $has := false }}
+  {{- range $rows }}{{ if index . $c }}{{ $has = true }}{{ end }}{{ end }}
+  {{- if $has }}{{ $cols = $cols | append $c }}{{ end }}
+{{- end }}
+<div class="table-wrapper">
+  <table class="podium">
+    <thead><tr>{{ range $cols }}<th scope="col">{{ index $labels . }}</th>{{ end }}</tr></thead>
+    <tbody>
+      {{- range $rows }}{{ $row := . }}
+      <tr{{ with $row.place }} class="place-{{ . }}"{{ end }}>{{ range $cols }}<td>{{ index $row . }}</td>{{ end }}</tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>

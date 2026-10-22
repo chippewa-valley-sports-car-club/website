@@ -1,37 +1,26 @@
-{{ $sponsors := hugo.Data.sponsors }}
-{{ $titleSponsors := where $sponsors "tier" "title" }}
-{{ $goldSponsors := where $sponsors "tier" "gold" }}
-{{ $supporterSponsors := where $sponsors "tier" "supporter" }}
-
-{{ $allSponsors := slice }}
-{{ range $titleSponsors }}
-  {{ $allSponsors = $allSponsors | append . }}
-{{ end }}
-{{ range $goldSponsors }}
-  {{ $allSponsors = $allSponsors | append . }}
-{{ end }}
-{{ range $supporterSponsors }}
-  {{ $allSponsors = $allSponsors | append . }}
-{{ end }}
-
-{{ $sponsors := $allSponsors }}
-
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
 {{ .Content }}
-
-{{ if eq (len $sponsors) 0 }}
-  <p>Want to sponsor the club? Ask an officer on Discord.</p>
-{{ else }}
-  {{ range $sponsors }}
-    <div class="sponsor-card{{ if eq .tier "title" }} sponsor-card-title{{ end }}">
-      {{ if .logo }}
-        <img src="{{ .logo | relURL }}" alt="{{ .name }}">
-      {{ else }}
-        <p>{{ .name }}</p>
-      {{ end }}
-      <p>{{ .blurb }}</p>
-      <p>{{ .offer }}</p>
-      <p>Code: {{ .code }}</p>
-      {{ partial "sponsor-link.html" . }}
-    </div>
-  {{ end }}
+{{- $all := hugo.Data.sponsors | default slice }}
+{{- $ordered := slice }}
+{{- range slice "title" "gold" "supporter" }}{{ $tier := . }}
+  {{- range $all }}{{ if eq (.tier | default "supporter") $tier }}{{ $ordered = $ordered | append . }}{{ end }}{{ end }}
+{{- end }}
+{{- with $ordered }}
+<div class="card-grid sponsors-grid">
+  {{- range . }}{{ $s := . }}
+  {{- $href := partial "sponsor-link.html" . }}
+  <article class="card sponsor-card tier-{{ .tier | default "supporter" }}">
+    <a class="sponsor-mark" {{ with $href }}href="{{ . }}" {{ end }}rel="sponsored noopener">{{ with .logo }}<img src="{{ . | relURL }}" alt="{{ $s.name }}">{{ else }}<span>{{ $s.name }}</span>{{ end }}</a>
+    {{ if ne (.tier | default "supporter") "supporter" }}<p class="card-kicker">{{ .tier | humanize }} sponsor</p>{{ end }}
+    <h3>{{ if $href }}<a href="{{ $href }}" rel="sponsored noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h3>
+    {{ with .blurb }}<p>{{ . }}</p>{{ end }}
+    {{ with .offer }}<p class="offer">{{ . }}</p>{{ end }}
+    {{ with .code }}<p class="code">Code: <code>{{ . }}</code></p>{{ end }}
+  </article>
+  {{- end }}
+</div>
+{{- else }}
+<p class="card">Want to sponsor the club? Ask an officer on <a href="{{ hugo.Data.club.discord_invite }}">Discord</a>.</p>
+{{- end }}
 {{ end }}
