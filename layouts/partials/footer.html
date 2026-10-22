@@ -1,6 +1,5 @@
 <footer>
+  <div class="footer-socials">{{ partial "socials.html" . }}</div>
   <p>© {{ now.Year }} {{ hugo.Data.club.name }}</p>
-  <div class="footer-socials">
-    <a href="{{ site.Params.repo }}/blob/main/docs/editing-the-website.md">Club editors: update this site</a>
-  </div>
+  <p class="footer-edit"><a href="{{ site.Params.repo }}/blob/main/docs/editing-the-website.md">Club editors: update this site</a></p>
 </footer>
