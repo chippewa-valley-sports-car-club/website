@@ -6,7 +6,8 @@
   tier: event
   event_label: Club autocross
   blurb: Home builder in Altoona.
-- name: PSI Tire
+- name: PSI Mobile Tire
   lane: event
   tier: event
   event_label: Club autocross
+  blurb: Mobile tire installation.
