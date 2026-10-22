@@ -8,13 +8,13 @@ highlights:
   - {place: 1, class: BS, driver: "Kevin Romenesko", car: "2021 Toyota Supra", time: "39.908"}
   - {place: 2, class: DS, driver: "Quinn Huettner", car: "2021 Honda Civic Type R/Gray", time: "41.105"}
   - {place: 3, class: AS, driver: "Paul Holzinger", car: "2017 Chevrolet Corvette/Admiral Blue", time: "41.436"}
-  - {place: 4, class: CST, driver: "Abel Lao", car: "2026 Subaru BRZ TS/White", time: "42.214"}
-  - {place: 5, class: DS, driver: "Maxwell Bulgrin", car: "2023 Toyota GR86/Steel Silver", time: "42.368"}
-  - {place: 6, class: SSM, driver: "Adrian Cepoi", car: "2001 Mazda Miata MX5/Black", time: "42.424"}
-  - {place: 7, class: HS, driver: "Luis De La Pena", car: "2009 Honda Civic SI/Grey", time: "42.621"}
-  - {place: 8, class: EST, driver: "Joel Anderegg", car: "1991 Honda Civic Si/Grey", time: "42.635"}
-  - {place: 9, class: XB, driver: "Rex Schultrich", car: "1991 Mazda Miata/Red", time: "42.648"}
-  - {place: 10, class: BST, driver: "Thomas Fusilier", car: "2018 Volkswagen Golf R/Black", time: "42.737"}
+  - {place: 4, class: CS, driver: "Isaac Karrer", car: "2020 Fiat Abarth 124 Spider/White", time: "42.061*"}
+  - {place: 5, class: CST, driver: "Abel Lao", car: "2026 Subaru BRZ TS/White", time: "42.214"}
+  - {place: 6, class: DS, driver: "Maxwell Bulgrin", car: "2023 Toyota GR86/Steel Silver", time: "42.368"}
+  - {place: 7, class: SSM, driver: "Adrian Cepoi", car: "2001 Mazda Miata MX5/Black", time: "42.424"}
+  - {place: 8, class: HS, driver: "Luis De La Pena", car: "2009 Honda Civic SI/Grey", time: "42.621"}
+  - {place: 9, class: EST, driver: "Joel Anderegg", car: "1991 Honda Civic Si/Grey", time: "42.635"}
+  - {place: 10, class: XB, driver: "Rex Schultrich", car: "1991 Mazda Miata/Red", time: "42.648"}
 ---
 
 Results are by **raw time**: each driver's best run, fastest first, regardless of class. The table above is the top ten. Class positions are in brackets. Timing by AXWare.
@@ -24,15 +24,15 @@ Results are by **raw time**: each driver's best run, fastest first, regardless o
 | 1 | BS (1) | 71 | Kevin Romenesko | 2021 Toyota Supra | 39.908 |
 | 2 | DS (1) | 165 | Quinn Huettner | 2021 Honda Civic Type R/Gray | 41.105 |
 | 3 | AS (2) | 17 | Paul Holzinger | 2017 Chevrolet Corvette/Admiral Blue | 41.436 |
-| 4 | CST (2) | 109 | Abel Lao | 2026 Subaru BRZ TS/White | 42.214 |
-| 5 | DS (2) | 141 | Maxwell Bulgrin | 2023 Toyota GR86/Steel Silver | 42.368 |
-| 6 | SSM (1) | 111 | Adrian Cepoi | 2001 Mazda Miata MX5/Black | 42.424 |
-| 7 | HS (1) | 74 | Luis De La Pena | 2009 Honda Civic SI/Grey | 42.621 |
-| 8 | EST (1) | 210 | Joel Anderegg | 1991 Honda Civic Si/Grey | 42.635 |
-| 9 | XB (1) | 51 | Rex Schultrich | 1991 Mazda Miata/Red | 42.648 |
-| 10 | BST (1) | 77 | Thomas Fusilier | 2018 Volkswagen Golf R/Black | 42.737 |
-| 11 | HS (2) | 81 | John Qualheim | 2018 Ford Fiesta ST/Gray | 42.869 |
-| 12 | CS (3) | 787 | Isaac Karrer | 2020 Fiat Abarth 124 Spider/White | 43.142 |
+| 4 | CS (3) | 787 | Isaac Karrer | 2020 Fiat Abarth 124 Spider/White | 42.061* |
+| 5 | CST (2) | 109 | Abel Lao | 2026 Subaru BRZ TS/White | 42.214 |
+| 6 | DS (2) | 141 | Maxwell Bulgrin | 2023 Toyota GR86/Steel Silver | 42.368 |
+| 7 | SSM (1) | 111 | Adrian Cepoi | 2001 Mazda Miata MX5/Black | 42.424 |
+| 8 | HS (1) | 74 | Luis De La Pena | 2009 Honda Civic SI/Grey | 42.621 |
+| 9 | EST (1) | 210 | Joel Anderegg | 1991 Honda Civic Si/Grey | 42.635 |
+| 10 | XB (1) | 51 | Rex Schultrich | 1991 Mazda Miata/Red | 42.648 |
+| 11 | BST (1) | 77 | Thomas Fusilier | 2018 Volkswagen Golf R/Black | 42.737 |
+| 12 | HS (2) | 81 | John Qualheim | 2018 Ford Fiesta ST/Gray | 42.869 |
 | 13 | SM (1) | 842 | Shandon Wall | 2017 Subaru Brz performance package/White | 43.361 |
 | 14 | N (1) | 365 | Devin Marshall | 2018 Ford Fiesta st/Black | 43.616 |
 | 15 | XB (2) | 501 | Fynn Schultrich | 1988 Mazda RX-7 FC/Red | 43.712 |
@@ -55,3 +55,5 @@ Results are by **raw time**: each driver's best run, fastest first, regardless o
 | 32 | HS (6) | 8 | Nolan Murray | 2005 Audi A4 Quattro/Black | 49.859 |
 | 33 | N (6) | 0 | Nate Ebert | 2026 Not a clue No freaking clue yet/Definitely | 50.587 |
 | 34 | N (7) | 87 | Courtney Moulton | 2014 Dodge Charger RT/Black | 57.999 |
+
+\* **Amended result.** Isaac Karrer's (CS, #787) best run was not recorded because of a timing fault; it is corrected from 43.142 to **42.061**, as shown in the [in-car video of the run](https://www.youtube.com/watch?v=j0NwGSo0kMw). Overall positions above reflect the correction. The downloadable AXWare sheet shows the original timing. On PAX (C Street, factor 0.814) the corrected time is **34.238**.
