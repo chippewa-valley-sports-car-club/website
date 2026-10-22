@@ -9,9 +9,9 @@
     {{- with .Params.event }} <a href="{{ printf "events/%s/" . | relURL }}">Event page</a>{{ end }}
   </p>
   {{ with .Params.highlights }}
-  <h2>Top {{ cond (eq (len .) 10) "ten" (string (len .)) }}</h2>
+  <h2>Top {{ cond (eq (len .) 10) "ten" (string (len .)) }} on PAX</h2>
   {{ partial "podium.html" . }}
   {{ end }}
-  {{ with .Content }}<h2>Full results</h2>{{ . }}{{ end }}
+  {{ .Content }}
 </article>
 {{ end }}

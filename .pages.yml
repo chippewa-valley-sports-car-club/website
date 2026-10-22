@@ -249,7 +249,7 @@ content:
         label: One-line summary
         type: string
       - name: highlights
-        label: Podium / highlights
+        label: Top ten on PAX
         type: object
         list: true
         fields:

@@ -11,7 +11,7 @@
       forAll = f: nixpkgs.lib.genAttrs systems (s: f nixpkgs.legacyPackages.${s});
     in {
       devShells = forAll (pkgs: {
-        default = pkgs.mkShell { packages = [ pkgs.hugo pkgs.lychee pkgs.yq-go ]; };
+        default = pkgs.mkShell { packages = [ pkgs.hugo pkgs.lychee pkgs.yq-go pkgs.python3 ]; };
       });
     };
 }

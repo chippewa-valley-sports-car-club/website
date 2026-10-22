@@ -634,6 +634,8 @@ tbody tr:nth-child(even) {
 /* Full results tables from page text scroll sideways rather than squash. */
 .results > table {
   display: block;
+  width: fit-content;
+  max-width: 100%;
   overflow-x: auto;
 }
 

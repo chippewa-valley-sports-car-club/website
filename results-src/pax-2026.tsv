@@ -1,0 +1,30 @@
+# PAX factors the club uses for 2026. "club" = printed on the club's own Spring 2026
+# AXWare sheet; "scca" = SCCA's 2026 PAX table (glen-scca.org/solo/2026/
+# PAX_change_from_25_to_26.pdf), used for classes the club hadn't run yet. The two
+# sources agree on every class both list except CAMC (club 0.827, SCCA 0.828); the
+# club's value is kept so the spring standings match the official sheet.
+# Novice (N) runs unindexed, as on the club's sheet.
+class	factor	name	source
+AS	0.830	A Street	club
+BS	0.823	B Street	club
+CS	0.814	C Street	club
+DS	0.811	D Street	club
+ES	0.788	E Street	club
+GS	0.809	G Street	scca
+HS	0.780	H Street	club
+SSC	0.808	Solo Spec Coupe	club
+AST	0.836	A Street Touring	club
+BST	0.835	B Street Touring	scca
+CST	0.829	C Street Touring	scca
+DST	0.820	D Street Touring	club
+EST	0.815	E Street Touring	scca
+GST	0.812	G Street Touring	club
+ESP	0.842	E Street Prepared	scca
+SM	0.870	Street Modified	club
+SMF	0.857	Street Modified FWD	scca
+SSM	0.878	Super Street Modified	club
+CAMC	0.827	Classic American Muscle Classic	club
+CAMT	0.819	Classic American Muscle Traditional	scca
+XA	0.861	Xtreme Street A	club
+XB	0.859	Xtreme Street B	club
+N	1.000	Novice	club
