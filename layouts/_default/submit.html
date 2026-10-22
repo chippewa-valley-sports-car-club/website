@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ with hugo.Data.club.media_form_url }}
+  <p><a class="button" href="{{ . }}">Submit your videos</a></p>
+{{ else }}
+  <p class="notice">Submissions open soon: post in #general on {{ with hugo.Data.club.discord_invite }}<a href="{{ . }}">Discord</a>{{ else }}Discord{{ end }}.</p>
+{{ end }}
+{{ end }}

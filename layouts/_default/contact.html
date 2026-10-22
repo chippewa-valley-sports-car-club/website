@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<ul class="contact-list">
+  {{ with hugo.Data.club.discord_invite }}<li><a class="button" href="{{ . }}">Ask on Discord</a></li>{{ end }}
+  {{ with hugo.Data.club.email }}<li>Email: <a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+  <li>Facebook: <a href="https://www.facebook.com/cvscc.org">facebook.com/cvscc.org</a></li>
+</ul>
+{{ end }}

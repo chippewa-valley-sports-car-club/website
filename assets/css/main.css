@@ -179,3 +179,18 @@ footer {
   text-transform: uppercase;
   vertical-align: middle;
 }
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 0.75rem 0;
+}
+
+.notice {
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(200, 16, 46, 0.05);
+}
