@@ -3,35 +3,28 @@
 <p><strong>{{ .Date.Format "January 2, 2006" }}</strong></p>
 {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
 
-{{ $highlights := .Params.highlights }}
-{{ with $highlights }}
+{{ with .Params.highlights }}
   <h2>Podium</h2>
-  {{/* Determine all columns from all highlights */}}
-  {{ $columns := slice }}
-  {{ range $highlights }}
-    {{ range $key, $value := . }}
-      {{ if not (in $columns $key) }}
-        {{ $columns = $columns | append $key }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-  
   <div class="table-wrapper">
     <table>
       <thead>
         <tr>
-          {{ range $columns }}
-            <th>{{ . | title }}</th>
-          {{ end }}
+          <th>Class</th>
+          <th>Place</th>
+          <th>Driver</th>
+          <th>Car</th>
+          <th>Time</th>
         </tr>
       </thead>
       <tbody>
-        {{ range $highlights }}
-          <tr>
-            {{ range $columns }}
-              <td>{{ with index . . }}{{ . }}{{ end }}</td>
-            {{ end }}
-          </tr>
+        {{ range . }}
+        <tr>
+          <td>{{ .class }}</td>
+          <td>{{ .place }}</td>
+          <td>{{ .driver }}</td>
+          <td>{{ .car }}</td>
+          <td>{{ .time }}</td>
+        </tr>
         {{ end }}
       </tbody>
     </table>
