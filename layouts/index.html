@@ -36,7 +36,8 @@
       <p class="card-kicker">{{ $r.Date.Format "January 2, 2006" }}</p>
       <h3><a href="{{ $r.RelPermalink }}">{{ $r.Title }}</a></h3>
       {{ with $r.Params.summary }}<p>{{ . }}</p>{{ end }}
-      {{ with $r.Params.highlights }}{{ partial "podium.html" . }}{{ end }}
+      {{ with $r.Params.highlights }}{{ partial "podium.html" (first 3 .) }}{{ end }}
+      <p><a href="{{ $r.RelPermalink }}">Full results →</a></p>
     </article>
   </section>
   {{- end }}

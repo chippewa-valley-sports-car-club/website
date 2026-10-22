@@ -1,47 +1,17 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<p><strong>{{ .Date.Format "January 2, 2006" }}</strong></p>
-{{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
-
-{{ with .Params.highlights }}
-  <h2>Podium</h2>
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Class</th>
-          <th>Place</th>
-          <th>Driver</th>
-          <th>Car</th>
-          <th>Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{ range . }}
-        <tr>
-          <td>{{ .class }}</td>
-          <td>{{ .place }}</td>
-          <td>{{ .driver }}</td>
-          <td>{{ .car }}</td>
-          <td>{{ .time }}</td>
-        </tr>
-        {{ end }}
-      </tbody>
-    </table>
-  </div>
-{{ end }}
-
-{{ with .Params.results_file }}
-  <p><a href="{{ . | relURL }}">Download full results</a></p>
-{{ end }}
-
-{{ with .Params.results_url }}
-  <p><a href="{{ . }}">Full results</a></p>
-{{ end }}
-
-{{ .Content }}
-
-{{ with .Params.event }}
-  <p><a href="{{ printf "events/%s/" . | relURL }}">Event page</a></p>
-{{ end }}
+<article class="results">
+  <p class="card-kicker">{{ .Date.Format "Monday, January 2, 2006" }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.summary }}<p class="lead">{{ . }}</p>{{ end }}
+  <p class="results-links">
+    {{- with .Params.results_file }}<a class="button" href="{{ . | relURL }}">Download the official results</a>{{ end }}
+    {{- with .Params.results_url }} <a class="button button-outline" href="{{ . }}">Full results</a>{{ end }}
+    {{- with .Params.event }} <a href="{{ printf "events/%s/" . | relURL }}">Event page</a>{{ end }}
+  </p>
+  {{ with .Params.highlights }}
+  <h2>Top {{ cond (eq (len .) 10) "ten" (string (len .)) }}</h2>
+  {{ partial "podium.html" . }}
+  {{ end }}
+  {{ with .Content }}<h2>Full results</h2>{{ . }}{{ end }}
+</article>
 {{ end }}

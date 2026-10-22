@@ -9,10 +9,10 @@
 {{- end }}
 <div class="table-wrapper">
   <table class="podium">
-    <thead><tr>{{ range $cols }}<th scope="col">{{ index $labels . }}</th>{{ end }}</tr></thead>
+    <thead><tr>{{ range $cols }}<th scope="col" class="col-{{ . }}">{{ index $labels . }}</th>{{ end }}</tr></thead>
     <tbody>
       {{- range $rows }}{{ $row := . }}
-      <tr{{ with $row.place }} class="place-{{ . }}"{{ end }}>{{ range $cols }}<td>{{ index $row . }}</td>{{ end }}</tr>
+      <tr{{ with $row.place }} class="place-{{ . }}"{{ end }}>{{ range $cols }}<td class="col-{{ . }}">{{ index $row . }}</td>{{ end }}</tr>
       {{- end }}
     </tbody>
   </table>

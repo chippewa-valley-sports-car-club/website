@@ -5,10 +5,12 @@
   url: https://holzingerhomes.com/
   lane: event
   tier: event
-  event_label: Club autocross
+  event: 2026-08-23-fall-autocross
+  event_label: 2026 Fall Autocross
   blurb: Custom and ready-built homes from an Altoona home builder.
 - name: PSI Mobile Tire
   lane: event
   tier: event
-  event_label: Club autocross
+  event: 2026-08-23-fall-autocross
+  event_label: 2026 Fall Autocross
   blurb: Mobile tire installation.

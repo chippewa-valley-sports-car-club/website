@@ -243,6 +243,27 @@ code {
   color: #fff;
 }
 
+.button-outline {
+  background: transparent;
+  color: var(--red);
+}
+
+.button-outline:hover {
+  color: #fff;
+}
+
+.lead {
+  max-width: var(--measure);
+  font-size: 1.15rem;
+}
+
+.results-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
 .button-ghost {
   background: transparent;
   border-color: rgb(255 255 255 / 70%);
@@ -610,6 +631,21 @@ tbody tr:nth-child(even) {
   background: rgb(160 158 161 / 8%);
 }
 
+/* Full results tables from page text scroll sideways rather than squash. */
+.results > table {
+  display: block;
+  overflow-x: auto;
+}
+
+.results > table td,
+.results > table th {
+  white-space: nowrap;
+}
+
+.podium td {
+  white-space: nowrap;
+}
+
 .podium .place-1 td:first-child {
   font-weight: 800;
   color: var(--red);
@@ -816,6 +852,15 @@ tbody tr:nth-child(even) {
 /* ── Wider screens ────────────────────────────────────────────────────── */
 
 @media (max-width: 40rem) {
+  .podium .col-car {
+    display: none;
+  }
+
+  .podium th,
+  .podium td {
+    padding: 0.5rem 0.35rem;
+  }
+
   .hero-badge {
     width: 96px;
     height: 96px;
