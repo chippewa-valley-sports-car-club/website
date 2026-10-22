@@ -86,6 +86,19 @@ footer {
   margin: 1rem 0;
 }
 
+.next-meeting {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.25rem;
+  background: rgba(200, 16, 46, 0.05);
+}
+
+.next-meeting h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
 @media (min-width: 48rem) {
   header {
     flex-wrap: nowrap;

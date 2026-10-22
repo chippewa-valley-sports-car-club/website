@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1>{{ hugo.Data.club.name }}</h1>
 <p>{{ hugo.Data.club.tagline }}</p>
+{{ partial "next-meeting.html" . }}
 {{ with hugo.Data.club.discord_invite }}<p><a href="{{ . }}">Join the club Discord</a></p>{{ end }}
 {{ end }}
