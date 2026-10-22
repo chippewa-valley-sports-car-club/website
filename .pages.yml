@@ -1,0 +1,317 @@
+# Pages CMS (https://pagescms.org): the forms club editors fill in at
+# https://app.pagescms.org. Every field mirrors docs/content-model.md, key for
+# key; a change to one is a change to the other and to the template that reads
+# it. Uploads are stored without a leading slash ("images/news/x.jpg") so
+# templates can pass them through relURL.
+
+media:
+  - name: images
+    label: Images
+    input: static/images
+    output: images
+    rename: safe
+    categories: [image]
+  - name: results
+    label: Results files
+    input: static/results
+    output: results
+    rename: safe
+    extensions: [pdf, html, htm, csv, xlsx]
+
+content:
+  # ── Club-wide facts ─────────────────────────────────────────────────────
+  - name: club
+    label: Club info & next meeting
+    type: file
+    path: data/club.yml
+    format: yaml
+    fields:
+      - name: name
+        label: Club name
+        type: string
+        required: true
+      - name: tagline
+        label: Tagline (one line under the name on the home page)
+        type: string
+      - name: email
+        label: Contact email
+        type: string
+      - name: discord_invite
+        label: Discord invite link
+        type: string
+        description: The permanent invite, e.g. https://discord.gg/...
+      - name: media_form_url
+        label: Video submission form link
+        type: string
+        description: The Google Form members use to send in videos. Empty shows "Submissions open soon".
+      - name: next_meeting
+        label: Next meeting
+        type: object
+        description: Leave the date empty (or let it pass) and the site says "date TBA".
+        fields:
+          - name: date
+            label: Date
+            type: date
+            default: ""
+            options:
+              format: yyyy-MM-dd
+          - name: time
+            label: Time
+            type: string
+            description: e.g. 7:00 pm
+          - name: venue
+            label: Venue
+            type: string
+          - name: address
+            label: Address
+            type: string
+          - name: map_url
+            label: Map link
+            type: string
+          - name: notes
+            label: Notes (one line)
+            type: string
+
+  - name: socials
+    label: Social links
+    type: file
+    path: data/socials.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        label: Platform
+        type: select
+        required: true
+        options:
+          values: [facebook, discord, youtube, instagram, tiktok, reddit]
+      - name: url
+        label: Link
+        type: string
+        description: Leave empty to hide this platform.
+      - name: label
+        label: Screen-reader label (optional)
+        type: string
+
+  - name: sponsors
+    label: Sponsors
+    type: file
+    path: data/sponsors.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        label: Sponsor name
+        type: string
+        required: true
+      - name: url
+        label: Website
+        type: string
+        description: The site adds referral tracking to this link automatically.
+      - name: logo
+        label: Logo
+        type: image
+        options:
+          media: images
+          path: static/images/sponsors
+      - name: tier
+        label: Tier
+        type: select
+        default: supporter
+        options:
+          values: [title, gold, supporter]
+      - name: offer
+        label: Member offer
+        type: string
+        description: e.g. 10% off parts for members
+      - name: code
+        label: Discount or referral code
+        type: string
+      - name: blurb
+        label: About them (one or two sentences)
+        type: text
+
+  # ── Calendar, results, news ─────────────────────────────────────────────
+  - name: events
+    label: Events
+    type: collection
+    path: content/events
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{fields.date}-{primary}.md"
+    view:
+      fields: [title, date, type, location]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Event name
+        type: string
+        required: true
+      - name: date
+        label: Event date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: end_date
+        label: Last day (multi-day events only)
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: type
+        label: Type
+        type: select
+        required: true
+        options:
+          values: [autocross, track, rally, social, meeting, sim]
+      - name: location
+        label: Location
+        type: string
+      - name: register_url
+        label: Registration link (MotorsportReg, Facebook event...)
+        type: string
+      - name: summary
+        label: One-line summary
+        type: string
+      - name: results
+        label: Results page (fill in after the event)
+        type: string
+        description: The results entry's file name without .md, e.g. 2027-05-15-cvtc-autocross. The event page links to it.
+      - name: body
+        label: Details
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: results
+    label: Results
+    type: collection
+    path: content/results
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{fields.date}-{primary}.md"
+    view:
+      fields: [title, date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: e.g. 2027 CVTC Autocross
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: event
+        label: Event
+        type: string
+        description: The event entry's file name without .md, e.g. 2027-05-15-cvtc-autocross. The results page links back to it.
+      - name: results_file
+        label: Full results file (PDF or HTML from the timing software)
+        type: file
+        options:
+          media: results
+      - name: results_url
+        label: Or a link to results hosted elsewhere
+        type: string
+      - name: summary
+        label: One-line summary
+        type: string
+      - name: highlights
+        label: Podium / highlights
+        type: object
+        list: true
+        fields:
+          - name: class
+            label: Class
+            type: string
+          - name: place
+            label: Place
+            type: number
+          - name: driver
+            label: Driver
+            type: string
+          - name: car
+            label: Car
+            type: string
+          - name: time
+            label: Time
+            type: string
+      - name: body
+        label: Write-up
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: news
+    label: News
+    type: collection
+    path: content/news
+    format: yaml-frontmatter
+    exclude: [_index.md]
+    filename: "{fields.date}-{primary}.md"
+    view:
+      fields: [title, date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Headline
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: One-line summary
+        type: string
+      - name: image
+        label: Image
+        type: image
+        options:
+          media: images
+          path: static/images/news
+      - name: body
+        label: Post
+        type: rich-text
+        options:
+          format: markdown
+
+  # ── Plain pages: About, Join, Contact, Submit, Privacy, Terms, Sponsors ──
+  - name: pages
+    label: Pages
+    type: collection
+    path: content
+    format: yaml-frontmatter
+    subfolders: false
+    exclude: [_index.md]
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: layout
+        type: string
+        hidden: true
+      - name: body
+        label: Page text
+        type: rich-text
+        options:
+          format: markdown
