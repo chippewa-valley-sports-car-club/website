@@ -1,0 +1,44 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+{{ $today := time.AsTime (now.Format "2006-01-02") }}
+{{ $upcoming := slice }}
+{{ $past := slice }}
+{{ range .Pages }}
+  {{ $effEnd := .Date }}
+  {{ with .Params.end_date }}{{ $effEnd = time.AsTime . }}{{ end }}
+  {{ $entry := dict "page" . "effEnd" $effEnd }}
+  {{ if ge $effEnd $today }}
+    {{ $upcoming = $upcoming | append $entry }}
+  {{ else }}
+    {{ $past = $past | append $entry }}
+  {{ end }}
+{{ end }}
+{{ $upcoming = sort $upcoming "effEnd" }}
+{{ $past = sort $past "effEnd" "desc" }}
+
+<h2>Upcoming</h2>
+{{ if $upcoming }}
+  <ul class="event-list">
+    {{ range $upcoming }}{{ template "event-entry" .page }}{{ end }}
+  </ul>
+{{ else }}
+  <p>Nothing on the calendar right now &mdash; watch <a href="{{ hugo.Data.club.discord_invite }}">Discord</a> for what's next.</p>
+{{ end }}
+
+<h2>Past events</h2>
+<ul class="event-list">
+  {{ range $past }}{{ template "event-entry" .page }}{{ end }}
+</ul>
+{{ end }}
+
+{{ define "event-entry" }}
+<li class="event-entry">
+  <span class="event-date">{{ .Date.Format "Mon, Jan 2, 2006" }}{{ with .Params.end_date }} &ndash; {{ time.AsTime . | dateFormat "Mon, Jan 2, 2006" }}{{ end }}</span>
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  <span class="badge">{{ .Params.event_type }}</span>
+  {{ with .Params.location }}<span class="event-location">{{ . }}</span>{{ end }}
+  {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+</li>
+{{ end }}

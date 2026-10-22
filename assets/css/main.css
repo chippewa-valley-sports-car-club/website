@@ -99,6 +99,36 @@ footer {
   color: var(--accent);
 }
 
+.event-list {
+  list-style: none;
+  padding: 0;
+}
+
+.event-entry {
+  margin-bottom: 1rem;
+}
+
+.event-date {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.event-location {
+  color: var(--muted);
+  margin-left: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 1rem;
+  background: var(--muted);
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
 .sponsor-card {
   border: 1px solid var(--muted);
   border-radius: 0.5rem;

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p>
+  <span class="event-date">{{ .Date.Format "Mon, Jan 2, 2006" }}{{ with .Params.end_date }} &ndash; {{ time.AsTime . | dateFormat "Mon, Jan 2, 2006" }}{{ end }}</span>
+  <span class="badge">{{ .Params.event_type }}</span>
+</p>
+{{ with .Params.location }}<p><strong>Location:</strong> {{ . }}</p>{{ end }}
+
+{{ .Content }}
+
+{{ with .Params.register_url }}
+<p><a class="button" href="{{ . }}">Register</a></p>
+{{ end }}
+
+{{ with .Params.results }}
+<p><a href="{{ printf "/results/%s/" . | relURL }}">See the results</a></p>
+{{ end }}
+{{ end }}
