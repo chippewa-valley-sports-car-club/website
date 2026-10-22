@@ -1,0 +1,25 @@
+{{- $events := where site.RegularPages "Section" "events" }}
+{{- $upcomingEvents := where $events "Params.end_date" "ge" (now | time.Format "2006-01-02") }}
+{{- $upcomingEvents = where $upcomingEvents "Params.date" "ge" (now | time.Format "2006-01-02") }}
+{{- $upcomingEvents = $upcomingEvents.ByParam "date" }}
+{{- $upcomingEvents = $upcomingEvents | first 3 }}
+
+<section class="upcoming-events">
+  <h2>Upcoming events</h2>
+  {{- if $upcomingEvents }}
+    <ul class="event-list">
+      {{- range $upcomingEvents }}
+        <li class="event-item">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{- with .Params.date }}
+            <p class="event-when">{{ time.AsTime . | dateFormat "Monday, January 2, 2006" }}</p>
+          {{- end }}
+          {{- with .Params.location }}<p class="event-location">{{ . }}</p>{{- end }}
+        </li>
+      {{- end }}
+    </ul>
+  {{- else }}
+    <p>No upcoming events scheduled. <a href="{{ hugo.Data.club.discord_invite }}">Join us on Discord</a> for updates.</p>
+  {{- end }}
+  <p><a href="{{ "events/" | relURL }}">View all events</a></p>
+</section>
