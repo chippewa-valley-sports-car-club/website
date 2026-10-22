@@ -1,0 +1,10 @@
+{{ $url := .url }}
+{{ $utm := "utm_source=cvscc.org&utm_medium=referral&utm_campaign=sponsors" }}
+{{ if hasPrefix $url "?" }}
+  {{ $url = printf "%s&%s" $url $utm }}
+{{ else if hasPrefix $url "&" }}
+  {{ $url = printf "%s&%s" $url $utm }}
+{{ else }}
+  {{ $url = printf "%s?%s" $url $utm }}
+{{ end }}
+<a href="{{ $url }}" rel="sponsored noopener">{{ .name }}</a>

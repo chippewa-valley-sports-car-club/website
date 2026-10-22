@@ -1,0 +1,4 @@
+{{ $sponsors := site.Data.sponsors }}
+{{ range $sponsors }}
+  {{ partial "sponsor-link.html" . }}
+{{ end }}

@@ -1,0 +1,37 @@
+{{ $sponsors := hugo.Data.sponsors }}
+{{ $titleSponsors := where $sponsors "tier" "title" }}
+{{ $goldSponsors := where $sponsors "tier" "gold" }}
+{{ $supporterSponsors := where $sponsors "tier" "supporter" }}
+
+{{ $allSponsors := slice }}
+{{ range $titleSponsors }}
+  {{ $allSponsors = $allSponsors | append . }}
+{{ end }}
+{{ range $goldSponsors }}
+  {{ $allSponsors = $allSponsors | append . }}
+{{ end }}
+{{ range $supporterSponsors }}
+  {{ $allSponsors = $allSponsors | append . }}
+{{ end }}
+
+{{ $sponsors := $allSponsors }}
+
+{{ .Content }}
+
+{{ if eq (len $sponsors) 0 }}
+  <p>Want to sponsor the club? Ask an officer on Discord.</p>
+{{ else }}
+  {{ range $sponsors }}
+    <div class="sponsor-card{{ if eq .tier "title" }} sponsor-card-title{{ end }}">
+      {{ if .logo }}
+        <img src="{{ .logo | relURL }}" alt="{{ .name }}">
+      {{ else }}
+        <p>{{ .name }}</p>
+      {{ end }}
+      <p>{{ .blurb }}</p>
+      <p>{{ .offer }}</p>
+      <p>Code: {{ .code }}</p>
+      {{ partial "sponsor-link.html" . }}
+    </div>
+  {{ end }}
+{{ end }}
