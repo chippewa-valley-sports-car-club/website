@@ -118,6 +118,26 @@ footer {
   margin: 1rem 0;
 }
 
+.news-item {
+  margin-bottom: 2rem;
+}
+
+.news-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.news-summary {
+  margin: 1rem 0;
+}
+
+.news-image {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
 @media (min-width: 48rem) {
   header {
     flex-wrap: nowrap;
