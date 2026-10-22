@@ -1,0 +1,6 @@
+<header>
+  <a href="{{ "/" | relURL }}">{{ hugo.Data.club.name }}</a>
+  <nav aria-label="Main">
+    {{ range site.Menus.main }}<a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ else if $.HasMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a> {{ end }}
+  </nav>
+</header>

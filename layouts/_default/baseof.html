@@ -8,13 +8,8 @@
   {{ with resources.Get "css/main.css" }}{{ with . | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}{{ end }}
 </head>
 <body>
-  <header>
-    <a href="{{ "/" | relURL }}">{{ hugo.Data.club.name }}</a>
-    <nav>{{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a> {{ end }}</nav>
-  </header>
+  {{ partial "header.html" . }}
   <main>{{ block "main" . }}{{ end }}</main>
-  <footer>
-    <p>© {{ now.Year }} {{ hugo.Data.club.name }}</p>
-  </footer>
+  {{ partial "footer.html" . }}
 </body>
 </html>
