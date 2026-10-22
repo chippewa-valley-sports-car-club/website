@@ -1,0 +1,16 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ $pages := .Pages.GroupByDate "2006" }}
+{{ range $pages }}
+  <h2>{{ .Key }}</h2>
+  <ul>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}: {{ .Title }}</a>
+      {{ with .Params.summary }}<br><span>{{ . }}</span>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}
+{{ end }}

@@ -1,0 +1,52 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p><strong>{{ .Date.Format "January 2, 2006" }}</strong></p>
+{{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+
+{{ with .Params.highlights }}
+  <h2>Podium</h2>
+  {{ $columns := slice }}
+  {{ range . }}
+    {{ range $key, $value := . }}
+      {{ if not (in $columns $key) }}
+        {{ $columns = $columns | append $key }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          {{ range $columns }}
+            <th>{{ . | title }}</th>
+          {{ end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .Params.highlights }}
+          <tr>
+            {{ range $columns }}
+              <td>{{ index . . }}</td>
+            {{ end }}
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+{{ end }}
+
+{{ with .Params.results_file }}
+  <p><a href="{{ . | relURL }}">Download full results</a></p>
+{{ end }}
+
+{{ with .Params.results_url }}
+  <p><a href="{{ . }}">Full results</a></p>
+{{ end }}
+
+{{ .Content }}
+
+{{ with .Params.event }}
+  <p><a href="{{ printf "/events/%s/" . | relURL }}">Event page</a></p>
+{{ end }}
+{{ end }}
