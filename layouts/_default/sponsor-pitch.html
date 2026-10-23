@@ -1,0 +1,10 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with hugo.Data.club.tax_status }}
+<aside class="notice tax-status">
+  <strong>The club is a {{ . }} nonprofit, not a 501(c)(3).</strong>
+  Sponsorships and donations to the club are not tax-deductible as charitable contributions. Many businesses treat sponsorship as an advertising expense instead; check with your tax advisor.
+</aside>
+{{ end }}
+<div class="prose">{{ .Content }}</div>
+{{ end }}

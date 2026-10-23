@@ -337,6 +337,9 @@ content:
       - name: layout
         type: string
         hidden: true
+      - name: review
+        label: Draft note (shows a "for club review" banner; clear it once decided)
+        type: text
       - name: body
         label: Page text
         type: rich-text

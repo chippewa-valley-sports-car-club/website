@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
+<div class="prose">{{ .Content }}</div>
 {{- $all := hugo.Data.sponsors | default slice }}
 {{- $club := slice }}{{ $event := slice }}
 {{- range $all }}{{ if eq (.lane | default "club") "event" }}{{ $event = $event | append . }}{{ else }}{{ $club = $club | append . }}{{ end }}{{ end }}
@@ -29,15 +30,4 @@
   {{- end }}
 </section>
 {{- end }}
-
-<section class="home-section sponsor-pitch">
-  <div class="section-head"><h2>Sponsor the club</h2></div>
-  {{ with hugo.Data.club.tax_status }}
-  <aside class="notice tax-status">
-    <strong>The club is a {{ . }} nonprofit, not a 501(c)(3).</strong>
-    Sponsorships and donations to the club are not tax-deductible as charitable contributions. Many businesses treat sponsorship as an advertising expense instead; check with your tax advisor.
-  </aside>
-  {{ end }}
-  <div class="prose">{{ .Content }}</div>
-</section>
 {{ end }}

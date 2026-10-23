@@ -105,6 +105,8 @@ The body is an optional write-up. The Results list groups pages by year.
 ## Plain pages
 
 `content/about.md`, `content/join.md`, `content/contact.md`,
-`content/submit.md`, `content/privacy.md` and `content/terms.md` are a title
-and a body. Privacy and Terms exist because TikTok's and Meta's developer
+`content/submit.md`, `content/privacy.md`, `content/terms.md` and
+`content/sponsor-the-club.md` are a title and a body. Any page may also set
+`review:` (text): the page then shows a "Draft: for club review" banner with
+that text, for information the club hasn't decided yet. Clear it once decided. Privacy and Terms exist because TikTok's and Meta's developer
 apps, which publish the club's videos, require those URLs.
