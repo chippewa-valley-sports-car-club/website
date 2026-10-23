@@ -1,6 +1,6 @@
 <li class="event-item">
   <p class="event-when">{{ partial "event-when.html" . }}</p>
   <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.event_type }} <span class="badge">{{ . }}</span>{{ end }}</h3>
-  {{ with .Params.location }}<p class="event-location">{{ . }}</p>{{ end }}
+  {{ partial "event-where.html" . }}
   {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
 </li>

@@ -227,10 +227,19 @@ content:
         type: select
         required: true
         options:
-          values: [autocross, track, rally, social, meeting, sim]
+          values: [autocross, track, drag, rally, social, meeting, sim]
+      - name: venue
+        label: Venue (if it's one the site knows)
+        type: select
+        options:
+          values: [rock-falls-raceway]
       - name: location
-        label: Location
+        label: Location (optional when a venue is picked)
         type: string
+      - name: host
+        label: Hosted by (only when another club or track runs it)
+        type: string
+        description: e.g. Rock Falls Raceway, for a club outing to a Test & Tune
       - name: register_url
         label: Registration link (MotorsportReg, Facebook event...)
         type: string

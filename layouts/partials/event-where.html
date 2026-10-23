@@ -1,0 +1,4 @@
+{{- /* An event's place: its location text, else its venue's name; plus "Hosted by" for events the club doesn't run. */ -}}
+{{- $v := "" }}{{ with .Params.venue }}{{ $v = index hugo.Data.venues . }}{{ end }}
+{{- $where := .Params.location | default (cond (ne $v "") (index $v "name") "") }}
+{{- with $where }}<p class="event-location">{{ . }}{{ with $.Params.host }} · Hosted by {{ . }}{{ end }}</p>{{ else }}{{ with .Params.host }}<p class="event-location">Hosted by {{ . }}</p>{{ end }}{{ end }}

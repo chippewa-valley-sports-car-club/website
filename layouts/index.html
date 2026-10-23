@@ -31,6 +31,18 @@
 
   {{ partial "upcoming-events.html" . }}
 
+  {{- with index hugo.Data.venues "rock-falls-raceway" }}
+  <section class="home-section">
+    <div class="section-head"><h2>Our home track</h2></div>
+    <a class="card card-link home-venue" href="{{ .page | relURL }}">
+      <p class="card-kicker">{{ .where }}</p>
+      <h3>{{ .name }}</h3>
+      <p>The club's autocrosses run at Rock Falls Raceway, Eau Claire's drag strip since 1969. Thanks for hosting us! Want to try drag racing? Their Test &amp; Tune days are open to street cars.</p>
+      <p class="card-more">About the track and its drag racing →</p>
+    </a>
+  </section>
+  {{- end }}
+
   {{- with first 1 (where site.RegularPages "Section" "results").ByDate.Reverse }}
   {{- $r := index . 0 }}
   <section class="home-section">

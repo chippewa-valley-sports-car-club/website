@@ -76,6 +76,12 @@ A list, shown in order on /community/nearby-clubs/.
 | `where` | text | One line: their venues or series |
 | `note` | text | Optional extra line |
 
+## `data/venues.yml`: places the club runs events
+
+A map from a key (used as an event's `venue`) to `name`, `url`, `where`
+(one line: how to find it), `map_url`, `thanks` (one line shown on event
+pages) and `page` (the site's own page about it, e.g. `rock-falls-raceway/`).
+
 ## `content/events/<slug>.md`: things on the calendar
 
 Front matter:
@@ -85,8 +91,10 @@ Front matter:
 | `title` | text, *required* | |
 | `date` | date, *required* | The day of the event. `buildFuture` is on, so future dates publish |
 | `end_date` | date | Multi-day events |
-| `event_type` | one of `autocross`, `track`, `rally`, `social`, `meeting`, `sim`, *required* | Not `type`: Hugo reserves that front-matter key to pick the page template |
-| `location` | text | |
+| `event_type` | one of `autocross`, `track`, `drag`, `rally`, `social`, `meeting`, `sim`, *required* | Not `type`: Hugo reserves that front-matter key to pick the page template |
+| `location` | text | Optional when `venue` is set (the venue's name is shown) |
+| `venue` | key in `data/venues.yml` | e.g. `rock-falls-raceway`: the event page shows the venue with a map link and a thank-you |
+| `host` | text | Who runs it, when the club is attending rather than running it (a club outing to a Test & Tune): shown as "Hosted by ..." |
 | `register_url` | url | MotorsportReg, Eventbrite, Facebook event |
 | `summary` | text | One line for lists |
 | `results` | slug of a `content/results/` page | Set after the event; the event links to its results |

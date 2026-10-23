@@ -787,6 +787,15 @@ tbody tr:nth-child(even) {
   color: var(--red);
 }
 
+.venue-card {
+  margin: 1.5rem 0;
+}
+
+.venue-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+
 .nearby-events {
   margin: 2rem 0;
 }

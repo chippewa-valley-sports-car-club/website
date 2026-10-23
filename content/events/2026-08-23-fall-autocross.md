@@ -2,6 +2,7 @@
 title: 2026 Fall Autocross
 date: 2026-08-23
 event_type: autocross
+venue: rock-falls-raceway
 summary: The club's fall autocross. 34 drivers took the timed course.
 results: 2026-08-23-fall-autocross
 ---

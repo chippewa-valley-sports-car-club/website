@@ -2,7 +2,16 @@
 <article class="event">
   <h1>{{ .Title }}</h1>
   <p class="event-when">{{ partial "event-when.html" . }}{{ with .Params.event_type }} <span class="badge">{{ . }}</span>{{ end }}</p>
-  {{ with .Params.location }}<p class="event-location">{{ . }}</p>{{ end }}
+  {{ partial "event-where.html" . }}
+  {{- with .Params.venue }}{{ with index hugo.Data.venues . }}
+  <aside class="card venue-card">
+    <p class="card-kicker">Venue</p>
+    <h2>{{ with .page }}<a href="{{ . | relURL }}">{{ end }}{{ .name }}{{ with .page }}</a>{{ end }}</h2>
+    {{ with .where }}<p>{{ . }}</p>{{ end }}
+    <p class="results-jump">{{ with .map_url }}<a href="{{ . }}" rel="noopener">Map ↗</a>{{ end }}{{ with .url }} · <a href="{{ . }}" rel="noopener">Track website ↗</a>{{ end }}</p>
+    {{ with .thanks }}<p class="note">{{ . }}</p>{{ end }}
+  </aside>
+  {{- end }}{{ end }}
   {{ .Content }}
   {{ with .Params.register_url }}<p><a class="button" href="{{ . }}">Register</a></p>{{ end }}
   {{ with .Params.results }}<p><a href="{{ printf "results/%s/" . | relURL }}">See the results</a></p>{{ end }}
