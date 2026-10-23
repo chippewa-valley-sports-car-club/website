@@ -12,6 +12,16 @@ The Chippewa Valley Sports Car Club is a group of car people from the Eau Claire
 - **Sim racing:** Assetto Corsa practice with Fugazy Sim Racing when the weather won't cooperate.
 - **Social events:** meetings, drives and get-togethers.
 
+## Our history
+
+The Chippewa Valley Sports Car Club began informally in the 1950s with MG-TD drivers getting together. The first rally ran out of Chippewa Falls in 1957.
+
+Organized and incorporated in 1960 after urging from Jack Nozle, Bill Bean, Bob Plunkett and Dick Feeney laid the groundwork. The first meeting was April 20, 1960, at the old Import Motors building on Hwy 93, following the Twin Cities Sports Car Club's bylaws. Most attendees joined as charter members. The first event was a hare-and-hound rally from the fairgrounds in Chippewa Falls, with 13 cars.
+
+Through the 1960s and 70s, the club held rallies, gymkhanas (including ice gymkhanas on Altoona Lake and one at Carson Park), the Alpine Rallye, Parker's Peak Hillclimb, the Northwoods Rally, and trips to Road America. The club went dormant in 1980 (the energy crunch and the 55 mph speed limit). Revived after Dick Feeney and Jim McCarthy talked at the B.K. Auto Show in fall 2000; meetings resumed in January 2001 at O'Leary Pub in Eau Claire and the club was officially reborn in April 2001.
+
+The [Dick Feeney Memorial Scholarship](../community/cvtc-scholarships/) carries one founder's name.
+
 ## In the community
 
 Club members provide most of the in-car coaches for the [Teen Car Control Class](../community/teen-car-control/), and our autocross proceeds fund two [CVTC automotive scholarships](../community/cvtc-scholarships/) every year. The club has been part of the Chippewa Valley for over 60 years.
