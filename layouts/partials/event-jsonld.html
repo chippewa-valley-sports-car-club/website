@@ -5,7 +5,7 @@
 {{- $locationName := "Eau Claire, Wisconsin area" -}}
 {{- with .Params.location }}{{ $locationName = . }}{{ end -}}
 {{- $clubName := hugo.Data.club.name -}}
-{{- $homeURL := site.BaseURL -}}
+{{- $homeURL := site.Home.Permalink -}}
 {{- $location := dict "@type" "Place" "name" $locationName -}}
 {{- $organizer := dict "@type" "Organization" "name" $clubName "url" $homeURL -}}
 {{- $event := dict
@@ -16,12 +16,10 @@
   "endDate" $endDate
   "eventStatus" "https://schema.org/EventScheduled"
   "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
-  "url" .RelPermalink
+  "url" .Permalink
   "description" .Summary
   "location" $location
   "organizer" $organizer
 -}}
-{{- with .Params.register_url }}{{ $event = $event | merge dict
-  "offers" dict "@type" "Offer" "url" .Params.register_url
-}}{{ end -}}
-<script type="application/ld+json">{{ $event | jsonify }}</script>
+{{- with .Params.register_url }}{{ $event = merge $event (dict "offers" (dict "@type" "Offer" "url" .)) }}{{ end -}}
+<script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>
