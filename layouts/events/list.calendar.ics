@@ -1,0 +1,26 @@
+{{- $lines := slice "BEGIN:VCALENDAR" "VERSION:2.0" "PRODID:-//CVSCC//Events//EN" "X-WR-CALNAME:CVSCC events" -}}
+{{- range .Pages -}}
+  {{- $start := .Date -}}
+  {{- $end := .Date -}}
+  {{- with .Params.end_date }}{{ $end = time.AsTime . }}{{ end -}}
+  {{- $dtend := $end.AddDate 0 0 1 -}}
+  {{- $summary := replace (replace (replace .Title "\\" "\\\\") "," "\\,") ";" "\\;" -}}
+  {{- $lines = $lines | append "BEGIN:VEVENT" -}}
+  {{- $lines = $lines | append (printf "UID:%s" .Permalink) -}}
+  {{- $lines = $lines | append (printf "DTSTAMP:%s" (.Lastmod.UTC.Format "20060102T150405Z")) -}}
+  {{- $lines = $lines | append (printf "DTSTART;VALUE=DATE:%s" ($start.Format "20060102")) -}}
+  {{- $lines = $lines | append (printf "DTEND;VALUE=DATE:%s" ($dtend.Format "20060102")) -}}
+  {{- $lines = $lines | append (printf "SUMMARY:%s" $summary) -}}
+  {{- with .Params.location }}
+    {{- $location := replace (replace (replace . "\\" "\\\\") "," "\\,") ";" "\\;" -}}
+    {{- $lines = $lines | append (printf "LOCATION:%s" $location) -}}
+  {{- end -}}
+  {{- $lines = $lines | append (printf "URL:%s" .Permalink) -}}
+  {{- with .Params.summary }}
+    {{- $description := replace (replace (replace . "\\" "\\\\") "," "\\,") ";" "\\;" -}}
+    {{- $lines = $lines | append (printf "DESCRIPTION:%s" $description) -}}
+  {{- end -}}
+  {{- $lines = $lines | append "END:VEVENT" -}}
+{{- end -}}
+{{- $lines = $lines | append "END:VCALENDAR" -}}
+{{- range $lines }}{{ printf "%s\r\n" . }}{{ end -}}
