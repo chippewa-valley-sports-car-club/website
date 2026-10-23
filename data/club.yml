@@ -5,6 +5,13 @@ email: cvscc@cvscc.org
 # Optional: a signup page for the mailing list (Google Group, form...). Empty means
 # people join by emailing the club address above.
 mailing_list_url: ""
+# Where the Events page's MotorsportReg links search from. MotorsportReg
+# honours its default 300-mile radius; smaller values are ignored.
+nearby_events:
+  label: Eau Claire, WI
+  lat: 44.8113
+  lng: -91.4985
+  radius: 300
 # Credit for the home page's header photo (static/images/hero-autocross.jpg).
 hero_photo_credit: C. Whitmore Sports Photography
 hero_photo_credit_url: https://www.facebook.com/C.Whitmore.Sports.Photography

@@ -19,6 +19,7 @@ it. That is how a half-filled form stays publishable.
 | `name` | text, *required* | "Chippewa Valley Sports Car Club" |
 | `tagline` | text | One line under the name on the home page |
 | `email` | text | Contact address, shown on Contact; also how people join the mailing list |
+| `nearby_events.label`, `.lat`, `.lng`, `.radius` | text, numbers | Where the Events page's MotorsportReg links search from (Eau Claire, 300 miles: MotorsportReg ignores smaller radii) |
 | `hero_photo_credit` | text | Who took the home page's header photo; shown in its corner |
 | `hero_photo_credit_url` | url | Link for that credit |
 | `mailing_list_url` | url | A signup page for the mailing list. Empty: the Find us card emails `email` instead |
@@ -61,6 +62,19 @@ A list, shown in order.
 | `offer` | text | "10% off parts for members" |
 | `code` | text | A discount or referral code to quote |
 | `blurb` | text | One or two sentences |
+
+## `data/clubs.yml`: other clubs near us
+
+A list, shown in order on /community/nearby-clubs/.
+
+| Key | Type | Notes |
+| --- | --- | --- |
+| `name` | text, *required* | |
+| `url` | url | Their site (or a MotorsportReg search for their events) |
+| `area` | text | Where they're based |
+| `runs` | text | What they run, e.g. Autocross |
+| `where` | text | One line: their venues or series |
+| `note` | text | Optional extra line |
 
 ## `content/events/<slug>.md`: things on the calendar
 

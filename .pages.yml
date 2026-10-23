@@ -164,6 +164,33 @@ content:
         label: About them (one or two sentences)
         type: text
 
+  - name: clubs
+    label: Clubs near us
+    type: file
+    path: data/clubs.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        label: Club name
+        type: string
+        required: true
+      - name: url
+        label: Website
+        type: string
+      - name: area
+        label: Where they're based
+        type: string
+      - name: runs
+        label: What they run (e.g. Autocross)
+        type: string
+      - name: where
+        label: Venues or series (one line)
+        type: string
+      - name: note
+        label: Extra note (optional)
+        type: string
+
   # ── Calendar, results, news ─────────────────────────────────────────────
   - name: events
     label: Events

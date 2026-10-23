@@ -1,0 +1,16 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="prose">{{ .Content }}</div>
+{{- with hugo.Data.clubs }}
+<div class="card-grid clubs-grid">
+  {{- range . }}
+  <article class="card club-card">
+    <p class="card-kicker">{{ .area }}{{ with .runs }} · {{ . }}{{ end }}</p>
+    <h2>{{ with .url }}<a href="{{ . }}" rel="noopener">{{ end }}{{ .name }}{{ with .url }}</a>{{ end }}</h2>
+    {{ with .where }}<p>{{ . }}</p>{{ end }}
+    {{ with .note }}<p class="note">{{ . }}</p>{{ end }}
+  </article>
+  {{- end }}
+</div>
+{{- end }}
+{{ end }}

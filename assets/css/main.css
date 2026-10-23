@@ -787,6 +787,24 @@ tbody tr:nth-child(even) {
   color: var(--red);
 }
 
+.nearby-events {
+  margin: 2rem 0;
+}
+
+.nearby-events .results-jump .button {
+  font-size: 0.95rem;
+}
+
+.club-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.club-card .note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .sponsor-group {
   margin: 1.5rem 0 0.75rem;
   color: var(--muted);

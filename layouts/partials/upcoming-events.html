@@ -4,7 +4,7 @@
   {{- if partial "event-upcoming.html" . }}{{ $upcoming = $upcoming | append . }}{{ end }}
 {{- end }}
 <section class="home-section upcoming-events">
-  <div class="section-head"><h2>Upcoming events</h2><a href="{{ "events/" | relURL }}">All events →</a></div>
+  <div class="section-head"><h2>Upcoming events</h2><span>{{ with hugo.Data.club.nearby_events }}<a href="https://www.motorsportreg.com/calendar/?{{ printf "lat=%v&lng=%v&radius=%v&loc=%s" .lat .lng .radius (.label | urlquery) | safeURL }}" rel="noopener">More nearby ↗</a> · {{ end }}<a href="{{ "events/" | relURL }}">All events →</a></span></div>
   {{- with first 3 $upcoming }}
   <ul class="event-list card-grid">{{ range . }}{{ partial "event-item.html" . }}{{ end }}</ul>
   {{- else }}

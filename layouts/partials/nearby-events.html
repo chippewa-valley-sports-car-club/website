@@ -1,0 +1,13 @@
+{{- /* Links to MotorsportReg's calendar near the club (data/club.yml nearby_events). */ -}}
+{{- with hugo.Data.club.nearby_events }}
+{{- $q := printf "lat=%v&lng=%v&radius=%v&loc=%s" .lat .lng .radius (.label | urlquery) }}
+<aside class="card nearby-events">
+  <p class="card-kicker">More events near {{ .label }}</p>
+  <p>MotorsportReg lists track days, autocrosses and more from clubs across the region, within {{ .radius }} miles of {{ .label }}.</p>
+  <p class="results-jump">
+    <a class="button" href="https://www.motorsportreg.com/calendar/?{{ $q | safeURL }}" rel="noopener">All events nearby</a>
+    <a class="button button-outline" href="https://www.motorsportreg.com/calendar/autocross/?{{ $q | safeURL }}" rel="noopener">Autocross nearby</a>
+  </p>
+  <p class="note">Other clubs we run with: <a href="{{ "community/nearby-clubs/" | relURL }}">Clubs near us</a>.</p>
+</aside>
+{{- end }}

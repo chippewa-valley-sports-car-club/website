@@ -13,6 +13,8 @@
   <p>Nothing on the calendar yet.{{ with hugo.Data.club.discord_invite }} Watch <a href="{{ . }}">#announcements on Discord</a> for the next one.{{ end }}</p>
 {{ end }}
 
+{{ partial "nearby-events.html" . }}
+
 {{ with $past }}
   <h2>Past events</h2>
   <ul class="event-list">{{ range sort . "Date" "desc" }}{{ partial "event-item.html" . }}{{ end }}</ul>
