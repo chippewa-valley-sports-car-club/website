@@ -17,7 +17,11 @@
   <meta property="og:description" content="{{ $desc }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:image" content="{{ "images/og-card.jpg" | absURL }}">
-  {{ with resources.Get "css/main.css" }}{{ with . | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}{{ end }}
+  {{- /* A stable file name plus a version query, not a fingerprinted name: GitHub
+         Pages caches pages for ten minutes, and a cached page naming a stylesheet
+         an earlier deploy deleted loads unstyled. Old pages now get the current
+         file; the ?v= changes whenever the styles do, so browsers refetch it. */}}
+  {{ with resources.Get "css/main.css" | minify | resources.Copy "css/main.css" }}<link rel="stylesheet" href="{{ .RelPermalink }}?v={{ .Content | md5 | truncate 10 "" }}">{{ end }}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
