@@ -1,0 +1,25 @@
+{{- /* JSON-LD for SportsEvent */ -}}
+{{- $startDate := .Date.Format "2006-01-02" -}}
+{{- $endDate := $startDate -}}
+{{- with .Params.end_date }}{{ $endDate = time.AsTime . | time.Format "2006-01-02" }}{{ end -}}
+{{- $locationName := "Eau Claire, Wisconsin area" -}}
+{{- with .Params.location }}{{ $locationName = . }}{{ end -}}
+{{- $clubName := hugo.Data.club.name -}}
+{{- $homeURL := site.Home.Permalink -}}
+{{- $location := dict "@type" "Place" "name" $locationName -}}
+{{- $organizer := dict "@type" "Organization" "name" $clubName "url" $homeURL -}}
+{{- $event := dict
+  "@context" "https://schema.org"
+  "@type" "SportsEvent"
+  "name" .Title
+  "startDate" $startDate
+  "endDate" $endDate
+  "eventStatus" "https://schema.org/EventScheduled"
+  "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+  "url" .Permalink
+  "description" .Summary
+  "location" $location
+  "organizer" $organizer
+-}}
+{{- with .Params.register_url }}{{ $event = merge $event (dict "offers" (dict "@type" "Offer" "url" .)) }}{{ end -}}
+<script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>
