@@ -26,6 +26,10 @@ The [Dick Feeney Memorial Scholarship](../community/cvtc-scholarships/) carries 
 
 Club members provide most of the in-car coaches for the [Teen Car Control Class](../community/teen-car-control/), and our autocross proceeds fund two [CVTC automotive scholarships](../community/cvtc-scholarships/) every year. The club has been part of the Chippewa Valley for over 60 years.
 
+## Where we run
+
+Our autocrosses run at [Rock Falls Raceway](../community/rock-falls-raceway/), Eau Claire's drag strip, where members also race at its Test & Tune days.
+
 ## Meetings
 
 We meet quarterly at Hangar 54. The date of the next one is on the [home page](../) and announced on Discord.

@@ -1,5 +1,7 @@
 ---
 title: Rock Falls Raceway
+aliases: [/rock-falls-raceway/]
+weight: 5
 summary: Our home track. The club's autocrosses run at Rock Falls Raceway, Eau Claire's drag strip, and members race there too.
 ---
 

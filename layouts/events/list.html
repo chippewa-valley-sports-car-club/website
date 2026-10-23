@@ -7,6 +7,8 @@
   {{ if partial "event-upcoming.html" . }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}
 {{ end }}
 
+{{ with index hugo.Data.venues "rock-falls-raceway" }}<p class="lead">The club's autocrosses run at <a href="{{ .page | relURL }}">{{ .name }}</a>. Fancy the drag strip too? See its Test &amp; Tune days on the same page.</p>{{ end }}
+
 <h2>Upcoming</h2>
 {{ with $upcoming }}
   <ul class="event-list">{{ range . }}{{ partial "event-item.html" . }}{{ end }}</ul>
