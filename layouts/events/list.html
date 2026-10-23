@@ -1,6 +1,7 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
+<p><a href="{{ "events/index.ics" | relURL }}">Subscribe to the club calendar</a> — phones and Google Calendar can subscribe to this link and stay up to date automatically.</p>
 {{ $upcoming := slice }}{{ $past := slice }}
 {{ range .Pages.ByDate }}
   {{ if partial "event-upcoming.html" . }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}
