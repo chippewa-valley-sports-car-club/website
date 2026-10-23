@@ -208,6 +208,15 @@ content:
         label: Results page (fill in after the event)
         type: string
         description: The results entry's file name without .md, e.g. 2027-05-15-cvtc-autocross. The event page links to it.
+      - name: announce
+        label: Announce on Discord, Slack and Facebook
+        type: boolean
+        default: false
+        description: Tick to post this once, with a link, after the site updates. Only ticked items are ever announced.
+      - name: announce_text
+        label: Announcement wording (optional)
+        type: text
+        description: "What the post says. Empty: the title and summary."
       - name: body
         label: Details
         type: rich-text
@@ -273,6 +282,15 @@ content:
           - name: time
             label: Time
             type: string
+      - name: announce
+        label: Announce on Discord, Slack and Facebook
+        type: boolean
+        default: false
+        description: Tick to post this once, with a link, after the site updates. Only ticked items are ever announced.
+      - name: announce_text
+        label: Announcement wording (optional)
+        type: text
+        description: "What the post says. Empty: the title and summary."
       - name: body
         label: Write-up
         type: rich-text
@@ -311,6 +329,15 @@ content:
         options:
           media: images
           path: static/images/news
+      - name: announce
+        label: Announce on Discord, Slack and Facebook
+        type: boolean
+        default: false
+        description: Tick to post this once, with a link, after the site updates. Only ticked items are ever announced.
+      - name: announce_text
+        label: Announcement wording (optional)
+        type: text
+        description: "What the post says. Empty: the title and summary."
       - name: body
         label: Post
         type: rich-text
