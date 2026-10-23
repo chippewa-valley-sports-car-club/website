@@ -37,6 +37,12 @@ content:
         label: Contact email
         type: string
         description: Shown on Contact. Without a signup link below, people join the mailing list by emailing it.
+      - name: hero_photo_credit
+        label: Header photo credit (photographer's name)
+        type: string
+      - name: hero_photo_credit_url
+        label: Header photo credit link
+        type: string
       - name: mailing_list_url
         label: Mailing list signup link (optional)
         type: string

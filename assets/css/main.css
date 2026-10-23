@@ -381,8 +381,8 @@ code {
   position: relative;
   color: #fff;
   background:
-    linear-gradient(100deg, rgb(29 25 27 / 88%) 0%, rgb(29 25 27 / 62%) 50%, rgb(29 25 27 / 25%) 100%),
-    var(--hero-img) 30% 45% / cover no-repeat,
+    linear-gradient(100deg, rgb(29 25 27 / 70%) 0%, rgb(29 25 27 / 35%) 45%, rgb(29 25 27 / 0%) 70%),
+    var(--hero-img) right center / cover no-repeat,
     var(--ink);
 }
 
@@ -392,6 +392,20 @@ code {
   gap: 2rem;
   padding-top: 3rem;
   padding-bottom: 3.25rem;
+}
+
+.hero-credit {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.4rem;
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgb(255 255 255 / 75%);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 70%);
+}
+
+.hero-credit a {
+  color: inherit;
 }
 
 .hero-badge {

@@ -5,6 +5,9 @@ email: cvscc@cvscc.org
 # Optional: a signup page for the mailing list (Google Group, form...). Empty means
 # people join by emailing the club address above.
 mailing_list_url: ""
+# Credit for the home page's header photo (static/images/hero-autocross.jpg).
+hero_photo_credit: C. Whitmore Sports Photography
+hero_photo_credit_url: https://www.facebook.com/C.Whitmore.Sports.Photography
 # Shown on the Sponsors page. The club is not a 501(c)(3): sponsorships and
 # donations are not tax-deductible as charitable contributions.
 tax_status: 501(c)(7)

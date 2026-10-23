@@ -13,6 +13,9 @@
       </p>
     </div>
   </div>
+  {{- with $club.hero_photo_credit }}
+  <p class="hero-credit">Photo: {{ with $club.hero_photo_credit_url }}<a href="{{ . }}" rel="noopener">{{ $club.hero_photo_credit }}</a>{{ else }}{{ . }}{{ end }}</p>
+  {{- end }}
 </section>
 
 <div class="container home">
