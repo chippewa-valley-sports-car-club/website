@@ -119,12 +119,22 @@ code {
   padding-bottom: 3rem;
 }
 
-.page > p,
-.page > ul,
-.page > ol,
-.page > h2,
-.page > h3 {
-  max-width: var(--measure);
+/* Inner pages are one centred reading column; the column itself sets the line
+   length. Results keep the full frame for their wide tables. */
+.page {
+  max-width: 48rem;
+}
+
+.page.page-results {
+  max-width: 72rem;
+}
+
+.page .prose,
+.page .notice,
+.page .news-item,
+.page .event-list,
+.page .lead {
+  max-width: none;
 }
 
 .skip-link {

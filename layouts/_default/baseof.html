@@ -22,7 +22,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   {{ partial "header.html" . }}
-  <main id="main"{{ if not .IsHome }} class="container page"{{ end }}>{{ with .Params.review }}<p class="review-banner" role="note"><strong>Draft: for club review.</strong> {{ . }}</p>{{ end }}{{ block "main" . }}{{ end }}</main>
+  <main id="main"{{ if not .IsHome }} class="container page page-{{ .Type }}"{{ end }}>{{ with .Params.review }}<p class="review-banner" role="note"><strong>Draft: for club review.</strong> {{ . }}</p>{{ end }}{{ block "main" . }}{{ end }}</main>
   {{ partial "footer.html" . }}
 </body>
 </html>
