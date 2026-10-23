@@ -667,6 +667,23 @@ tbody tr:nth-child(even) {
   white-space: nowrap;
 }
 
+.podium-title {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.podium-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.results-jump {
+  font-weight: 600;
+}
+
 .podium .place-1 td:first-child {
   font-weight: 800;
   color: var(--red);

@@ -36,8 +36,12 @@
       <p class="card-kicker">{{ $r.Date.Format "January 2, 2006" }}</p>
       <h3><a href="{{ $r.RelPermalink }}">{{ $r.Title }}</a></h3>
       {{ with $r.Params.summary }}<p>{{ . }}</p>{{ end }}
-      {{ with $r.Params.highlights }}{{ partial "podium.html" (first 3 .) }}{{ end }}
-      <p><a href="{{ $r.RelPermalink }}">Full results →</a></p>
+      {{ with $r.Params.highlights }}
+      <h4 class="podium-title">Top 3 on PAX</h4>
+      {{ partial "podium.html" (first 3 .) }}
+      <p class="podium-note">PAX multiplies each driver's time by their class's factor, so every car competes in one standing. The fastest raw time and each class's results are on the results page.</p>
+      {{ end }}
+      <p class="results-jump"><a href="{{ $r.RelPermalink }}#raw-times">Raw times</a> · <a href="{{ $r.RelPermalink }}#pax">PAX</a> · <a href="{{ $r.RelPermalink }}#by-class">By class</a> · <a href="{{ $r.RelPermalink }}">Full results →</a></p>
     </article>
   </section>
   {{- end }}

@@ -1,6 +1,6 @@
 {{- /* A results podium table from a highlights list; shows only the columns at least one row fills. */ -}}
 {{- $rows := . }}
-{{- $labels := dict "class" "Class" "place" "Place" "driver" "Driver" "car" "Car" "time" "Time" }}
+{{- $labels := dict "class" "Class" "place" "Place" "driver" "Driver" "car" "Car" "time" "PAX time" }}
 {{- $cols := slice }}
 {{- range slice "place" "class" "driver" "car" "time" }}
   {{- $c := . }}{{ $has := false }}

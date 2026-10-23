@@ -42,5 +42,5 @@ trap 'rm -rf "$out"' EXIT
 hugo --gc --panicOnWarning --printPathWarnings --logLevel warn \
   --baseURL "http://localhost/website/" --destination "$out/website"
 
-lychee --offline --no-progress --include-fragments --root-dir "$out" "$out/website"
+lychee --offline --no-progress --include-fragments --index-files index.html --root-dir "$out" "$out/website"
 echo "check: PASS"
