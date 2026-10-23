@@ -25,9 +25,26 @@
       <li><strong>Any car, any experience.</strong> Bring what you drive.</li>
       <li><strong>Membership:</strong> show up to a meeting. That's it.</li>
       <li><strong>Autocross, track, rally and sim racing</strong>, plus the social side.</li>
-      <li><strong>Giving back:</strong> we coach the <a href="{{ "community/teen-car-control/" | relURL }}">Teen Car Control Class</a> and fund <a href="{{ "community/cvtc-scholarships/" | relURL }}">CVTC scholarships</a>.</li>
     </ul>
   </div>
+
+  {{- /* What the club gives back comes first: the teen class and the scholarships (owner, 2026-10-24). */}}
+  {{- $giving := slice }}
+  {{- range slice "/community/teen-car-control" "/community/cvtc-scholarships" }}{{ with site.GetPage . }}{{ $giving = $giving | append . }}{{ end }}{{ end }}
+  {{- with $giving }}
+  <section class="home-section giving-back">
+    <div class="section-head"><h2>Giving back</h2><a href="{{ "community/" | relURL }}">In the community →</a></div>
+    <div class="card-grid">
+      {{- range . }}
+      <a class="card card-link card-accent" href="{{ .RelPermalink }}">
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+        <p class="card-more">Read more →</p>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
 
   {{ partial "upcoming-events.html" . }}
 
