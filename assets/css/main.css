@@ -517,6 +517,14 @@ code {
   text-decoration: none;
 }
 
+.giving-back .card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.giving-back h3 {
+  font-size: 1.3rem;
+}
+
 .community-icon {
   display: inline-flex;
   width: 2.5rem;
