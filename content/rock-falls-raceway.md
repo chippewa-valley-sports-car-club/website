@@ -9,20 +9,14 @@ Rock Falls opened in May 1969 as Amber Green Dragway and was rebuilt in the late
 
 ## Try drag racing
 
-You don't need a race car. Rock Falls' **O'Reilly Auto Parts Test & Tune** days are open to street cars, and they're a low-pressure way to run your car down the strip. From the track's 2026 rules:
+You don't need a race car. Rock Falls' **Test & Tune** days are open to street cars, and they're a low-pressure way to run your own car down the strip. You'll need an approved helmet and the right clothing; the track can rent you a helmet.
 
-- **Bring:** a valid driver's license, long pants, a sleeved shirt and closed-toe shoes.
-- **Helmet:** an NHRA-approved helmet is required. The track rents them at registration, on the south side of the tower.
-- **Cost:** $60 to run ($40 junior), plus gate admission.
-- **When:** Fridays roughly 1–7 pm and weekends roughly 10 am–4 pm, on the dates the track publishes.
-- **Under 18:** a parent or guardian must sign the track's minor release first.
-
-Always check [the track's own Test & Tune page](https://www.rockfallsraceway.com/daytest) before you go; dates and rules change each season.
+What to bring, what it costs and when the gates open are all on [the track's Test & Tune page](https://www.rockfallsraceway.com/daytest). Read it before you go: the details change from season to season.
 
 ## Big events at the track
 
-Rock Falls hosts drag racing most weekends from April to October, including the Badger Classic in June, the NHRA National Open in July, the Fallout Drags and the Mopar Showdown in September, the Amber Green Drags, Muscle Car & Motorcycle Drags, and the Sunoco Race Fuels ET Series. The dates are on the track's [events page](https://www.rockfallsraceway.com/events).
+Rock Falls runs drag racing most weekends through the season, from bracket racing and the ET Series to big weekends like the Badger Classic, the NHRA National Open, the Fallout Drags and the Mopar Showdown. This year's dates are on the track's [events page](https://www.rockfallsraceway.com/events), along with its [racer handbook](https://www.rockfallsraceway.com/handbook) and [FAQ](https://www.rockfallsraceway.com/contact/faq).
 
-Going? Say so in #general on Discord; there's usually someone from the club in the pits.
+Going? Say so in #drag-racing on [Discord](https://discord.gg/d3kfjmWDQ8); there's usually someone from the club in the pits.
 
 Follow the track on [Facebook](https://www.facebook.com/RockFallsRaceway/) and [Instagram](https://www.instagram.com/racerockfalls).
