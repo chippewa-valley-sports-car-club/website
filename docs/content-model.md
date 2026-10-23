@@ -74,6 +74,8 @@ Front matter:
 | `register_url` | url | MotorsportReg, Eventbrite, Facebook event |
 | `summary` | text | One line for lists |
 | `results` | slug of a `content/results/` page | Set after the event; the event links to its results |
+| `announce` | boolean | Defaults to `false`. Tick to post this once, with a link, after the site updates. Only ticked items are ever announced |
+| `announce_text` | text | Optional. What the post says. Empty: the title and summary |
 
 The body is optional free text. "Upcoming" means `date` (or `end_date`) is
 today or later **at build time**; the deploy workflow rebuilds every day, so
@@ -90,6 +92,8 @@ past events drop off on their own.
 | `results_url` | url | Results hosted elsewhere (MotorsportReg, a series site) |
 | `highlights` | list of `{class, place, driver, car, time}` | Optional podium table; any subset of the keys |
 | `summary` | text | One line for lists |
+| `announce` | boolean | Defaults to `false`. Tick to post this once, with a link, after the site updates. Only ticked items are ever announced |
+| `announce_text` | text | Optional. What the post says. Empty: the title and summary |
 
 The body is an optional write-up. The Results list groups pages by year.
 
@@ -101,6 +105,8 @@ The body is an optional write-up. The Results list groups pages by year.
 | `date` | date, *required* | |
 | `summary` | text | |
 | `image` | image path under `static/images/news/` | |
+| `announce` | boolean | Defaults to `false`. Tick to post this once, with a link, after the site updates. Only ticked items are ever announced |
+| `announce_text` | text | Optional. What the post says. Empty: the title and summary |
 
 ## Plain pages
 
