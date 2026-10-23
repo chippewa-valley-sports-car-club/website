@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article class="event">
+  {{ partial "event-jsonld.html" . }}
   <h1>{{ .Title }}</h1>
   <p class="event-when">{{ partial "event-when.html" . }}{{ with .Params.event_type }} <span class="badge">{{ . }}</span>{{ end }}</p>
   {{ with .Params.location }}<p class="event-location">{{ . }}</p>{{ end }}
