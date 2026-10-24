@@ -147,8 +147,13 @@ content:
           values: [title, gold, supporter, presenting, event, in-kind]
       - name: event
         label: Event (event lane only)
-        type: string
-        description: The event entry's file name without .md; the sponsor also shows on that event's page.
+        type: reference
+        options:
+          collection: events
+          search: title
+          value: "{path}"
+          label: "{title}"
+        description: The sponsor also shows on that event's page.
       - name: event_label
         label: Event name to group under (event lane only)
         type: string
@@ -247,9 +252,14 @@ content:
         label: One-line summary
         type: string
       - name: results
-        label: Results page (fill in after the event)
-        type: string
-        description: The results entry's file name without .md, e.g. 2027-05-15-cvtc-autocross. The event page links to it.
+        label: Results page (filled in for you when results are imported)
+        type: reference
+        options:
+          collection: results
+          search: title
+          value: "{path}"
+          label: "{title}"
+        description: The event page links to it.
       - name: announce
         label: Announce on Discord, Slack and Facebook
         type: boolean
@@ -291,12 +301,21 @@ content:
           format: yyyy-MM-dd
       - name: event
         label: Event
-        type: string
-        description: The event entry's file name without .md, e.g. 2027-05-15-cvtc-autocross. The results page links back to it.
+        type: reference
+        options:
+          collection: events
+          search: title
+          value: "{path}"
+          label: "{title}"
+        description: Pick the event these results are from. The two pages link to each other.
       - name: results_file
         label: Full results file (PDF or HTML from the timing software)
         type: file
-        description: Upload AXWare's "Final Raw Time Results" PDF and save; the tables, top ten, summary and the event's results link fill in on their own a few minutes later.
+        description: Upload AXWare's "Final Raw Time Results" PDF and save. The tables, top ten and summary fill in on their own about five minutes later.
+      - name: import_problem
+        label: Problem reading the results file (filled in automatically)
+        type: string
+        description: Empty means all is well. If the site couldn't read the PDF, this says why; fix that and save again, and it clears itself.
         options:
           media: results
       - name: results_url

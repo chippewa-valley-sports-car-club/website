@@ -10,7 +10,9 @@ With --pending (what CI runs after a CMS edit): for every results page whose
 `results_file` is a PDF and that has no results-src/<page>.tsv yet, write the
 TSV, build the tables, fill in an empty summary, and link the event page to its
 results. An existing TSV is never overwritten, so hand amendments (the `note`
-column) survive.
+column) survive. If a PDF can't be imported, the page's `import_problem` says
+why in plain words (the CMS shows it on the form and the page shows it under
+the results), nothing else is written, and the next run tries again.
 
 The PDF is checked against itself before anything is written: the row count
 must equal "Timed Entries", rows must be numbered 1..N in raw-time order, the
@@ -21,6 +23,7 @@ bad parse fails loudly instead of publishing wrong standings.
 
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 import sys
@@ -34,11 +37,15 @@ YEAR = re.compile(r"\b(19|20)\d{2}\b")
 
 
 def pdf_text(pdf: Path) -> str:
+    if not pdf.exists():
+        sys.exit(f"No such file: {pdf}")
     try:
         return subprocess.run(["pdftotext", "-layout", str(pdf), "-"], check=True,
                               capture_output=True, text=True).stdout
     except FileNotFoundError:
-        sys.exit("pdftotext is missing: run under `flox activate`")
+        raise RuntimeError("pdftotext is missing: run under `flox activate`") from None
+    except subprocess.CalledProcessError:
+        sys.exit(f"Couldn't open {pdf} as a PDF")
 
 
 def split_driver_car(text: str, line: str) -> tuple[str, str]:
@@ -121,22 +128,49 @@ def field(fm: str, name: str) -> str | None:
     return m.group(1).strip().strip("\"'") or None if m else None
 
 
+def set_field(page: Path, name: str, value: str | None) -> None:
+    """Set (or with None, remove) one front-matter line."""
+    fm, text = front_matter(page)
+    rest = re.sub(rf"^{name}:.*\n", "", fm, flags=re.M)
+    line = f"{name}: {json.dumps(value, ensure_ascii=False)}\n" if value is not None else ""
+    page.write_text(text.replace(fm, rest + line, 1))
+
+
+def explain(problem: str) -> str:
+    """Say what went wrong, and what to do, for someone who isn't technical."""
+    if "not an AXWare" in problem:
+        return ("This file isn't AXWare's \"Final Raw Time Results\" report. Export that report "
+                "from AXWare as a PDF and upload it in place of this one.")
+    m = re.search(r"class '([^']+)' \(([^)]*)\) has no factor", problem)
+    if m:
+        return (f"Class {m.group(1)} (driven by {m.group(2)}) has no PAX factor for this year yet. "
+                "Ask the club's tech lead to add it; the tables build on their own once it's there.")
+    if "Couldn't open" in problem:
+        return ("This file isn't a PDF the site can read. Export AXWare's \"Final Raw Time Results\" "
+                "report as a PDF and upload that.")
+    if "No such file" in problem:
+        return "The uploaded results file can't be found. Upload it again and save."
+    return (f"The numbers in the PDF don't add up ({problem.splitlines()[0]}). Export the report "
+            "from AXWare again and re-upload it; if it still happens, ask the club's tech lead.")
+
+
 def link_event(event: str | None, results: str) -> None:
     if not event:
         return
-    page = ROOT / "content" / "events" / f"{event}.md"
+    # The CMS's pick list stores the event's path; older pages store its name.
+    page = ROOT / "content" / "events" / f"{Path(event).stem}.md"
     if not page.exists():
         print(f"  note: event page {page.relative_to(ROOT)} not found; not linked")
         return
     fm, text = front_matter(page)
     if field(fm, "results"):
         return
-    page.write_text(text.replace(fm, fm + f"results: {results}\n", 1))
+    page.write_text(text.replace(fm, fm + f"results: content/results/{results}.md\n", 1))
     print(f"  linked {page.relative_to(ROOT)} to its results")
 
 
 def pending() -> int:
-    done = 0
+    done = failed = 0
     for page in sorted((ROOT / "content" / "results").glob("*.md")):
         if page.name == "_index.md":
             continue
@@ -146,11 +180,24 @@ def pending() -> int:
         if not pdf or not pdf.lower().endswith(".pdf") or src.exists():
             continue
         print(f"{page.relative_to(ROOT)}: importing {pdf}")
-        src.write_text(tsv(parse(pdf_text(ROOT / "static" / pdf)), f"static/{pdf}"))
-        subprocess.run([sys.executable, str(ROOT / "scripts" / "results-tables.py"), str(src), str(page)], check=True)
+        tables = ROOT / "assets" / "results" / f"{page.stem}.md"
+        try:
+            src.write_text(tsv(parse(pdf_text(ROOT / "static" / pdf)), f"static/{pdf}"))
+            run = subprocess.run([sys.executable, str(ROOT / "scripts" / "results-tables.py"), str(src), str(page)],
+                                 capture_output=True, text=True)
+            if run.returncode:
+                raise SystemExit(run.stderr.strip() or run.stdout.strip())
+        except SystemExit as err:
+            src.unlink(missing_ok=True)
+            tables.unlink(missing_ok=True)
+            print(f"  problem: {err}")
+            set_field(page, "import_problem", explain(str(err)))
+            failed += 1
+            continue
+        set_field(page, "import_problem", None)
         link_event(field(fm, "event"), page.stem)
         done += 1
-    print(f"{done} results file(s) imported")
+    print(f"{done} results file(s) imported, {failed} with a problem")
     return 0
 
 

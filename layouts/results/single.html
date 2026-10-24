@@ -6,7 +6,7 @@
   <p class="results-links">
     {{- with .Params.results_file }}<a class="button" href="{{ . | relURL }}">Download the official results</a>{{ end }}
     {{- with .Params.results_url }} <a class="button button-outline" href="{{ . }}">Full results</a>{{ end }}
-    {{- with .Params.event }} <a href="{{ printf "events/%s/" . | relURL }}">Event page</a>{{ end }}
+    {{- with .Params.event }} <a href="{{ printf "events/%s/" (path.BaseName .) | relURL }}">Event page</a>{{ end }}
   </p>
   {{ with .Params.highlights }}
   <h2>Top {{ cond (eq (len .) 10) "ten" (string (len .)) }} on PAX</h2>
@@ -15,6 +15,15 @@
   {{ .Content }}
   {{- /* The tables come from scripts/results-tables.py, kept out of the body so
          the CMS's rich-text editor never rewrites them. */}}
-  {{ with resources.Get (printf "results/%s.md" .File.ContentBaseName) }}{{ $.RenderString (dict "display" "block") .Content }}{{ end }}
+  {{- $tables := resources.Get (printf "results/%s.md" .File.ContentBaseName) }}
+  {{- with $tables }}{{ $.RenderString (dict "display" "block") .Content }}
+  {{- else }}{{ with .Params.results_file }}{{ if strings.HasSuffix (lower .) ".pdf" }}
+  {{- /* scripts/import-results.py builds the tables a few minutes after the
+         PDF is saved, or records in import_problem why it couldn't. */}}
+  <p class="review-banner" role="status">
+    {{- with $.Params.import_problem }}<strong>The results tables couldn't be made from this file.</strong> {{ . }}
+    {{- else }}<strong>Results tables on the way.</strong> The site is reading the timing file; the full tables appear here within a few minutes.{{ end }}
+  </p>
+  {{- end }}{{ end }}{{ end }}
 </article>
 {{ end }}

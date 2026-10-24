@@ -1,57 +1,81 @@
-# Editing the Chippewa Valley Sports Car Club Website
+# Editing the club website
 
-This guide explains how to update the club's website using Pages CMS. Pages CMS is a simple content management system that allows non-technical users to edit website content.
+You edit the website in **Pages CMS**, a set of forms in your browser. You
+don't need to know any code. Every save updates the live site by itself.
 
-## Getting Started
+## Getting in
 
-To begin editing, you'll need a GitHub account. If you don't have one, sign up at [github.com](https://github.com).
+1. Make a free account at [github.com](https://github.com) if you don't have
+   one, and send your username to the club's tech lead. They add you as an
+   editor.
+2. Go to [app.pagescms.org](https://app.pagescms.org), sign in with GitHub,
+   and pick **chippewa-valley-sports-car-club / website**.
+3. The menu on the left lists everything you can edit. Each item opens a form,
+   and every box on a form has a line of help under it.
 
-Once you have a GitHub account, sign in to Pages CMS at [app.pagescms.org](https://app.pagescms.org). An officer from the club must add you to the website-editors team before you can make changes.
+**How long changes take:** about two minutes after you save, the site shows
+the change. Results PDFs take about five, because the site reads the file
+first. If your browser still shows the old page, reload it.
 
-## Editing Tasks
+## Common jobs
 
-### Add an Event
-1. Go to the [Events form](https://app.pagescms.org/entry/new?repo=cvscc/cvscc.org&path=content/events/)
-2. Fill in the required fields
-3. Save the entry
-4. The site updates about a minute after Save
+### Add an event
 
-### Post Results
-1. Go to the [Results form](https://app.pagescms.org/entry/new?repo=cvscc/cvscc.org&path=content/results/)
-2. Fill in the required fields including podium details
-3. Upload the results PDF
-4. Save the entry
-5. The site updates about a minute after Save
+1. **Events** → **Add an entry**.
+2. Fill in the name, date and type. Add the venue, and a registration link if
+   there is one.
+3. Tick **Announce** if you want the event posted to Discord (and later Slack
+   and Facebook). Only ticked items are ever posted, and each is posted once.
+4. **Save**.
 
-### Set the Next Meeting
-1. Go to the [Meetings form](https://app.pagescms.org/entry/new?repo=cvscc/cvscc.org&path=content/meetings/)
-2. Fill in the required fields
-3. Save the entry
-4. The site updates about a minute after Save
+### Post autocross results
 
-### Add a Sponsor
-1. Go to the [Sponsors form](https://app.pagescms.org/entry/new?repo=cvscc/cvscc.org&path=data/sponsors.yml)
-2. Fill in the sponsor details including logo and code
-3. Save the entry
-4. The site updates about a minute after Save
+You need AXWare's **Final Raw Time Results** report, saved as a PDF. Ask
+whoever ran timing to export it. The site works out the PAX and class
+standings itself, so you only need that one report.
 
-### Add a News Post
-1. Go to the [News form](https://app.pagescms.org/entry/new?repo=cvscc/cvscc.org&path=content/news/)
-2. Fill in the required fields
-3. Save the entry
-4. The site updates about a minute after Save
+1. **Results** → **Add an entry**.
+2. **Title:** e.g. "2027 Spring Autocross results". **Date:** the event's date.
+3. **Event:** pick the event from the list.
+4. **Full results file:** upload the PDF.
+5. Leave **summary** and **top ten** empty; the site fills them in.
+6. Write something about the day in **Write-up** if you like, and tick
+   **Announce** to post the results to Discord.
+7. **Save**.
 
-### Change Social Links
-1. Go to the [Social links form](https://app.pagescms.org/entry/new?repo=cvscc/cvscc.org&path=data/social.yml)
-2. Fill in the required fields
-3. Save the entry
-4. The site updates about a minute after Save
+About five minutes later, the results page shows the full raw, PAX and
+by-class tables, the top ten, and a one-line summary. The event page gets a
+"See the results" link. Until then, the page says the tables are on the way.
 
-## Undoing a Mistake
+**If something's wrong with the file,** the results page says so in a yellow
+box, and the same message appears in the form's **Problem reading the results
+file** box. It says what to do, usually "export the right report and upload
+it again". Fix it and save; the message clears itself once the tables are
+made.
 
-Every save is recorded in the repository's history. If you make a mistake:
-1. Go to the repository's commit history
-2. Revert to the previous good commit
-3. If you need help, ask on Discord in the #technology channel
+**To correct a time** (a timing fault, say), ask the tech lead. Corrections
+are marked with an asterisk and a note explaining why, so they're done by hand.
 
-(screenshot)
+### Set the next meeting
+
+**Club info & next meeting** → change the date, time and place → **Save**.
+
+### Add a sponsor
+
+**Sponsors** → add an entry, upload the logo in its **Logo** box, and pick
+the **Tier**. Only title and gold club sponsors appear on the home page; for an
+event sponsor, pick the event and the sponsor shows on that event's page.
+
+### Add a news post
+
+**News** → **Add an entry** → write it → tick **Announce** if it should go to
+Discord → **Save**.
+
+### Change social links or nearby clubs
+
+**Social links** or **Clubs near us** → edit → **Save**.
+
+## Undoing a mistake
+
+Every save is kept, so nothing is lost. Ask in the Discord **#technology**
+channel, and the tech lead can put any page back the way it was.
