@@ -1,0 +1,31 @@
+{{- /* The page's link-preview image URL (absolute). The home page uses the
+       static card; every other page gets its title drawn onto the brand card
+       (assets/images/og-base.png, room for text at x 470-1140, y 230-470):
+       wrapped at 18 characters per line (wider overflows the space right of the rule at this size), at most 4 lines, with "..." only
+       when the title had to be cut. */ -}}
+{{- if .IsHome }}
+  {{- return ("images/og-card.jpg" | absURL) }}
+{{- end }}
+{{- $maxChars := 18 }}
+{{- $maxLines := 4 }}
+{{- $lines := slice }}
+{{- $line := "" }}
+{{- range split .Title " " }}
+  {{- if eq $line "" }}
+    {{- $line = . }}
+  {{- else if le (len (printf "%s %s" $line .)) $maxChars }}
+    {{- $line = printf "%s %s" $line . }}
+  {{- else }}
+    {{- $lines = $lines | append $line }}
+    {{- $line = . }}
+  {{- end }}
+{{- end }}
+{{- with $line }}{{ $lines = $lines | append . }}{{ end }}
+{{- if gt (len $lines) $maxLines }}
+  {{- $kept := first (sub $maxLines 1) $lines }}
+  {{- $lines = $kept | append (printf "%s..." (index $lines (sub $maxLines 1))) }}
+{{- end }}
+{{- $text := delimit $lines "\n" }}
+{{- $font := resources.Get "fonts/DejaVuSans-Bold.ttf" }}
+{{- $card := resources.Get "images/og-base.png" | images.Filter (images.Text $text (dict "color" "#ffffff" "font" $font "size" 52 "x" 470 "y" 235 "linespacing" 12)) }}
+{{- return $card.Permalink }}
