@@ -804,6 +804,14 @@ tbody tr:nth-child(even) {
   font-size: 1.2rem;
 }
 
+.calendar-subscribe {
+  margin: 1.5rem 0;
+}
+
+.calendar-subscribe code {
+  word-break: break-all;
+}
+
 .nearby-events {
   margin: 2rem 0;
 }

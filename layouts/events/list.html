@@ -1,7 +1,17 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
-<p><a href="{{ "events/index.ics" | relURL }}">Subscribe to the club calendar</a> — phones and Google Calendar can subscribe to this link and stay up to date automatically.</p>
+{{- $ics := "events/index.ics" | absURL }}
+{{- $webcal := replaceRE "^https?://" "webcal://" $ics }}
+<aside class="card calendar-subscribe">
+  <p class="card-kicker">Club calendar</p>
+  <p>Put every club event in your own calendar; new events show up there by themselves.</p>
+  <p class="results-jump">
+    <a class="button" href="https://calendar.google.com/calendar/render?cid={{ $webcal | urlquery }}" rel="noopener">Add to Google Calendar</a>
+    <a class="button button-outline" href="{{ $webcal | safeURL }}">Apple / Outlook</a>
+  </p>
+  <p class="note">Or copy this link into any calendar app that can subscribe by URL: <code>{{ $ics }}</code></p>
+</aside>
 {{ $upcoming := slice }}{{ $past := slice }}
 {{ range .Pages.ByDate }}
   {{ if partial "event-upcoming.html" . }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}
