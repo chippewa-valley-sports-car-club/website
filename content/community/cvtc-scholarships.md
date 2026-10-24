@@ -17,8 +17,8 @@ One goes to a student in the **Auto Collision Repair & Refinish Technician** pro
 
 ## Students: how to apply
 
-Applications go through CVTC's scholarship site, not the club. See the club's current scholarships, award amounts and deadlines on [CVTC's scholarship page for the Chippewa Valley Sports Car Club](https://cvtc.academicworks.com/donors/chippewa-valley-sports-car-club). The deadline has fallen in mid-February in recent years.
+Students apply through CVTC's scholarship site, not through the club. [CVTC's page for the Chippewa Valley Sports Car Club](https://cvtc.academicworks.com/donors/chippewa-valley-sports-car-club) lists the current scholarships, award amounts and deadlines. In recent years the deadline has been mid-February.
 
 ## Help fund them
 
-Run an autocross, join the club, or [sponsor an event](../../sponsors/). Proceeds from our events go to these scholarships.
+Run an autocross, join the club, or [sponsor an event](../../sponsor-the-club/). Our event proceeds pay for these scholarships.

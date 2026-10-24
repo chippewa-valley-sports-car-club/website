@@ -17,7 +17,7 @@ highlights:
   - {place: 10, class: XB, driver: "Brad Retzlaff", car: "1999 Mazda Miata/Black", time: "23.272"}
 ---
 
-The club's official AXWare timing sheet is linked above. Tables generated from `results-src/2026-05-10-spring-autocross.tsv`; PAX factors are the club's 2026 table.
+Download the official AXWare timing sheet above. We built these tables from it, using the club's 2026 PAX factors.
 
 <!-- results:start -->
 
@@ -127,7 +127,7 @@ Each best run multiplied by its class's PAX factor, so every class competes in o
 
 ## By class
 
-Each class ranked on raw time.
+Every class, ranked on raw time.
 
 ### AS: A Street
 

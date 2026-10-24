@@ -5,4 +5,4 @@ layout: clubs
 weight: 40
 ---
 
-More seat time is the fastest way to get faster. These clubs run events within a few hours of Eau Claire, and our members show up at all of them. For everything happening nearby, see the MotorsportReg links on the [Events](../../events/) page.
+More seat time is the fastest way to get faster. These clubs all run events within a few hours of Eau Claire, and they're worth the drive. For everything else happening nearby, use the MotorsportReg links on the [Events](../../events/) page.

@@ -17,7 +17,7 @@ highlights:
   - {place: 10, class: EST, driver: "Joel Anderegg", car: "1991 Honda Civic Si/Grey", time: "34.747"}
 ---
 
-The club's official AXWare timing sheet (raw times) is linked above. PAX and class standings are computed from it with the club's 2026 PAX factors; tables generated from `results-src/2026-08-23-fall-autocross.tsv`.
+Download the official AXWare timing sheet above. It lists raw times; we worked out the PAX and class standings from it with the club's 2026 PAX factors.
 
 <!-- results:start -->
 
@@ -107,7 +107,7 @@ Each best run multiplied by its class's PAX factor, so every class competes in o
 
 ## By class
 
-Each class ranked on raw time.
+Every class, ranked on raw time.
 
 ### AS: A Street
 

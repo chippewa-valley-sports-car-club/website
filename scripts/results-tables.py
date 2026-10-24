@@ -92,7 +92,7 @@ def build(entries: list[dict], pax: dict[str, dict]) -> tuple[str, list[dict]]:
                    f"{fmt(e['rawt'])}{e['mark']} | {e['factor']:.3f} | {fmt(e['paxt'])}{e['mark']} |")
 
     out.append("\n## By class\n")
-    out.append("Each class ranked on raw time.\n")
+    out.append("Every class, ranked on raw time.\n")
     for cls in sorted({e["class"] for e in entries}, key=lambda c: order[c]):
         members = [e for e in by_raw if e["class"] == cls]
         out.append(f"### {cls}: {pax[cls]['name']}\n")

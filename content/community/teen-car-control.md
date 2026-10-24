@@ -6,11 +6,11 @@ weight: 10
 
 New drivers rarely get to practice what happens when things go wrong: a skid on a wet road, a hard stop, a sudden swerve around something in the lane. The Teen Car Control Class gives them that practice on a closed course, where getting it wrong is safe.
 
-Teens spend a day driving real-world accident-avoidance situations, including emergency braking, sudden lane changes and driving on wet pavement, and learn how to correct them. The goal isn't to teach teens how to drive. It's to coach them through the moments that most often cause panic and over-correction, so they've felt them before they meet them on the road.
+Teens spend a day driving real accident-avoidance situations, including emergency braking, sudden lane changes and wet pavement, and learn how to recover. They already know how to drive. The class coaches them through the moments that most often cause panic and over-correction, so they've felt those moments before they meet them on the road.
 
 ## Who runs it
 
-The class is put on by **Mayo Clinic Health System** and **Chippewa Valley Technical College (CVTC)**. Members of the Chippewa Valley Sports Car Club provide most of the in-car coaches, and the program depends on them.
+**Mayo Clinic Health System** and **Chippewa Valley Technical College (CVTC)** run the class. Members of the Chippewa Valley Sports Car Club provide most of the in-car coaches.
 
 ## See it in action
 
@@ -18,5 +18,5 @@ WEAU covered the class in 2022: [Car control class teaches young drivers critica
 
 ## Sign up or coach
 
-- **Teens and parents:** class dates and registration are on [Mayo Clinic Health System's Eau Claire classes and events page](https://www.mayoclinichealthsystem.org/locations/eau-claire/classes-and-events/car-control-class).
+- **Teens and parents:** find class dates and registration on [Mayo Clinic Health System's Eau Claire classes and events page](https://www.mayoclinichealthsystem.org/locations/eau-claire/classes-and-events/car-control-class).
 - **Club members who want to coach:** ask an officer on [Discord](https://discord.gg/d3kfjmWDQ8). Experienced autocrossers and track drivers make the best coaches.
