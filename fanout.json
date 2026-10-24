@@ -1,11 +1,15 @@
 {
-  "source": { "type": "jsonfeed", "url": "https://chippewa-valley-sports-car-club.github.io/website/announce.json" },
+  "source": {
+    "type": "jsonfeed",
+    "url": "https://chippewa-valley-sports-car-club.github.io/website/announce.json"
+  },
   "ledger": "fanout-ledger/deliveries.jsonl",
   "targets": {
     "club-discord": {
       "type": "discord",
       "webhook_env": "DISCORD_WEBHOOK_URL",
-      "template": "📣 {text}\n{url}"
+      "template": "📣 {text}\n{url}",
+      "username": "CVSCC"
     },
     "club-slack": {
       "type": "slack",
