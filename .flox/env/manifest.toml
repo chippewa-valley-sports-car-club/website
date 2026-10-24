@@ -1,11 +1,3 @@
-## Flox Environment Manifest -----------------------------------------
-##
-##   _Everything_ you need to know about the _manifest_ is here:
-##
-##   https://flox.dev/docs/reference/command-reference/manifest.toml/
-##
-## -------------------------------------------------------------------
-# Flox manifest version managed by Flox CLI
 schema-version = "1.16.0"
 
 
@@ -22,6 +14,9 @@ hugo.pkg-path = "hugo"          # the site generator (AGENTS.md names its versio
 lychee.pkg-path = "lychee"      # offline link checker in scripts/check.sh
 yq-go.pkg-path = "yq-go"        # YAML parse check in scripts/check.sh
 python3.pkg-path = "python3"    # scripts/results-tables.py
+fanout.pkg-path = "imkarrer/fanout"  # posts ticked items after each deploy (fanout.json)
+fanout.pkg-group = "fanout"
+fanout.systems = ["x86_64-linux"]
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 

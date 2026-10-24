@@ -3,6 +3,13 @@
   "manifest": {
     "schema-version": "1.16.0",
     "install": {
+      "fanout": {
+        "pkg-path": "imkarrer/fanout",
+        "pkg-group": "fanout",
+        "systems": [
+          "x86_64-linux"
+        ]
+      },
       "hugo": {
         "pkg-path": "hugo"
       },
@@ -380,6 +387,32 @@
       },
       "system": "x86_64-linux",
       "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "fanout",
+      "derivation": "/nix/store/sgp53q9scwjpawfgzlraanlxprh07mhc-fanout-0.1.0.drv",
+      "description": "Announce what a site publishes on Discord, Slack, Facebook and more, from one feed",
+      "install_id": "fanout",
+      "locked_url": "ssh://git@github.com/imkarrer/fanout.git?rev=b96223f4ae3176db7e6dc0db10c0ae46eb9a661e",
+      "name": "fanout-0.1.0",
+      "pname": "fanout",
+      "rev": "b96223f4ae3176db7e6dc0db10c0ae46eb9a661e",
+      "rev_count": 5,
+      "rev_date": "2026-10-23T02:16:43Z",
+      "scrape_date": "2026-10-23T22:09:23.240213640Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "version": "0.1.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/0jippcx2rfh1qfdnwpqg1w0kk74hfggc-fanout-0.1.0"
+      },
+      "system": "x86_64-linux",
+      "group": "fanout",
       "priority": 5
     }
   ]

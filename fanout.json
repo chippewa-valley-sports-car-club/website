@@ -1,0 +1,29 @@
+{
+  "source": { "type": "jsonfeed", "url": "https://chippewa-valley-sports-car-club.github.io/website/announce.json" },
+  "ledger": "fanout-ledger/deliveries.jsonl",
+  "targets": {
+    "club-discord": {
+      "type": "discord",
+      "webhook_env": "DISCORD_WEBHOOK_URL",
+      "template": "📣 {text}\n{url}"
+    },
+    "club-slack": {
+      "type": "slack",
+      "webhook_env": "SLACK_WEBHOOK_URL",
+      "enabled": false
+    },
+    "club-facebook-page": {
+      "type": "facebook-page",
+      "page_id": "",
+      "token_env": "FB_PAGE_TOKEN",
+      "enabled": false
+    },
+    "club-facebook-group": {
+      "type": "facebook-group",
+      "group_url": "https://www.facebook.com/groups/1598148030477801",
+      "profile_dir": "~/.local/share/fanout/cvscc-facebook",
+      "mode": "assist",
+      "enabled": false
+    }
+  }
+}

@@ -37,3 +37,38 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Announce what editors ticked (fanout.json): every deploy reads the live
+  # /announce.json and posts each newly ticked item to the enabled targets,
+  # recording deliveries on the fanout-ledger branch so nothing posts twice.
+  # A dry run (it only prints) until the repo variable FANOUT_LIVE is "true".
+  announce:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: announce
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check out the ledger branch
+        run: git worktree add fanout-ledger origin/fanout-ledger
+      - uses: flox/install-flox-action@v2
+      - uses: flox/activate-action@v2
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        with:
+          command: fanout run ${{ vars.FANOUT_LIVE == 'true' && '--live' || '' }}
+      - name: Record deliveries on the ledger branch
+        if: always()
+        working-directory: fanout-ledger
+        run: |
+          git add -A
+          git diff --cached --quiet && exit 0
+          git -c user.name="cvscc-announce" -c user.email="actions@github.com" commit -q -m "fanout: deliveries from ${GITHUB_SHA::7}"
+          git push origin HEAD:fanout-ledger
