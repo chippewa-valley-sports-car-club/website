@@ -296,6 +296,7 @@ content:
       - name: results_file
         label: Full results file (PDF or HTML from the timing software)
         type: file
+        description: Upload AXWare's "Final Raw Time Results" PDF and save; the tables, top ten, summary and the event's results link fill in on their own a few minutes later.
         options:
           media: results
       - name: results_url
@@ -304,8 +305,10 @@ content:
       - name: summary
         label: One-line summary
         type: string
+        description: Leave empty to have it written from the results.
       - name: highlights
         label: Top ten on PAX
+        description: Filled in from the timing data; no need to type it.
         type: object
         list: true
         fields:

@@ -1,0 +1,36 @@
+# After a CMS edit that attaches an AXWare raw-time PDF to a results page,
+# read the PDF into results-src/, build the tables, highlights and summary,
+# link the event page, commit, and redeploy. scripts/import-results.py checks
+# the PDF against itself first; if the numbers don't add up, this fails and
+# changes nothing. Pages that already have timing data are left alone.
+name: import-results
+on:
+  push:
+    branches: [main]
+    paths: ["content/results/**", "static/results/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: import-results
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: flox/install-flox-action@v2
+      - uses: flox/activate-action@v2
+        with:
+          command: python3 scripts/import-results.py --pending
+      - name: Commit and redeploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -A content results-src assets
+          git diff --cached --quiet && exit 0
+          git -c user.name="cvscc-results" -c user.email="actions@users.noreply.github.com" \
+            commit -m "Import results from the timing PDF"
+          git push
+          # A push made with this workflow's token doesn't start other
+          # workflows, so ask for the deploy directly.
+          gh workflow run deploy.yml

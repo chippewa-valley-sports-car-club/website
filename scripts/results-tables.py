@@ -13,10 +13,11 @@ PAX factors come from results-src/pax-<year>.tsv (the year is taken from the
 input file's name). PAX time = raw x factor, truncated to 0.001, as
 AXWare does (checked against the club's Spring 2026 sheet, all 44 rows).
 
-Output: three tables (raw, PAX, by class) written into the results page
-between <!-- results:start --> and <!-- results:end -->, and the page's
-`highlights` (the top-ten table) set to the top ten on PAX. Everything else in
-the page is left alone.
+Output: three tables (raw, PAX, by class) written to assets/results/<page>.md,
+which layouts/results/single.html renders under the page's write-up, and the
+page's `highlights` (the top-ten table) set to the top ten on PAX. An empty
+`summary` gets a one-line one. Everything else in the page is left alone, so
+the CMS can edit the write-up without touching the tables.
 """
 
 from __future__ import annotations
@@ -26,7 +27,7 @@ import sys
 from decimal import ROUND_DOWN, Decimal
 from pathlib import Path
 
-START, END = "<!-- results:start -->", "<!-- results:end -->"
+ROOT = Path(__file__).resolve().parent.parent
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -127,6 +128,17 @@ def highlights(by_pax: list[dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def summary(by_pax: list[dict]) -> str:
+    raw = min((e for e in by_pax if e["rawt"] is not None), key=lambda e: e["rawt"])
+    pax = by_pax[0]
+    who = lambda e: f"{e['driver']} ({e['class']}, {e['car']})"
+    if raw is pax:
+        line = f"{who(pax)} won on both raw time ({fmt(raw['rawt'])}) and PAX ({fmt(pax['paxt'])})."
+    else:
+        line = f"{who(pax)} won on PAX ({fmt(pax['paxt'])}); {who(raw)} set the fastest raw time ({fmt(raw['rawt'])})."
+    return '"' + f"{len(by_pax)} drivers. {line}".replace('"', '\\"') + '"'
+
+
 def main(argv: list[str]) -> int:
     if len(argv) != 3:
         sys.exit(__doc__)
@@ -138,15 +150,17 @@ def main(argv: list[str]) -> int:
     pax = {r["class"]: r for r in read_tsv(pax_file)}
     tables, by_pax = build(read_tsv(src), pax)
 
+    out = ROOT / "assets" / "results" / f"{page.stem}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(tables)
+
     text = page.read_text()
-    if START not in text or END not in text:
-        sys.exit(f"{page}: add {START} and {END} where the tables go")
-    before, rest = text.split(START, 1)
-    _, after = rest.split(END, 1)
-    text = f"{before}{START}\n\n{tables}\n{END}{after}"
     text, n = re.subn(r"^highlights:\n(?:  .*\n)*", highlights(by_pax), text, count=1, flags=re.M)
     if n == 0:
         text = text.replace("\n---\n", "\n" + highlights(by_pax) + "---\n", 1)
+    if not re.search(r"^summary:[ \t]*(?!''|\"\")\S", text, re.M):
+        text = re.sub(r"^summary:.*\n", "", text, count=1, flags=re.M)
+        text = text.replace("\n---\n", "\nsummary: " + summary(by_pax) + "\n---\n", 1)
     page.write_text(text)
     print(f"{page}: {len(by_pax)} entries, PAX leader {by_pax[0]['driver']} {fmt(by_pax[0]['paxt'])}")
     return 0

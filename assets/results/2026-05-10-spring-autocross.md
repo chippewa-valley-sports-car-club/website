@@ -1,0 +1,233 @@
+**Jump to:** [Raw times](#raw-times) · [PAX](#pax) · [By class](#by-class)
+
+## Raw times
+
+Every driver's best run, fastest first, regardless of class.
+
+| Pos | Class | # | Driver | Car | Time |
+| ---: | --- | ---: | --- | --- | ---: |
+| 1 | XB | 869 | Brad Retzlaff | 1999 Mazda Miata/Black | 27.093 |
+| 2 | AS | 17 | Paul Holzinger | 2013 Chevrolet Corvette/Red | 27.183 |
+| 3 | BS | 513 | Leng Thao | 2024 Honda Civic Type R/White | 27.402 |
+| 4 | HS | 74 | Luis De La Pena | 2009 Honda Civic SI/Grey | 27.477 |
+| 5 | DS | 165 | Quinn Huettner | 2021 Honda Civic Type R/Gray | 27.566 |
+| 6 | GST | 808 | Kyle Yohnk | 2012 Volkswagen GOLF R/Red | 27.752 |
+| 7 | SM | 22 | Kevin Schwetz | 2015 Infiniti Q50/White | 27.870 |
+| 8 | N | 67 | Touger Thao | 2024 Honda Civic Type R/White | 27.956 |
+| 9 | ES | 210 | Joel Anderegg | 1991 Honda Civic Si/Grey | 28.256 |
+| 10 | XB | 51 | Rex Schultrich | 1991 Mazda Miata/Red | 28.351 |
+| 11 | HS | 81 | John Qualheim | 2018 Ford Fiesta ST/Gray | 28.509 |
+| 12 | SM | 3 | Tyler Hart | 1995 Nissan 240sx | 28.796 |
+| 13 | CS | 5 | Sam Houlihan | 2025 Mazda MX-5 Miata/Gray | 28.807 |
+| 14 | N | 365 | Devin Marshall | 2018 Ford Fiesta st/Black | 28.830 |
+| 15 | XA | 90 | Carter Lueloff | 2006 Infiniti G35/Blue | 28.845 |
+| 16 | AS | 172 | Cole Holzinger | 2013 Chevrolet Corvette/Red | 28.862 |
+| 17 | HS | 811 | Paul Cyr | Ford Fiesta st/Grey | 28.940 |
+| 18 | XB | 501 | Fynn Schultrich | 1988 Mazda RX-7 FC/Red | 29.023 |
+| 19 | DS | 141 | Maxwell Bulgrin | 2023 Toyota GR86/Steel Silver | 29.040 |
+| 20 | N | 787 | Isaac Karrer | 2020 Fiat Abarth 124 Spider/White | 29.067 |
+| 21 | DST | 46 | Brad Wickersham | 2017 Subaru BRZ LTD Perf Pack/Blue | 29.115 |
+| 22 | AST | 325 | Jon Strosahl | 1994 Mazda Miata/Red | 29.411 |
+| 23 | HS | 913 | Brandon Roehl | 2001 Mitsubishi Eclipse GT/Red | 29.498 |
+| 24 | SSM | 391 | Korey Klammer | 2015 Alfa Romeo 4C/Rosso Alfa | 29.745 |
+| 25 | SM | 842 | Shandon Wall | 2017 Subaru Brz performance package/White | 29.934 |
+| 26 | N | 331 | Dalton Roehl | 1995 Dodge Stealth/Red | 30.076 |
+| 27 | N | 144 | Nolan Murray | 2005 Audi A4 Quattro/Black | 30.169 |
+| 28 | N | 11 | Joey Stevens | 1999 Mazda Miata/Silver | 30.297 |
+| 29 | N | 201 | Shannon Anderegg | 1991 Honda Civic SI/Grey | 30.459 |
+| 30 | CS | 9 | Wyatt Leonhardt | 1993 Nissan Nissan Skyline R32 GTR/Silver | 30.509 |
+| 31 | CAMC | 707 | John Heaser Jr | 2010 Chevrolet Camaro SS/Tan/Black | 30.543 |
+| 32 | GST | 69 | Tucker Manderscheid | 2013 Mazda Mazdaspeed 3/Red | 30.574 |
+| 33 | N | 116 | Sean Kurschner | 2014 Kia forte5/blue | 30.640 |
+| 34 | CAMC | 72 | Jon Houlihan | 2015 Ford Mustang/Blue | 30.897 |
+| 35 | N | 65 | Aaron Tweed | 2007 Mini Cooper s/Metallic black | 31.388 |
+| 36 | N | 33 | Aaron Biederman | 1996 Mazda Miata/Black | 31.414 |
+| 37 | BS | 15 | Erin Holzinger | 2020 Mini Hatchback/Gray | 31.928 |
+| 38 | ES | 140 | Jeff Daken | 2014 Chevrolet Cruze/Black | 32.067 |
+| 39 | DST | 156 | Austyn Houlihan | 2002 Chevrolet S10/Black | 32.291 |
+| 40 | N | 88 | Nate Ebert | 2017 Chevy Volt | 32.551 |
+| 41 | AST | 1 | Darrel Turner | Lotus Elan/Red | 33.278 |
+| 42 | N | 13 | Quinton Klammer | 1991 Honda Beat/Red | 33.820 |
+| 43 | N | 55 | Michael Bartholomew | 1977 Dodge Royal Monaco Brougham/Black/White | 34.726 |
+| – | SSC | 645 | Kurt Seeman | Zink Formula Vee/Orange | DNF |
+
+## PAX
+
+Each best run multiplied by its class's PAX factor, so every class competes in one standing.
+
+| Pos | Class | # | Driver | Car | Raw | Factor | PAX time |
+| ---: | --- | ---: | --- | --- | ---: | ---: | ---: |
+| 1 | HS | 74 | Luis De La Pena | 2009 Honda Civic SI/Grey | 27.477 | 0.780 | 21.432 |
+| 2 | HS | 81 | John Qualheim | 2018 Ford Fiesta ST/Gray | 28.509 | 0.780 | 22.237 |
+| 3 | ES | 210 | Joel Anderegg | 1991 Honda Civic Si/Grey | 28.256 | 0.788 | 22.265 |
+| 4 | DS | 165 | Quinn Huettner | 2021 Honda Civic Type R/Gray | 27.566 | 0.811 | 22.356 |
+| 5 | GST | 808 | Kyle Yohnk | 2012 Volkswagen GOLF R/Red | 27.752 | 0.812 | 22.534 |
+| 6 | BS | 513 | Leng Thao | 2024 Honda Civic Type R/White | 27.402 | 0.823 | 22.551 |
+| 7 | AS | 17 | Paul Holzinger | 2013 Chevrolet Corvette/Red | 27.183 | 0.830 | 22.561 |
+| 8 | HS | 811 | Paul Cyr | Ford Fiesta st/Grey | 28.940 | 0.780 | 22.573 |
+| 9 | HS | 913 | Brandon Roehl | 2001 Mitsubishi Eclipse GT/Red | 29.498 | 0.780 | 23.008 |
+| 10 | XB | 869 | Brad Retzlaff | 1999 Mazda Miata/Black | 27.093 | 0.859 | 23.272 |
+| 11 | CS | 5 | Sam Houlihan | 2025 Mazda MX-5 Miata/Gray | 28.807 | 0.814 | 23.448 |
+| 12 | DS | 141 | Maxwell Bulgrin | 2023 Toyota GR86/Steel Silver | 29.040 | 0.811 | 23.551 |
+| 13 | DST | 46 | Brad Wickersham | 2017 Subaru BRZ LTD Perf Pack/Blue | 29.115 | 0.820 | 23.874 |
+| 14 | AS | 172 | Cole Holzinger | 2013 Chevrolet Corvette/Red | 28.862 | 0.830 | 23.955 |
+| 15 | SM | 22 | Kevin Schwetz | 2015 Infiniti Q50/White | 27.870 | 0.870 | 24.246 |
+| 16 | XB | 51 | Rex Schultrich | 1991 Mazda Miata/Red | 28.351 | 0.859 | 24.353 |
+| 17 | AST | 325 | Jon Strosahl | 1994 Mazda Miata/Red | 29.411 | 0.836 | 24.587 |
+| 18 | GST | 69 | Tucker Manderscheid | 2013 Mazda Mazdaspeed 3/Red | 30.574 | 0.812 | 24.826 |
+| 19 | CS | 9 | Wyatt Leonhardt | 1993 Nissan Nissan Skyline R32 GTR/Silver | 30.509 | 0.814 | 24.834 |
+| 20 | XA | 90 | Carter Lueloff | 2006 Infiniti G35/Blue | 28.845 | 0.861 | 24.835 |
+| 21 | XB | 501 | Fynn Schultrich | 1988 Mazda RX-7 FC/Red | 29.023 | 0.859 | 24.930 |
+| 22 | SM | 3 | Tyler Hart | 1995 Nissan 240sx | 28.796 | 0.870 | 25.052 |
+| 23 | CAMC | 707 | John Heaser Jr | 2010 Chevrolet Camaro SS/Tan/Black | 30.543 | 0.827 | 25.259 |
+| 24 | ES | 140 | Jeff Daken | 2014 Chevrolet Cruze/Black | 32.067 | 0.788 | 25.268 |
+| 25 | CAMC | 72 | Jon Houlihan | 2015 Ford Mustang/Blue | 30.897 | 0.827 | 25.551 |
+| 26 | SM | 842 | Shandon Wall | 2017 Subaru Brz performance package/White | 29.934 | 0.870 | 26.042 |
+| 27 | SSM | 391 | Korey Klammer | 2015 Alfa Romeo 4C/Rosso Alfa | 29.745 | 0.878 | 26.116 |
+| 28 | BS | 15 | Erin Holzinger | 2020 Mini Hatchback/Gray | 31.928 | 0.823 | 26.276 |
+| 29 | DST | 156 | Austyn Houlihan | 2002 Chevrolet S10/Black | 32.291 | 0.820 | 26.478 |
+| 30 | AST | 1 | Darrel Turner | Lotus Elan/Red | 33.278 | 0.836 | 27.820 |
+| 31 | N | 67 | Touger Thao | 2024 Honda Civic Type R/White | 27.956 | 1.000 | 27.956 |
+| 32 | N | 365 | Devin Marshall | 2018 Ford Fiesta st/Black | 28.830 | 1.000 | 28.830 |
+| 33 | N | 787 | Isaac Karrer | 2020 Fiat Abarth 124 Spider/White | 29.067 | 1.000 | 29.067 |
+| 34 | N | 331 | Dalton Roehl | 1995 Dodge Stealth/Red | 30.076 | 1.000 | 30.076 |
+| 35 | N | 144 | Nolan Murray | 2005 Audi A4 Quattro/Black | 30.169 | 1.000 | 30.169 |
+| 36 | N | 11 | Joey Stevens | 1999 Mazda Miata/Silver | 30.297 | 1.000 | 30.297 |
+| 37 | N | 201 | Shannon Anderegg | 1991 Honda Civic SI/Grey | 30.459 | 1.000 | 30.459 |
+| 38 | N | 116 | Sean Kurschner | 2014 Kia forte5/blue | 30.640 | 1.000 | 30.640 |
+| 39 | N | 65 | Aaron Tweed | 2007 Mini Cooper s/Metallic black | 31.388 | 1.000 | 31.388 |
+| 40 | N | 33 | Aaron Biederman | 1996 Mazda Miata/Black | 31.414 | 1.000 | 31.414 |
+| 41 | N | 88 | Nate Ebert | 2017 Chevy Volt | 32.551 | 1.000 | 32.551 |
+| 42 | N | 13 | Quinton Klammer | 1991 Honda Beat/Red | 33.820 | 1.000 | 33.820 |
+| 43 | N | 55 | Michael Bartholomew | 1977 Dodge Royal Monaco Brougham/Black/White | 34.726 | 1.000 | 34.726 |
+| – | SSC | 645 | Kurt Seeman | Zink Formula Vee/Orange | DNF | 0.808 | DNF |
+
+## By class
+
+Every class, ranked on raw time.
+
+### AS: A Street
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 17 | Paul Holzinger | 2013 Chevrolet Corvette/Red | 27.183 |  |
+| 2 | 172 | Cole Holzinger | 2013 Chevrolet Corvette/Red | 28.862 | +1.679 |
+
+### BS: B Street
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 513 | Leng Thao | 2024 Honda Civic Type R/White | 27.402 |  |
+| 2 | 15 | Erin Holzinger | 2020 Mini Hatchback/Gray | 31.928 | +4.526 |
+
+### CS: C Street
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 5 | Sam Houlihan | 2025 Mazda MX-5 Miata/Gray | 28.807 |  |
+| 2 | 9 | Wyatt Leonhardt | 1993 Nissan Nissan Skyline R32 GTR/Silver | 30.509 | +1.702 |
+
+### DS: D Street
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 165 | Quinn Huettner | 2021 Honda Civic Type R/Gray | 27.566 |  |
+| 2 | 141 | Maxwell Bulgrin | 2023 Toyota GR86/Steel Silver | 29.040 | +1.474 |
+
+### ES: E Street
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 210 | Joel Anderegg | 1991 Honda Civic Si/Grey | 28.256 |  |
+| 2 | 140 | Jeff Daken | 2014 Chevrolet Cruze/Black | 32.067 | +3.811 |
+
+### HS: H Street
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 74 | Luis De La Pena | 2009 Honda Civic SI/Grey | 27.477 |  |
+| 2 | 81 | John Qualheim | 2018 Ford Fiesta ST/Gray | 28.509 | +1.032 |
+| 3 | 811 | Paul Cyr | Ford Fiesta st/Grey | 28.940 | +1.463 |
+| 4 | 913 | Brandon Roehl | 2001 Mitsubishi Eclipse GT/Red | 29.498 | +2.021 |
+
+### SSC: Solo Spec Coupe
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| – | 645 | Kurt Seeman | Zink Formula Vee/Orange | DNF |  |
+
+### AST: A Street Touring
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 325 | Jon Strosahl | 1994 Mazda Miata/Red | 29.411 |  |
+| 2 | 1 | Darrel Turner | Lotus Elan/Red | 33.278 | +3.867 |
+
+### DST: D Street Touring
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 46 | Brad Wickersham | 2017 Subaru BRZ LTD Perf Pack/Blue | 29.115 |  |
+| 2 | 156 | Austyn Houlihan | 2002 Chevrolet S10/Black | 32.291 | +3.176 |
+
+### GST: G Street Touring
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 808 | Kyle Yohnk | 2012 Volkswagen GOLF R/Red | 27.752 |  |
+| 2 | 69 | Tucker Manderscheid | 2013 Mazda Mazdaspeed 3/Red | 30.574 | +2.822 |
+
+### SM: Street Modified
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 22 | Kevin Schwetz | 2015 Infiniti Q50/White | 27.870 |  |
+| 2 | 3 | Tyler Hart | 1995 Nissan 240sx | 28.796 | +0.926 |
+| 3 | 842 | Shandon Wall | 2017 Subaru Brz performance package/White | 29.934 | +2.064 |
+
+### SSM: Super Street Modified
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 391 | Korey Klammer | 2015 Alfa Romeo 4C/Rosso Alfa | 29.745 |  |
+
+### CAMC: Classic American Muscle Classic
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 707 | John Heaser Jr | 2010 Chevrolet Camaro SS/Tan/Black | 30.543 |  |
+| 2 | 72 | Jon Houlihan | 2015 Ford Mustang/Blue | 30.897 | +0.354 |
+
+### XA: Xtreme Street A
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 90 | Carter Lueloff | 2006 Infiniti G35/Blue | 28.845 |  |
+
+### XB: Xtreme Street B
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 869 | Brad Retzlaff | 1999 Mazda Miata/Black | 27.093 |  |
+| 2 | 51 | Rex Schultrich | 1991 Mazda Miata/Red | 28.351 | +1.258 |
+| 3 | 501 | Fynn Schultrich | 1988 Mazda RX-7 FC/Red | 29.023 | +1.930 |
+
+### N: Novice
+
+| Pos | # | Driver | Car | Time | Gap |
+| ---: | ---: | --- | --- | ---: | ---: |
+| 1 | 67 | Touger Thao | 2024 Honda Civic Type R/White | 27.956 |  |
+| 2 | 365 | Devin Marshall | 2018 Ford Fiesta st/Black | 28.830 | +0.874 |
+| 3 | 787 | Isaac Karrer | 2020 Fiat Abarth 124 Spider/White | 29.067 | +1.111 |
+| 4 | 331 | Dalton Roehl | 1995 Dodge Stealth/Red | 30.076 | +2.120 |
+| 5 | 144 | Nolan Murray | 2005 Audi A4 Quattro/Black | 30.169 | +2.213 |
+| 6 | 11 | Joey Stevens | 1999 Mazda Miata/Silver | 30.297 | +2.341 |
+| 7 | 201 | Shannon Anderegg | 1991 Honda Civic SI/Grey | 30.459 | +2.503 |
+| 8 | 116 | Sean Kurschner | 2014 Kia forte5/blue | 30.640 | +2.684 |
+| 9 | 65 | Aaron Tweed | 2007 Mini Cooper s/Metallic black | 31.388 | +3.432 |
+| 10 | 33 | Aaron Biederman | 1996 Mazda Miata/Black | 31.414 | +3.458 |
+| 11 | 88 | Nate Ebert | 2017 Chevy Volt | 32.551 | +4.595 |
+| 12 | 13 | Quinton Klammer | 1991 Honda Beat/Red | 33.820 | +5.864 |
+| 13 | 55 | Michael Bartholomew | 1977 Dodge Royal Monaco Brougham/Black/White | 34.726 | +6.770 |
+
+DNF: did not finish.

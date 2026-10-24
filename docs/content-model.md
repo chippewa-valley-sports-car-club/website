@@ -112,14 +112,14 @@ past events drop off on their own.
 | `title` | text, *required* | "2027 CVTC Autocross" |
 | `date` | date, *required* | |
 | `event` | slug of a `content/events/` page | |
-| `results_file` | file path under `static/results/` | PDF or HTML from the timing software |
+| `results_file` | file path under `static/results/` | PDF or HTML from the timing software. An AXWare raw-time PDF is imported automatically (`scripts/import-results.py`) |
 | `results_url` | url | Results hosted elsewhere (MotorsportReg, a series site) |
 | `highlights` | list of `{class, place, driver, car, time}` | Optional podium table; any subset of the keys |
 | `summary` | text | One line for lists |
 | `announce` | boolean | Defaults to `false`. Tick to post this once, with a link, after the site updates. Only ticked items are ever announced |
 | `announce_text` | text | Optional. What the post says. Empty: the title and summary |
 
-The body is an optional write-up. The Results list groups pages by year.
+The body is an optional write-up; the tables come from `assets/results/<slug>.md`, generated from `results-src/`. The Results list groups pages by year.
 
 ## `content/news/<slug>.md`: posts
 

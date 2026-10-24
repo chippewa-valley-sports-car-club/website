@@ -9,6 +9,9 @@
       "lychee": {
         "pkg-path": "lychee"
       },
+      "poppler-utils": {
+        "pkg-path": "poppler-utils"
+      },
       "python3": {
         "pkg-path": "python3"
       },
@@ -190,6 +193,96 @@
       ],
       "outputs": {
         "out": "/nix/store/qkbb5lyjh5v5wikirs0c2n6r9hdlv5yi-lychee-0.24.2"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "poppler-utils",
+      "broken": false,
+      "derivation": "/nix/store/hhv2fh7wy7ljy459lrlrsdfkqr72rypn-poppler-utils-26.10.0.drv",
+      "description": "PDF rendering library",
+      "install_id": "poppler-utils",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=02c087f3fe673c9e317f206a627cb6b910336dbe",
+      "name": "poppler-utils-26.10.0",
+      "pname": "poppler-utils",
+      "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+      "rev_count": 1097682,
+      "rev_date": "2026-10-20T13:28:04Z",
+      "scrape_date": "2026-10-21T05:50:29.047961Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "26.10.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/cl2gbk6yxyn910ckawxk89n3q6svpzmf-poppler-utils-26.10.0-dev",
+        "out": "/nix/store/qjx2i015navxnzyzh6pkfzfhnhcwwdyn-poppler-utils-26.10.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "poppler-utils",
+      "broken": false,
+      "derivation": "/nix/store/v1hylir0sqq13ny9wwbrr1z1c61xms89-poppler-utils-26.10.0.drv",
+      "description": "PDF rendering library",
+      "install_id": "poppler-utils",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=02c087f3fe673c9e317f206a627cb6b910336dbe",
+      "name": "poppler-utils-26.10.0",
+      "pname": "poppler-utils",
+      "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+      "rev_count": 1097682,
+      "rev_date": "2026-10-20T13:28:04Z",
+      "scrape_date": "2026-10-21T06:26:17.694354Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "26.10.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/4h05nfqgm07csyfdsiw40g11gr49mjkr-poppler-utils-26.10.0-dev",
+        "out": "/nix/store/ffafgfpymilqh8zcbhl0kwfh96ajgvjx-poppler-utils-26.10.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "poppler-utils",
+      "broken": false,
+      "derivation": "/nix/store/klis1ns1gz7q25rjm6l23jg1w1w1xidy-poppler-utils-26.10.0.drv",
+      "description": "PDF rendering library",
+      "install_id": "poppler-utils",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=02c087f3fe673c9e317f206a627cb6b910336dbe",
+      "name": "poppler-utils-26.10.0",
+      "pname": "poppler-utils",
+      "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+      "rev_count": 1097682,
+      "rev_date": "2026-10-20T13:28:04Z",
+      "scrape_date": "2026-10-21T07:05:52.955851Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "26.10.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/h40p0sdmk3881ijp2iv25w57gjbb5vf5-poppler-utils-26.10.0-dev",
+        "out": "/nix/store/9wxndncjva1acn178yk4x3rxy6507jd5-poppler-utils-26.10.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

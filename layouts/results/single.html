@@ -13,5 +13,8 @@
   {{ partial "podium.html" . }}
   {{ end }}
   {{ .Content }}
+  {{- /* The tables come from scripts/results-tables.py, kept out of the body so
+         the CMS's rich-text editor never rewrites them. */}}
+  {{ with resources.Get (printf "results/%s.md" .File.ContentBaseName) }}{{ $.RenderString (dict "display" "block") .Content }}{{ end }}
 </article>
 {{ end }}
