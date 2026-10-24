@@ -140,3 +140,26 @@ The body is an optional write-up. The Results list groups pages by year.
 `review:` (text): the page then shows a "Draft: for club review" banner with
 that text, for information the club hasn't decided yet. Clear it once decided. Privacy and Terms exist because TikTok's and Meta's developer
 apps, which publish the club's videos, require those URLs.
+
+## `/announce.json` feed
+
+The site generates a JSON Feed 1.1 feed at `/announce.json` that contains all
+news, events and results pages. The feed includes:
+- `version`: "https://jsonfeed.org/version/1.1"
+- `title`: site title
+- `home_page_url`: site permalink
+- `feed_url`: absolute URL to the feed itself
+- `items`: array of feed items, each with:
+  - `id`: page permalink
+  - `url`: page permalink (absolute)
+  - `title`: page title
+  - `summary`: page summary when set
+  - `date_published`: ISO 8601 date
+  - `image`: absolute URL to page image when set
+  - `_fanout`: object with:
+    - `announce`: true only when `.Params.announce` is true
+    - `text`: `.Params.announce_text` when set
+    - `kind`: page section ("news", "events", or "results")
+
+All pages in the news, events and results sections appear in the feed; the
+`_fanout.announce` flag is true only for pages where `.Params.announce` is set.

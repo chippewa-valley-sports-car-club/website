@@ -8,6 +8,18 @@ buildFuture = true
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
+[mediaTypes.'application/feed+json']
+suffixes = ['json']
+
+[outputFormats.announce]
+mediaType = 'application/feed+json'
+baseName = 'announce'
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "announce"]
+
 [params]
 description = "A car club for the Chippewa Valley: autocross, track days, rally, sim racing, and quarterly meetings at Hangar 54."
 repo = "https://github.com/chippewa-valley-sports-car-club/website"

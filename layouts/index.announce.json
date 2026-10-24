@@ -1,0 +1,17 @@
+{{- $items := slice }}
+{{- $pages := (where site.RegularPages "Section" "in" (slice "news" "events" "results")).ByDate.Reverse }}
+{{- range $pages }}
+{{- $item := dict "id" .Permalink "url" .Permalink "title" .Title "date_published" (.Date.Format "2006-01-02T15:04:05Z07:00") "_fanout" (dict "announce" (eq (.Params.announce | default false) true) "kind" .Section) }}
+{{- with .Params.summary }}
+{{- $item = merge $item (dict "summary" .) }}
+{{- end }}
+{{- with .Params.image }}
+{{- $item = merge $item (dict "image" (. | absURL)) }}
+{{- end }}
+{{- with .Params.announce_text }}
+{{- $item = merge $item (dict "_fanout" (merge (index $item "_fanout") (dict "text" .))) }}
+{{- end }}
+{{- $items = $items | append $item }}
+{{- end }}
+{{- $feed := dict "version" "https://jsonfeed.org/version/1.1" "title" site.Title "home_page_url" .Permalink "feed_url" (absURL "announce.json") "items" $items }}
+{{ jsonify $feed }}
