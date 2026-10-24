@@ -56,6 +56,14 @@ jobs:
           fetch-depth: 0
       - name: Check out the ledger branch
         run: git worktree add fanout-ledger origin/fanout-ledger
+      # fanout runs from its own repo at a pinned commit, inside that repo's
+      # Flox environment (Node from the public catalog). Not `flox install
+      # imkarrer/fanout`: FloxHub requires a login to download custom packages.
+      - uses: actions/checkout@v4
+        with:
+          repository: imkarrer/fanout
+          ref: 46c6ab6ee2e6ba0e4a3e6440fc21c92a37f43ed4  # v0.1.0
+          path: fanout-src
       - uses: flox/install-flox-action@v2
       - uses: flox/activate-action@v2
         env:
@@ -63,7 +71,8 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
         with:
-          command: fanout run ${{ vars.FANOUT_LIVE == 'true' && '--live' || '' }}
+          dir: fanout-src
+          command: node --no-warnings fanout-src/src/cli.ts run --config fanout.json ${{ vars.FANOUT_LIVE == 'true' && '--live' || '' }}
       - name: Record deliveries on the ledger branch
         if: always()
         working-directory: fanout-ledger
