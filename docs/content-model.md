@@ -150,7 +150,7 @@ news, events and results pages. The feed includes:
 - `home_page_url`: site permalink
 - `feed_url`: absolute URL to the feed itself
 - `items`: array of feed items, each with:
-  - `id`: page permalink
+  - `id`: `cvscc:` plus the page's path in the site (e.g. `cvscc:/news/2026-10-24-new-website`), stable when the domain changes; fanout's ledger keys on it
   - `url`: page permalink (absolute)
   - `title`: page title
   - `summary`: page summary when set

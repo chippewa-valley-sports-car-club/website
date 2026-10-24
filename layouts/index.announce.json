@@ -1,7 +1,8 @@
 {{- $items := slice }}
 {{- $pages := (where site.RegularPages "Section" "in" (slice "news" "events" "results")).ByDate.Reverse }}
 {{- range $pages }}
-{{- $item := dict "id" .Permalink "url" .Permalink "title" .Title "date_published" (.Date.Format "2006-01-02T15:04:05Z07:00") "_fanout" (dict "announce" (eq (.Params.announce | default false) true) "kind" .Section) }}
+{{- /* id is the page's path inside the site, not its URL: fanout's ledger keys on it, and the URL changes when the domain does (github.io -> www.cvscc.org), which would announce everything again. */}}
+{{- $item := dict "id" (printf "cvscc:%s" .Path) "url" .Permalink "title" .Title "date_published" (.Date.Format "2006-01-02T15:04:05Z07:00") "_fanout" (dict "announce" (eq (.Params.announce | default false) true) "kind" .Section) }}
 {{- with .Params.summary }}
 {{- $item = merge $item (dict "summary" .) }}
 {{- end }}
