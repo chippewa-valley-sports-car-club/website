@@ -1,10 +1,13 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 <div class="prose">{{ .Content }}</div>
-{{- with hugo.Data.sponsors }}
+{{- $years := slice }}
+{{- range hugo.Data.sponsors }}{{ range .seasons }}{{ $years = $years | append . }}{{ end }}{{ end }}
+{{- range $year := sort (uniq $years) "value" "desc" }}
 <section class="home-section">
+  <div class="section-head"><h2>{{ $year }} season</h2></div>
   <div class="card-grid sponsors-grid">
-    {{- range . }}{{ partial "sponsor-card.html" . }}{{ end }}
+    {{- range hugo.Data.sponsors }}{{ if in (.seasons | default slice) $year }}{{ partial "sponsor-card.html" . }}{{ end }}{{ end }}
   </div>
 </section>
 {{- end }}
