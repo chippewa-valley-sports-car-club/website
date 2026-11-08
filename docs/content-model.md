@@ -48,17 +48,14 @@ page and its Facebook group); `label` tells them apart.
 
 ## `data/sponsors.yml`: who supports the club
 
-A list, shown in order.
+This season's sponsors, shown in order. Each one backs every event, so each is
+listed once and shows on the home page, the Sponsors page and every event page.
 
 | Key | Type | Notes |
 | --- | --- | --- |
 | `name` | text, *required* | |
 | `url` | url | The site adds `utm_source=cvscc.org&utm_medium=referral&utm_campaign=sponsors` so sponsors can see the referrals |
 | `logo` | image path under `static/images/sponsors/` | Missing: the name is shown instead |
-| `lane` | `club` or `event` | Defaults to `club`. Club sponsors back the whole season; event sponsors back one event |
-| `tier` | club lane: `title`, `gold`, `supporter`; event lane: `presenting`, `event`, `in-kind` | Defaults to `supporter` (club) or `event` (event). Higher tiers show first and larger |
-| `event` | file name of a `content/events/` page, without `.md` | Event lane: the sponsor also shows on that event's page |
-| `event_label` | text | Event lane: the heading it's grouped under on the Sponsors page, e.g. `2027 CVTC Autocross` |
 | `offer` | text | "10% off parts for members" |
 | `code` | text | A discount or referral code to quote |
 | `blurb` | text | One or two sentences |
