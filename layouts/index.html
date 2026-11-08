@@ -95,10 +95,14 @@
 
   {{ partial "community.html" . }}
 
-  {{- /* Every sponsor gets a logo on the home page. */}}
-  {{- with hugo.Data.sponsors }}
+  {{- /* The latest season's sponsors get a logo on the home page. */}}
+  {{- $latest := 0 }}
+  {{- range hugo.Data.sponsors }}{{ range .seasons }}{{ if gt . $latest }}{{ $latest = . }}{{ end }}{{ end }}{{ end }}
+  {{- $current := slice }}
+  {{- range hugo.Data.sponsors }}{{ if in (.seasons | default slice) $latest }}{{ $current = $current | append . }}{{ end }}{{ end }}
+  {{- with $current }}
   <section class="home-section">
-    <div class="section-head"><h2>Our sponsors</h2><a href="{{ "sponsors/" | relURL }}">All sponsors →</a></div>
+    <div class="section-head"><h2>Our {{ $latest }} sponsors</h2><a href="{{ "sponsors/" | relURL }}">All sponsors →</a></div>
     {{ partial "sponsor-strip.html" . }}
   </section>
   {{- end }}
