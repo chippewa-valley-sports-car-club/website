@@ -18,9 +18,12 @@
   {{- /* Link fields hold an entry's name or, from the CMS's pick list, its
          path (content/results/x.md); path.BaseName reduces both to x. */}}
   {{ with .Params.results }}<p><a href="{{ printf "results/%s/" (path.BaseName .) | relURL }}">See the results</a></p>{{ end }}
-  {{- with hugo.Data.sponsors }}
+  {{- $year := .Date.Year }}
+  {{- $sponsors := slice }}
+  {{- range hugo.Data.sponsors }}{{ if in (.seasons | default slice) $year }}{{ $sponsors = $sponsors | append . }}{{ end }}{{ end }}
+  {{- with $sponsors }}
   <section class="event-sponsors">
-    <h2>Thanks to our sponsors</h2>
+    <h2>Thanks to our {{ $year }} sponsors</h2>
     {{ partial "sponsor-strip.html" . }}
   </section>
   {{- end }}
