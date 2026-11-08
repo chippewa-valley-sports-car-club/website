@@ -132,6 +132,11 @@ content:
         options:
           media: images
           path: static/images/sponsors
+      - name: seasons
+        label: Seasons sponsored
+        type: number
+        list: true
+        description: Every year this business paid for, e.g. 2026. When it renews, add the new year.
       - name: offer
         label: Member offer
         type: string

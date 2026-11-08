@@ -1,14 +1,18 @@
-# This season's sponsors, in display order. docs/content-model.md
-# Each one backs every event, so each is listed once and shows on the home
-# page, the Sponsors page and every event page.
+# Sponsors, in display order. docs/content-model.md
+# seasons: every year the business paid for. A sponsor backs every event in
+# those years; add the new year when it renews.
 - name: Holzinger Homes
   url: https://holzingerhomes.com/
   logo: images/sponsors/holzinger-homes.svg
+  seasons: [2026]
   blurb: Custom and ready-built homes from an Altoona home builder.
 - name: PSI Mobile Tire
   url: https://psimobiletire.com/
+  logo: images/sponsors/psi-mobile-tire.png
+  seasons: [2026]
   blurb: Family-owned mobile tire shop from Eau Claire that comes to you, serving the whole Chippewa Valley.
 - name: Fast Freddie's Rod Shop
   url: https://fastfreddiesrodshop.com/
   logo: images/sponsors/fast-freddies-rod-shop.png
+  seasons: [2026]
   blurb: Hot rod shop in Eau Claire restoring vintage cars to their former glory.
