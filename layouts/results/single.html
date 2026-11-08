@@ -26,4 +26,11 @@
   </p>
   {{- end }}{{ end }}{{ end }}
 </article>
+{{- $year := .Date.Year }}
+{{- with partial "season-sponsors.html" $year }}
+<section class="event-sponsors">
+  <h2>Thanks to our {{ $year }} sponsors</h2>
+  {{ partial "sponsor-strip.html" . }}
+</section>
+{{- end }}
 {{ end }}
