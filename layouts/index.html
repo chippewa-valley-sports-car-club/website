@@ -95,6 +95,7 @@
 
   {{ partial "community.html" . }}
 
+  {{- /* The latest season's sponsors get a logo on the home page. */}}
   {{- $latest := 0 }}
   {{- range hugo.Data.sponsors }}{{ range .seasons }}{{ if gt . $latest }}{{ $latest = . }}{{ end }}{{ end }}{{ end }}
   {{- $current := slice }}
