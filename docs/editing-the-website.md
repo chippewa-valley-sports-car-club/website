@@ -62,9 +62,10 @@ are marked with an asterisk and a note explaining why, so they're done by hand.
 
 ### Add a sponsor
 
-**Sponsors** → add an entry and upload the logo in its **Logo** box. A sponsor
-backs the whole season for $500, so it shows on the home page, the Sponsors page
-and every event page. Remove sponsors who don't renew when a new season starts.
+**Sponsors** → add an entry and upload the logo in its **Logo** box. Add
+the year to **Seasons sponsored**: a sponsor backs every event that year for
+$500. When a sponsor renews, add the new year to its entry rather than adding a
+new one.
 
 ### Add a news post
 

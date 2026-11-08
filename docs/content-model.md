@@ -48,14 +48,15 @@ page and its Facebook group); `label` tells them apart.
 
 ## `data/sponsors.yml`: who supports the club
 
-This season's sponsors, shown in order. Each one backs every event, so each is
-listed once and shows on the home page, the Sponsors page and every event page.
+Every sponsor, shown in order. A sponsor backs every event in the seasons it
+paid for, so each business is listed once with the years it sponsored.
 
 | Key | Type | Notes |
 | --- | --- | --- |
 | `name` | text, *required* | |
 | `url` | url | The site adds `utm_source=cvscc.org&utm_medium=referral&utm_campaign=sponsors` so sponsors can see the referrals |
 | `logo` | image path under `static/images/sponsors/` | Missing: the name is shown instead |
+| `seasons` | list of years, e.g. `[2026, 2027]` | Every season the business paid for. Event pages show that year's sponsors; the Sponsors page groups by year |
 | `offer` | text | "10% off parts for members" |
 | `code` | text | A discount or referral code to quote |
 | `blurb` | text | One or two sentences |
