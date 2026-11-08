@@ -1,44 +1,14 @@
-# Sponsors, in display order within each lane and tier. docs/content-model.md
-# lane: club (season-long) or event (one event). Tiers: club lane title, gold,
-# supporter; event lane presenting, event, in-kind. A business that sponsored
-# two events has an entry for each; the home page lists it once.
+# This season's sponsors, in display order. docs/content-model.md
+# Each one backs every event, so each is listed once and shows on the home
+# page, the Sponsors page and every event page.
 - name: Holzinger Homes
   url: https://holzingerhomes.com/
-  lane: event
-  tier: event
-  event: 2026-08-23-fall-autocross
-  event_label: 2026 Fall Autocross
+  logo: images/sponsors/holzinger-homes.svg
   blurb: Custom and ready-built homes from an Altoona home builder.
 - name: PSI Mobile Tire
-  lane: event
-  tier: event
-  event: 2026-08-23-fall-autocross
-  event_label: 2026 Fall Autocross
-  blurb: Mobile tire installation.
+  url: https://psimobiletire.com/
+  blurb: Family-owned mobile tire shop from Eau Claire that comes to you, serving the whole Chippewa Valley.
 - name: Fast Freddie's Rod Shop
   url: https://fastfreddiesrodshop.com/
-  lane: event
-  tier: event
-  event: 2026-08-23-fall-autocross
-  event_label: 2026 Fall Autocross
-  blurb: Hot rod shop in Eau Claire restoring vintage cars to their former glory.
-- name: Holzinger Homes
-  url: https://holzingerhomes.com/
-  lane: event
-  tier: event
-  event: 2026-05-10-spring-autocross
-  event_label: 2026 Spring Autocross
-  blurb: Custom and ready-built homes from an Altoona home builder.
-- name: PSI Mobile Tire
-  lane: event
-  tier: event
-  event: 2026-05-10-spring-autocross
-  event_label: 2026 Spring Autocross
-  blurb: Mobile tire installation.
-- name: Fast Freddie's Rod Shop
-  url: https://fastfreddiesrodshop.com/
-  lane: event
-  tier: event
-  event: 2026-05-10-spring-autocross
-  event_label: 2026 Spring Autocross
+  logo: images/sponsors/fast-freddies-rod-shop.png
   blurb: Hot rod shop in Eau Claire restoring vintage cars to their former glory.

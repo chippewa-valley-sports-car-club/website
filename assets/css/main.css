@@ -782,12 +782,13 @@ tbody tr:nth-child(even) {
   width: auto;
 }
 
-.tier-title {
-  border-top: 4px solid var(--red);
-}
-
-.tier-gold {
-  border-top: 4px solid #c9a227;
+@media (prefers-color-scheme: dark) {
+  .sponsor-strip img,
+  .sponsor-mark img {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.35rem;
+    background: white;
+  }
 }
 
 .offer {
@@ -828,14 +829,6 @@ tbody tr:nth-child(even) {
 .club-card .note {
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.sponsor-group {
-  margin: 1.5rem 0 0.75rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .tax-status {

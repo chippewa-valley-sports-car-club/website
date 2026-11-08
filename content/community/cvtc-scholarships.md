@@ -21,4 +21,4 @@ Students apply through CVTC's scholarship site, not through the club. [CVTC's pa
 
 ## Help fund them
 
-Run an autocross, join the club, or [sponsor an event](../../sponsor-the-club/). Our event proceeds pay for these scholarships.
+Run an autocross, join the club, or [sponsor the club](../../sponsor-the-club/). Our event proceeds pay for these scholarships.

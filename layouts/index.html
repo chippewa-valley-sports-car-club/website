@@ -95,14 +95,10 @@
 
   {{ partial "community.html" . }}
 
-  {{- /* Only season-long club sponsors at the title and gold tiers earn the home page (see Sponsors). */}}
-  {{- $featured := slice }}
-  {{- range $tier := slice "title" "gold" }}
-    {{- range hugo.Data.sponsors }}{{ if and (eq (.lane | default "club") "club") (eq .tier $tier) }}{{ $featured = $featured | append . }}{{ end }}{{ end }}
-  {{- end }}
-  {{- with $featured }}
+  {{- /* Every sponsor gets a logo on the home page. */}}
+  {{- with hugo.Data.sponsors }}
   <section class="home-section">
-    <div class="section-head"><h2>Our sponsors</h2><a href="{{ "sponsors/" | relURL }}">Member offers →</a></div>
+    <div class="section-head"><h2>Our sponsors</h2><a href="{{ "sponsors/" | relURL }}">All sponsors →</a></div>
     {{ partial "sponsor-strip.html" . }}
   </section>
   {{- end }}

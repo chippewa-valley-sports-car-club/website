@@ -62,9 +62,9 @@ are marked with an asterisk and a note explaining why, so they're done by hand.
 
 ### Add a sponsor
 
-**Sponsors** → add an entry, upload the logo in its **Logo** box, and pick
-the **Tier**. Only title and gold club sponsors appear on the home page; for an
-event sponsor, pick the event and the sponsor shows on that event's page.
+**Sponsors** → add an entry and upload the logo in its **Logo** box. A sponsor
+backs the whole season for $500, so it shows on the home page, the Sponsors page
+and every event page. Remove sponsors who don't renew when a new season starts.
 
 ### Add a news post
 
