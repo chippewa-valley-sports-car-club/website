@@ -19,9 +19,7 @@
          path (content/results/x.md); path.BaseName reduces both to x. */}}
   {{ with .Params.results }}<p><a href="{{ printf "results/%s/" (path.BaseName .) | relURL }}">See the results</a></p>{{ end }}
   {{- $year := .Date.Year }}
-  {{- $sponsors := slice }}
-  {{- range hugo.Data.sponsors }}{{ if in (.seasons | default slice) $year }}{{ $sponsors = $sponsors | append . }}{{ end }}{{ end }}
-  {{- with $sponsors }}
+  {{- with partial "season-sponsors.html" $year }}
   <section class="event-sponsors">
     <h2>Thanks to our {{ $year }} sponsors</h2>
     {{ partial "sponsor-strip.html" . }}
