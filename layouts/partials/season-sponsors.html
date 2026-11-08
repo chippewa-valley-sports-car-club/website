@@ -1,0 +1,5 @@
+{{- /* The sponsors whose seasons include a year. Called with the year, e.g.
+       partial "season-sponsors.html" .Date.Year; returns a list, maybe empty. */ -}}
+{{- $sponsors := slice }}
+{{- range hugo.Data.sponsors }}{{ if in (.seasons | default slice) $ }}{{ $sponsors = $sponsors | append . }}{{ end }}{{ end }}
+{{- return $sponsors }}
